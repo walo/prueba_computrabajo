@@ -9,6 +9,15 @@ export const FEATURES_ROUTES: Routes = [
       import('./dashboard/dashboard.component').then((m) => m.DashboardComponent),
   },
   {
+    path: 'categories',
+    canActivate: [permissionGuard],
+    data: { permissions: [PERMISSIONS.CATEGORIES.READ] },
+    loadComponent: () =>
+      import('./categories/pages/categories-page.component').then(
+        (m) => m.CategoriesPageComponent
+      ),
+  },
+  {
     path: 'users',
     canActivate: [permissionGuard],
     data: { permissions: [PERMISSIONS.USERS.READ] },

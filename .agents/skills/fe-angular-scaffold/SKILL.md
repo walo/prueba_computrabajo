@@ -70,6 +70,7 @@ npm install -D jest jest-preset-angular @types/jest jest-environment-jsdom jsdom
   }
   ```
 - `package.json`: `"start": "ng serve --prebundle=false"` (evita que Vite pre-empaquete una segunda instancia de `@angular/core` al importar desde `../ui-design-system` y cause `NG0203`), `"test": "jest"`, `"test:ci": "jest --ci --runInBand"`.
+- `angular.json`: En `projects.frontend.architect.serve`, configurar `"options": { "prebundle": false }` para que ejecutar `ng s` o `ng serve` directamente tampoco genere el prebundle duplicado de `@angular/core`.
 
 
 ### Paso 3: Conectar `@accionadev/ui-kit` (Rutas Relativas), Tailwind Preset & `ngx-permissions`

@@ -52,9 +52,15 @@ export class ErrorHandlerService {
 
   private resolveDomainError(error: HttpErrorResponse): UiErrorMessage {
     const rawError = error.error as
-      | { code?: string; detail?: string; extensions?: { code?: string }; metadata?: Record<string, string> }
+      | {
+          code?: string;
+          title?: string;
+          detail?: string;
+          extensions?: { code?: string };
+          metadata?: Record<string, string>;
+        }
       | undefined;
-    const code = rawError?.code || rawError?.extensions?.code || '';
+    const code = rawError?.code || rawError?.extensions?.code || rawError?.title || '';
     const template = this.errorCatalog[code];
     if (template) {
       return {

@@ -61,6 +61,9 @@ export class ShellComponent {
 
   protected readonly pageTitle = computed(() => {
     const url = this.currentUrl();
+    if (url.startsWith('/categories')) {
+      return 'Catálogo de Categorías';
+    }
 
     return url.startsWith('/users') ? 'Usuarios y Permisos' : 'Tablero Principal';
   });
@@ -77,6 +80,15 @@ export class ShellComponent {
         active: url === '/dashboard' || url === '/',
       },
     ];
+    if (granted[PERMISSIONS.CATEGORIES.READ]) {
+      items.push({
+        id: 'categories',
+        label: 'Categorías',
+        route: '/categories',
+        icon: 'tag',
+        active: url.startsWith('/categories'),
+      });
+    }
     if (granted[PERMISSIONS.USERS.READ]) {
       items.push({
         id: 'users',

@@ -6,6 +6,12 @@
     "Entity.InvalidState": "El registro no permite esta operación en su estado actual.",
     "User.DuplicateEmail": "El correo electrónico {email} ya se encuentra en uso.",
     "Auth.InvalidCredentials": "Las credenciales ingresadas son incorrectas.",
-    "Auth.Forbidden": "No tienes los permisos requeridos para acceder a este recurso."
+    "Auth.Forbidden": "No tienes los permisos requeridos para acceder a este recurso.",
+    "Category.NotFound": "La categoría solicitada no existe o fue eliminada.",
+    "Category.DuplicateCode": "Ya existe una categoría registrada con el código ingresado.",
+    "Category.DuplicateName": "Ya existe una categoría registrada con el nombre ingresado.",
+    "Category.HasAssociatedProducts": "No se puede eliminar la categoría porque tiene productos asociados. Considere inactivarla.",
+    "Category.InvalidCode": "El código de categoría debe tener entre 2 y 30 caracteres válidos.",
+    "Category.InvalidName": "El nombre de categoría debe tener entre 2 y 100 caracteres."
   }
 }
