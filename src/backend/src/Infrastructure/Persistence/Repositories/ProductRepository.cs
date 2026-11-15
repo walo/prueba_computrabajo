@@ -25,7 +25,7 @@ public sealed class ProductRepository(
     {
         if (!dbContext.Database.IsRelational())
         {
-            return false;
+            return await dbContext.InventoryMovements.AsNoTracking().AnyAsync(movement => movement.ProductId == productId, ct);
         }
         const string tableCheckSql = "SELECT CASE WHEN OBJECT_ID(N'dbo.InventoryMovements', N'U') IS NOT NULL THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT) END";
         using var connection = connectionFactory.CreateConnection();

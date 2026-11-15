@@ -1,0 +1,235 @@
+<div class="space-y-6">
+  @if (pageError(); as error) {
+    <ad-alert
+      variant="danger"
+      [title]="error.title"
+      [dismissible]="true"
+      (closed)="clearPageError()">
+      {{ error.message }}
+    </ad-alert>
+  }
+
+  <ad-card
+    title="Movimientos de Inventario (Kardex)"
+    subtitle="Historial inmutable de entradas, salidas y saldos de stock por producto."
+    padding="md">
+    <div card-header-actions class="flex items-center gap-3">
+      <ad-button
+        *ngxPermissionsOnly="[permissions.INVENTORY_MOVEMENTS.CREATE]"
+        variant="primary"
+        size="md"
+        (clicked)="openCreateModal()">
+        <span class="inline-flex items-center gap-2">
+          <ad-icon name="plus" size="sm" />
+          <span>Registrar Movimiento</span>
+        </span>
+      </ad-button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6 items-end">
+      <ad-search-box
+        [(value)]="search"
+        placeholder="Buscar por SKU, producto o motivo..."
+        size="md"
+        (search)="onSearchChange($event)"
+        (cleared)="onSearchChange('')" />
+
+      <ad-select
+        label="Producto"
+        [options]="productFilterOptions()"
+        [ngModel]="productFilter()"
+        (ngModelChange)="onProductFilterChange($event)" />
+
+      <ad-select
+        label="Tipo"
+        [options]="typeFilterOptions"
+        [ngModel]="typeFilter()"
+        (ngModelChange)="onTypeFilterChange($event)" />
+
+      <ad-input
+        label="Desde"
+        type="text"
+        prefixIcon="calendar"
+        placeholder="AAAA-MM-DD"
+        [ngModel]="fromDate()"
+        (ngModelChange)="onFromDateChange($event)" />
+
+      <ad-input
+        label="Hasta"
+        type="text"
+        prefixIcon="calendar"
+        placeholder="AAAA-MM-DD"
+        [ngModel]="toDate()"
+        (ngModelChange)="onToDateChange($event)" />
+    </div>
+
+    <div class="flex justify-end mb-4">
+      <ad-button variant="ghost" size="sm" (clicked)="clearFilters()">
+        Limpiar filtros
+      </ad-button>
+    </div>
+
+    <ad-table
+      [columns]="columns"
+      [data]="movements()"
+      [loading]="isLoading()"
+      [totalItems]="totalCount()"
+      [page]="page()"
+      [pageSize]="pageSize()"
+      emptyTitle="Sin movimientos registrados"
+      emptyDescription="No se encontraron entradas o salidas con los criterios seleccionados."
+      (pageChange)="onPageChange($event)">
+      <ng-template adTableCell="createdAtUtc" let-row>
+        <span class="text-xs font-mono text-foreground-muted">
+          {{ toLocalDate(row.createdAtUtc) | date:'dd/MM/yyyy HH:mm' }}
+        </span>
+      </ng-template>
+
+      <ng-template adTableCell="productSku" let-row>
+        <div class="flex flex-col">
+          <span class="font-mono text-xs font-semibold text-foreground">{{ row.productSku }}</span>
+          <span class="text-xs text-foreground-muted">{{ row.productName }}</span>
+        </div>
+      </ng-template>
+
+      <ng-template adTableCell="type" let-row>
+        <ad-badge
+          [variant]="row.type === 'ENTRY' ? 'success' : 'warning'"
+          [dot]="true">
+          {{ row.type === 'ENTRY' ? 'Entrada' : 'Salida' }}
+        </ad-badge>
+      </ng-template>
+
+      <ng-template adTableCell="quantity" let-row>
+        <span class="font-semibold text-foreground">
+          {{ row.type === 'ENTRY' ? '+' : '-' }}{{ row.quantity }}
+        </span>
+      </ng-template>
+
+      <ng-template adTableCell="stockBalance" let-row>
+        <ad-badge [variant]="row.newStock === 0 ? 'danger' : 'primary'">
+          {{ row.previousStock }} -> {{ row.newStock }}
+        </ad-badge>
+      </ng-template>
+
+      <ng-template adTableCell="performedByEmail" let-row>
+        <span class="text-xs text-foreground-muted">
+          {{ row.performedByEmail || 'Sistema' }}
+        </span>
+      </ng-template>
+    </ad-table>
+  </ad-card>
+
+  <ad-modal
+    [(isOpen)]="isModalOpen"
+    title="Registrar movimiento de inventario"
+    description="Las entradas suman y las salidas descuentan stock de forma auditable e inmutable."
+    size="lg"
+    (closed)="closeModal()">
+    <div modal-body class="space-y-4">
+      @if (modalError(); as error) {
+        <ad-alert
+          variant="danger"
+          [title]="error.title"
+          [dismissible]="true"
+          (closed)="clearModalError()">
+          {{ error.message }}
+        </ad-alert>
+      }
+
+      @if (activeProductOptions().length === 0) {
+        <ad-alert variant="warning" title="Sin productos activos">
+          Debes crear o activar al menos un producto antes de registrar movimientos de inventario.
+        </ad-alert>
+      }
+
+      <form [formGroup]="movementForm" (ngSubmit)="submitForm()" class="space-y-4">
+        <ad-select
+          label="Producto"
+          placeholder="Selecciona un producto activo"
+          [options]="activeProductOptions()"
+          formControlName="productId"
+          [required]="true"
+          [errorMessages]="{
+            required: 'El producto es obligatorio.'
+          }" />
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <ad-select
+            label="Tipo de movimiento"
+            [options]="movementTypeOptions"
+            formControlName="type"
+            [required]="true"
+            [errorMessages]="{
+              required: 'El tipo de movimiento es obligatorio.'
+            }" />
+
+          <ad-input
+            label="Cantidad"
+            type="number"
+            placeholder="1"
+            formControlName="quantity"
+            [required]="true"
+            [errorMessages]="{
+              required: 'La cantidad es obligatoria.',
+              min: 'La cantidad debe ser mayor o igual a 1.'
+            }" />
+        </div>
+
+        @if (selectedProduct(); as product) {
+          <ad-card padding="sm">
+            <div class="flex flex-wrap items-center justify-between gap-3 text-sm">
+              <div>
+                <span class="text-foreground-muted">Stock actual:</span>
+                <span class="ml-1 font-semibold text-foreground">{{ currentStock() }} u.</span>
+                <span class="ml-2 text-xs text-foreground-muted">(Mín: {{ product.minStock }})</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-foreground-muted">Stock proyectado:</span>
+                <ad-badge [variant]="isInsufficientStock() ? 'danger' : 'success'">
+                  {{ projectedStock() }} u.
+                </ad-badge>
+              </div>
+            </div>
+
+            @if (isInsufficientStock()) {
+              <p class="mt-2 text-xs text-danger font-medium">
+                El stock resultante no puede ser negativo para registrar esta salida.
+              </p>
+            }
+          </ad-card>
+        }
+
+        <ad-textarea
+          label="Motivo del movimiento"
+          placeholder="Ej. Reposición de proveedor #204 o despacho de orden #88"
+          formControlName="reason"
+          [rows]="3"
+          [maxLength]="300"
+          [showCount]="true"
+          [required]="true"
+          [errorMessages]="{
+            required: 'El motivo es obligatorio.',
+            minlength: 'Mínimo 3 caracteres.',
+            maxlength: 'Máximo 300 caracteres.'
+          }" />
+      </form>
+    </div>
+
+    <div modal-footer class="flex items-center justify-end gap-3">
+      <ad-button
+        variant="ghost"
+        [disabled]="isSaving()"
+        (clicked)="closeModal()">
+        Cancelar
+      </ad-button>
+      <ad-button
+        variant="primary"
+        [loading]="isSaving()"
+        [disabled]="movementForm.invalid || isSaving() || isInsufficientStock() || activeProductOptions().length === 0"
+        (clicked)="submitForm()">
+        Guardar movimiento
+      </ad-button>
+    </div>
+  </ad-modal>
+</div>

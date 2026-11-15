@@ -23,6 +23,14 @@
     "Product.InvalidDescription": "La descripción del producto no puede superar los 500 caracteres.",
     "Product.InvalidPrice": "El precio del producto no puede ser negativo.",
     "Product.InvalidInitialStock": "El stock inicial no puede ser negativo.",
-    "Product.InvalidMinStock": "El stock mínimo no puede ser negativo."
+    "Product.InvalidMinStock": "El stock mínimo no puede ser negativo.",
+    "InventoryMovement.NotFound": "El movimiento de inventario solicitado no existe.",
+    "InventoryMovement.ProductNotFound": "El producto seleccionado no existe o fue eliminado.",
+    "InventoryMovement.ProductInactive": "No se pueden registrar movimientos sobre un producto inactivo.",
+    "InventoryMovement.InsufficientStock": "El stock disponible es insuficiente para realizar la salida solicitada.",
+    "InventoryMovement.InvalidType": "El tipo de movimiento debe ser Entrada (ENTRY) o Salida (EXIT).",
+    "InventoryMovement.InvalidQuantity": "La cantidad del movimiento debe ser un entero mayor a cero.",
+    "InventoryMovement.InvalidReason": "El motivo del movimiento es obligatorio y debe tener entre 3 y 300 caracteres.",
+    "InventoryMovement.UnauthorizedUser": "Tu sesión no es válida para registrar movimientos de inventario."
   }
 }
