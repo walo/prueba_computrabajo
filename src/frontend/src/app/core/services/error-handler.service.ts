@@ -1,11 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import errorMessages from '../config/error-messages.json';
-
-export interface UiErrorMessage {
-  title: string;
-  message: string;
-}
+import { UiErrorMessage } from '../models/ui-error-message.model';
 
 @Injectable({ providedIn: 'root' })
 export class ErrorHandlerService {

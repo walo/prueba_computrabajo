@@ -26,89 +26,91 @@ import { StorageService } from '../services/storage.service';
 let refreshInFlight$: Observable<string> | null = null;
 
 function isPublicAuthEndpoint(url: string): boolean {
-  return (
-    url.includes(API_PATHS.AUTH.LOGIN) || url.includes(API_PATHS.AUTH.REFRESH)
-  );
+  return url.includes(API_PATHS.AUTH.LOGIN) || url.includes(API_PATHS.AUTH.REFRESH);
 }
 
 function attachBearerToken(
   request: HttpRequest<unknown>,
   token: string
 ): HttpRequest<unknown> {
-  return request.clone({
-    setHeaders: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  return request.clone({ setHeaders: { Authorization: `Bearer ${token}` } });
+}
+
+function createRefreshStream(authService: AuthService, router: Router): Observable<string> {
+  return authService.refreshTokens().pipe(
+    map((tokens) => tokens.accessToken),
+    catchError((refreshError) => {
+      authService.clearSessionState();
+      void router.navigate(['/auth/login']);
+
+      return throwError(() => refreshError);
+    }),
+    finalize(() => {
+      refreshInFlight$ = null;
+    }),
+    shareReplay(1)
+  );
 }
 
 function retryWithRefresh(
-  request: HttpRequest<unknown>,
-  next: HttpHandlerFn,
-  authService: AuthService,
-  router: Router
+  invocation: { request: HttpRequest<unknown>; next: HttpHandlerFn },
+  session: { authService: AuthService; router: Router }
 ): Observable<HttpEvent<unknown>> {
-  if (!refreshInFlight$) {
-    refreshInFlight$ = authService.refreshTokens().pipe(
-      map((tokens) => tokens.accessToken),
-      catchError((refreshError) => {
-        authService.clearSessionState();
-        void router.navigate(['/auth/login']);
-
-        return throwError(() => refreshError);
-      }),
-      finalize(() => {
-        refreshInFlight$ = null;
-      }),
-      shareReplay(1)
-    );
-  }
+  refreshInFlight$ ??= createRefreshStream(session.authService, session.router);
 
   return refreshInFlight$.pipe(
     take(1),
-    switchMap((accessToken) => next(attachBearerToken(request, accessToken)))
+    switchMap((token) => invocation.next(attachBearerToken(invocation.request, token)))
   );
 }
 
 function notifyHttpError(
-  error: HttpErrorResponse,
-  requestUrl: string,
-  errorHandler: ErrorHandlerService,
-  notifications: NotificationService
+  failure: { error: HttpErrorResponse; requestUrl: string },
+  handlers: { errorHandler: ErrorHandlerService; notifications: NotificationService }
 ): void {
-  const uiError = errorHandler.resolveError(error, requestUrl);
+  const uiError = handlers.errorHandler.resolveError(failure.error, failure.requestUrl);
   if (uiError) {
-    notifications.error(uiError.title, uiError.message);
+    handlers.notifications.error(uiError.title, uiError.message);
   }
 }
 
+function handleHttpError(
+  error: unknown,
+  context: {
+    request: HttpRequest<unknown>;
+    next: HttpHandlerFn;
+    storage: StorageService;
+    authService: AuthService;
+    errorHandler: ErrorHandlerService;
+    notifications: NotificationService;
+    router: Router;
+  }
+): Observable<HttpEvent<unknown>> {
+  if (!(error instanceof HttpErrorResponse)) {
+    return throwError(() => error);
+  }
+  const canRefresh =
+    error.status === 401 && !isPublicAuthEndpoint(context.request.url) && Boolean(context.storage.getRefreshToken());
+  if (canRefresh) {
+    return retryWithRefresh(context, context);
+  }
+  notifyHttpError({ error, requestUrl: context.request.url }, context);
+
+  return throwError(() => error);
+}
+
 export const tokenInterceptor: HttpInterceptorFn = (request, next) => {
-  const storage = inject(StorageService);
-  const authService = inject(AuthService);
-  const errorHandler = inject(ErrorHandlerService);
-  const notifications = inject(NotificationService);
-  const router = inject(Router);
-  const token = storage.getAccessToken();
-  const outbound =
-    token && !isPublicAuthEndpoint(request.url)
-      ? attachBearerToken(request, token)
-      : request;
+  const context = {
+    request,
+    next,
+    storage: inject(StorageService),
+    authService: inject(AuthService),
+    errorHandler: inject(ErrorHandlerService),
+    notifications: inject(NotificationService),
+    router: inject(Router),
+  };
+  const token = context.storage.getAccessToken();
+  const outbound = token && !isPublicAuthEndpoint(request.url) ? attachBearerToken(request, token) : request;
 
-  return next(outbound).pipe(
-    catchError((error: unknown) => {
-      if (!(error instanceof HttpErrorResponse)) {
-        return throwError(() => error);
-      }
-      if (
-        error.status === 401 &&
-        !isPublicAuthEndpoint(request.url) &&
-        storage.getRefreshToken()
-      ) {
-        return retryWithRefresh(request, next, authService, router);
-      }
-      notifyHttpError(error, request.url, errorHandler, notifications);
-
-      return throwError(() => error);
-    })
-  );
+  return next(outbound).pipe(catchError((error: unknown) => handleHttpError(error, context)));
 };

@@ -38,21 +38,20 @@ public sealed class InventoryMovementRepository(
         using var connection = connectionFactory.CreateConnection();
         connection.Open();
         using var transaction = connection.BeginTransaction();
-        var updatedRows = await TryUpdateProductStockAsync(connection, transaction, movement, ct);
+        var updatedRows = await TryUpdateProductStockAsync(transaction, movement, ct);
         if (updatedRows == 0)
         {
             transaction.Rollback();
 
             return false;
         }
-        await InsertMovementAsync(connection, transaction, movement, ct);
+        await InsertMovementAsync(transaction, movement, ct);
         transaction.Commit();
 
         return true;
     }
 
     private static Task<int> TryUpdateProductStockAsync(
-        IDbConnection connection,
         IDbTransaction transaction,
         InventoryMovement movement,
         CancellationToken ct)
@@ -63,11 +62,11 @@ public sealed class InventoryMovementRepository(
             WHERE Id = @ProductId AND Stock = @PreviousStock AND IsActive = 1
             """;
 
-        return connection.ExecuteAsync(new CommandDefinition(updateSql, movement, transaction, cancellationToken: ct));
+        return transaction.Connection!.ExecuteAsync(
+            new CommandDefinition(updateSql, movement, transaction, cancellationToken: ct));
     }
 
     private static Task InsertMovementAsync(
-        IDbConnection connection,
         IDbTransaction transaction,
         InventoryMovement movement,
         CancellationToken ct)
@@ -77,6 +76,7 @@ public sealed class InventoryMovementRepository(
             VALUES (@Id, @ProductId, @Type, @Quantity, @PreviousStock, @NewStock, @Reason, @PerformedByUserId, @CreatedAtUtc)
             """;
 
-        return connection.ExecuteAsync(new CommandDefinition(insertSql, movement, transaction, cancellationToken: ct));
+        return transaction.Connection!.ExecuteAsync(
+            new CommandDefinition(insertSql, movement, transaction, cancellationToken: ct));
     }
 }

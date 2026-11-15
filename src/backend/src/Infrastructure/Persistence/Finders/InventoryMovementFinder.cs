@@ -114,9 +114,10 @@ public sealed class InventoryMovementFinder(AppDbContext dbContext) : IInventory
         var userIds = movements.Select(movement => movement.PerformedByUserId).Distinct().ToList();
         var products = await LoadProductLookupAsync(productIds, ct);
         var users = await LoadUserLookupAsync(userIds, ct);
+        var lookup = new MovementLookupContext(products, users);
 
         return movements
-            .Select(movement => MapSingleMovement(movement, products, users))
+            .Select(movement => MapSingleMovement(movement, lookup))
             .ToList();
     }
 
@@ -148,11 +149,10 @@ public sealed class InventoryMovementFinder(AppDbContext dbContext) : IInventory
 
     private static InventoryMovementResponse MapSingleMovement(
         InventoryMovement movement,
-        IReadOnlyDictionary<Guid, (string Sku, string Name)> products,
-        IReadOnlyDictionary<Guid, string> users)
+        MovementLookupContext lookup)
     {
-        var hasProduct = products.TryGetValue(movement.ProductId, out var productInfo);
-        var hasUser = users.TryGetValue(movement.PerformedByUserId, out var userEmail);
+        var hasProduct = lookup.Products.TryGetValue(movement.ProductId, out var productInfo);
+        var hasUser = lookup.Users.TryGetValue(movement.PerformedByUserId, out var userEmail);
         var sku = hasProduct ? productInfo.Sku : string.Empty;
         var name = hasProduct ? productInfo.Name : string.Empty;
         var email = hasUser && userEmail is not null ? userEmail : string.Empty;

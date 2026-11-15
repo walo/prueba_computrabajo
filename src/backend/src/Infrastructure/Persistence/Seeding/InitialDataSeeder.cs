@@ -72,42 +72,38 @@ public static class InitialDataSeeder
         var userRole = await dbContext.Roles.AsNoTracking().FirstOrDefaultAsync(r => r.Code == "USER", ct);
         if (adminRole is not null)
         {
-            await AssignMissingPermissionsAsync(dbContext, adminRole.Id, permissions.Select(p => p.Id), ct);
+            await AssignMissingPermissionsAsync(new RolePermissionSeedData(dbContext, adminRole.Id, permissions.Select(p => p.Id)), ct);
         }
         if (userRole is not null)
         {
             var userCodes = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
             {
-                Permissions.Categories.Read,
-                Permissions.Products.Read,
-                Permissions.InventoryMovements.Read
+                Permissions.CategoriesRead,
+                Permissions.ProductsRead,
+                Permissions.InventoryMovementsRead
             };
             var userPermissionIds = permissions.Where(p => userCodes.Contains(p.Code)).Select(p => p.Id);
-            await AssignMissingPermissionsAsync(dbContext, userRole.Id, userPermissionIds, ct);
+            await AssignMissingPermissionsAsync(new RolePermissionSeedData(dbContext, userRole.Id, userPermissionIds), ct);
         }
     }
 
-    private static async Task AssignMissingPermissionsAsync(
-        AppDbContext dbContext,
-        Guid roleId,
-        IEnumerable<Guid> permissionIds,
-        CancellationToken ct)
+    private static async Task AssignMissingPermissionsAsync(RolePermissionSeedData data, CancellationToken ct)
     {
-        var existingIds = await dbContext.RolePermissions
-            .Where(rp => rp.RoleId == roleId)
+        var existingIds = await data.DbContext.RolePermissions
+            .Where(rp => rp.RoleId == data.RoleId)
             .Select(rp => rp.PermissionId)
             .ToListAsync(ct);
         var existingSet = existingIds.ToHashSet();
-        var missing = permissionIds
+        var missing = data.PermissionIds
             .Where(id => !existingSet.Contains(id))
-            .Select(id => RolePermission.Create(new RolePermissionCreationData(roleId, id)))
+            .Select(id => RolePermission.Create(new RolePermissionCreationData(data.RoleId, id)))
             .ToList();
         if (missing.Count == 0)
         {
             return;
         }
-        await dbContext.RolePermissions.AddRangeAsync(missing, ct);
-        await dbContext.SaveChangesAsync(ct);
+        await data.DbContext.RolePermissions.AddRangeAsync(missing, ct);
+        await data.DbContext.SaveChangesAsync(ct);
     }
 
     private static async Task SeedDefaultUsersAsync(DatabaseSeedRequest request, CancellationToken ct)
@@ -115,8 +111,12 @@ public static class InitialDataSeeder
         var dbContext = request.DbContext;
         var adminRole = await dbContext.Roles.AsNoTracking().FirstAsync(r => r.Code == "ADMIN", ct);
         var userRole = await dbContext.Roles.AsNoTracking().FirstAsync(r => r.Code == "USER", ct);
-        await EnsureUserExistsAsync(request, new UserCreationData("System Administrator", "admin@enterprise.local", request.PasswordHasher.Hash("Admin123*"), adminRole.Id), ct);
-        await EnsureUserExistsAsync(request, new UserCreationData("Standard Operator", "user@enterprise.local", request.PasswordHasher.Hash("User123*"), userRole.Id), ct);
+        var adminEmail = request.Configuration["SEED_ADMIN_EMAIL"] ?? "admin@enterprise.local";
+        var adminPassword = request.Configuration["SEED_ADMIN_PASSWORD"] ?? "Admin123*";
+        var userEmail = request.Configuration["SEED_USER_EMAIL"] ?? "user@enterprise.local";
+        var userPassword = request.Configuration["SEED_USER_PASSWORD"] ?? "User123*";
+        await EnsureUserExistsAsync(request, new UserCreationData("System Administrator", adminEmail, request.PasswordHasher.Hash(adminPassword), adminRole.Id), ct);
+        await EnsureUserExistsAsync(request, new UserCreationData("Standard Operator", userEmail, request.PasswordHasher.Hash(userPassword), userRole.Id), ct);
     }
 
     private static async Task EnsureUserExistsAsync(DatabaseSeedRequest request, UserCreationData data, CancellationToken ct)

@@ -31,14 +31,15 @@ public sealed class ProductsIntegrationTests(CustomWebApplicationFactory factory
     {
         var suffix = Guid.NewGuid().ToString("N")[..8];
         await AuthenticateAsAdminAsync();
-        var category = await CreateCategoryAsync($"cat-{suffix}", $"Tech {suffix}");
-        var created = await CreateProductAsync(category.Id, $"sku-{suffix}", $"Device {suffix}", 199.50m, 0, 3);
+        var category = await CreateCategoryAsync(new CreateCategoryRequest($"cat-{suffix}", $"Tech {suffix}", null));
+        var created = await CreateProductAsync(
+            new CreateProductRequest($"sku-{suffix}", $"Device {suffix}", "Integration spec", category.Id, 199.50m, 0, 3));
         created.Sku.Should().Be($"SKU-{suffix}".ToUpperInvariant());
         created.CategoryCode.Should().Be($"cat-{suffix}");
         created.CategoryName.Should().Be($"Tech {suffix}");
         created.IsLowStock.Should().BeTrue();
         await VerifyCategoryDeleteBlockedAsync(category.Id);
-        await VerifyPagedFilterAndUpdateAsync(created.Id, category.Id, suffix);
+        await VerifyPagedFilterAndUpdateAsync(created, suffix);
         await VerifyProductAndCategoryCleanupAsync(created.Id, category.Id);
     }
 
@@ -47,12 +48,13 @@ public sealed class ProductsIntegrationTests(CustomWebApplicationFactory factory
     {
         var suffix = Guid.NewGuid().ToString("N")[..8];
         await AuthenticateAsAdminAsync();
-        var activeCategory = await CreateCategoryAsync($"act-{suffix}", $"Active {suffix}");
-        var inactiveCategory = await CreateCategoryAsync($"ina-{suffix}", $"Inactive {suffix}");
+        var activeCategory = await CreateCategoryAsync(new CreateCategoryRequest($"act-{suffix}", $"Active {suffix}", null));
+        var inactiveCategory = await CreateCategoryAsync(new CreateCategoryRequest($"ina-{suffix}", $"Inactive {suffix}", null));
         await Client.PutAsJsonAsync(
             $"/api/v1/categories/{inactiveCategory.Id}",
             new UpdateCategoryRequest($"ina-{suffix}", $"Inactive {suffix}", null, false));
-        var created = await CreateProductAsync(activeCategory.Id, $"dup-{suffix}", $"Stocked {suffix}", 50m, 5, 2);
+        var created = await CreateProductAsync(
+            new CreateProductRequest($"dup-{suffix}", $"Stocked {suffix}", "Integration spec", activeCategory.Id, 50m, 5, 2));
         await AssertConflictAsync(
             Client.PostAsJsonAsync("/api/v1/products", new CreateProductRequest($"DUP-{suffix}", "Other", null, activeCategory.Id, 10m, 0, 1)),
             "Product.DuplicateSku");
@@ -64,25 +66,17 @@ public sealed class ProductsIntegrationTests(CustomWebApplicationFactory factory
             "Product.CannotDeleteWithStockOrMovements");
     }
 
-    private async Task<CategoryResponse> CreateCategoryAsync(string code, string name)
+    private async Task<CategoryResponse> CreateCategoryAsync(CreateCategoryRequest request)
     {
-        var response = await Client.PostAsJsonAsync("/api/v1/categories", new CreateCategoryRequest(code, name, null));
+        var response = await Client.PostAsJsonAsync("/api/v1/categories", request);
         response.StatusCode.Should().Be(HttpStatusCode.Created);
 
         return (await response.Content.ReadFromJsonAsync<CategoryResponse>())!;
     }
 
-    private async Task<ProductResponse> CreateProductAsync(
-        Guid categoryId,
-        string sku,
-        string name,
-        decimal price,
-        int initialStock,
-        int minStock)
+    private async Task<ProductResponse> CreateProductAsync(CreateProductRequest request)
     {
-        var response = await Client.PostAsJsonAsync(
-            "/api/v1/products",
-            new CreateProductRequest(sku, name, "Integration spec", categoryId, price, initialStock, minStock));
+        var response = await Client.PostAsJsonAsync("/api/v1/products", request);
         response.StatusCode.Should().Be(HttpStatusCode.Created);
 
         return (await response.Content.ReadFromJsonAsync<ProductResponse>())!;
@@ -96,15 +90,15 @@ public sealed class ProductsIntegrationTests(CustomWebApplicationFactory factory
         problem.Title.Should().Be("Category.HasAssociatedProducts");
     }
 
-    private async Task VerifyPagedFilterAndUpdateAsync(Guid productId, Guid categoryId, string suffix)
+    private async Task VerifyPagedFilterAndUpdateAsync(ProductResponse product, string suffix)
     {
         var listResponse = await Client.GetFromJsonAsync<PagedProductsResponse>(
-            $"/api/v1/products?page=1&pageSize=10&categoryId={categoryId}&lowStockOnly=true&search={suffix}");
+            $"/api/v1/products?page=1&pageSize=10&categoryId={product.CategoryId}&lowStockOnly=true&search={suffix}");
         listResponse.Should().NotBeNull();
-        listResponse!.Items.Should().Contain(item => item.Id == productId);
+        listResponse!.Items.Should().Contain(item => item.Id == product.Id);
         var updateResponse = await Client.PutAsJsonAsync(
-            $"/api/v1/products/{productId}",
-            new UpdateProductRequest($"sku-{suffix}", $"Device Pro {suffix}", "Updated", categoryId, 249.99m, 5, false));
+            $"/api/v1/products/{product.Id}",
+            new UpdateProductRequest($"sku-{suffix}", $"Device Pro {suffix}", "Updated", product.CategoryId, 249.99m, 5, false));
         updateResponse.StatusCode.Should().Be(HttpStatusCode.OK);
         var updated = (await updateResponse.Content.ReadFromJsonAsync<ProductResponse>())!;
         updated.Name.Should().Be($"Device Pro {suffix}");

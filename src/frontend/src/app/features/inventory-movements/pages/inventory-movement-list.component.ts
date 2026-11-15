@@ -23,7 +23,8 @@ import {
 } from '@accionadev/ui-kit';
 import { API_PATHS } from '../../../core/constants/api-paths.constants';
 import { PERMISSIONS } from '../../../core/constants/permissions.constants';
-import { ErrorHandlerService, UiErrorMessage } from '../../../core/services/error-handler.service';
+import { UiErrorMessage } from '../../../core/models/ui-error-message.model';
+import { ErrorHandlerService } from '../../../core/services/error-handler.service';
 import { NotificationService } from '../../../core/services/notification.service';
 import { Product } from '../../products/models/product.model';
 import { ProductsService } from '../../products/services/products.service';

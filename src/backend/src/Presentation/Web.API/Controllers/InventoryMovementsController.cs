@@ -14,7 +14,7 @@ namespace Web.API.Controllers;
 public sealed class InventoryMovementsController(ISender sender) : ApiController
 {
     [HttpGet]
-    [HasPermission(Permissions.InventoryMovements.Read)]
+    [HasPermission(Permissions.InventoryMovementsRead)]
     [ProducesResponseType(typeof(PagedInventoryMovementsResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
@@ -27,7 +27,7 @@ public sealed class InventoryMovementsController(ISender sender) : ApiController
     }
 
     [HttpGet("{id:guid}")]
-    [HasPermission(Permissions.InventoryMovements.Read)]
+    [HasPermission(Permissions.InventoryMovementsRead)]
     [ProducesResponseType(typeof(InventoryMovementResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status403Forbidden)]
@@ -40,7 +40,7 @@ public sealed class InventoryMovementsController(ISender sender) : ApiController
     }
 
     [HttpPost]
-    [HasPermission(Permissions.InventoryMovements.Create)]
+    [HasPermission(Permissions.InventoryMovementsCreate)]
     [ProducesResponseType(typeof(InventoryMovementResponse), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]

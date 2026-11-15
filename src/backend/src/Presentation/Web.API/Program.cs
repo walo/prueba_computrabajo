@@ -24,7 +24,6 @@ builder.Services.AddHealthChecks().AddCheck<DatabaseHealthCheck>("database");
 builder.Services.AddJwtAuthentication(builder.Configuration);
 builder.Services.AddCorsInfrastructure(builder.Configuration, corsPolicyName);
 builder.Services.AddSwaggerDocumentation();
-
 var app = builder.Build();
 await app.InitializeDatabaseAsync();
 app.UseSwagger();

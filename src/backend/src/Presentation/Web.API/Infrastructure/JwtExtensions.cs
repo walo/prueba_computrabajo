@@ -20,17 +20,18 @@ public static class JwtExtensions
 
     private static void ConfigureJwtBearerOptions(JwtBearerOptions options, IConfiguration config)
     {
+        options.MapInboundClaims = false;
+        options.TokenValidationParameters = BuildValidationParameters(config);
+    }
+
+    private static TokenValidationParameters BuildValidationParameters(IConfiguration config)
+    {
         var secretKey = config["JWT_SECRET_KEY"]
             ?? config["Jwt:SecretKey"]
             ?? throw new InvalidOperationException("JWT_SECRET_KEY is not configured.");
         var issuer = config["JWT_ISSUER"] ?? config["Jwt:Issuer"] ?? "RedarborInventoryApi";
         var audience = config["JWT_AUDIENCE"] ?? config["Jwt:Audience"] ?? "RedarborInventoryClient";
-        options.MapInboundClaims = false;
-        options.TokenValidationParameters = BuildValidationParameters(secretKey, issuer, audience);
-    }
 
-    private static TokenValidationParameters BuildValidationParameters(string secretKey, string issuer, string audience)
-    {
         return new TokenValidationParameters
         {
             ValidateIssuer = true,

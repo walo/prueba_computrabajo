@@ -1,5 +1,5 @@
 # ==============================================================================
-# Local Development Infrastructure Stack (SQL Server 2022 + Redis 7)
+# Stack Local / Dockerizado (SQL Server 2022 + Redis 7 + Web API .NET 10)
 # ==============================================================================
 services:
   sqlserver:
@@ -34,6 +34,37 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+
+  api:
+    build:
+      context: ./src/backend
+      dockerfile: Dockerfile
+    container_name: redarbor-api
+    restart: unless-stopped
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: "${ASPNETCORE_ENVIRONMENT:-Production}"
+      DB_HOST: "sqlserver"
+      DB_PORT: "1433"
+      DB_NAME: "${DB_NAME:-RedarborInventoryDb}"
+      DB_USER: "${DB_USER:-sa}"
+      DB_PASSWORD: "${DB_PASSWORD:-RedarborStrongPass123!}"
+      ConnectionStrings__Redis: "redis:6379"
+      JWT_SECRET_KEY: "${JWT_SECRET_KEY:-SuperSecretRedarborEnterpriseJwtKey2026WithAtLeast32Bytes!}"
+      JWT_ISSUER: "${JWT_ISSUER:-RedarborInventoryApi}"
+      JWT_AUDIENCE: "${JWT_AUDIENCE:-RedarborInventoryClient}"
+      JWT_ACCESS_TOKEN_MINUTES: "${JWT_ACCESS_TOKEN_MINUTES:-15}"
+      CORS_ALLOWED_ORIGINS: "${CORS_ALLOWED_ORIGINS:-http://localhost:4200}"
+      SEED_ADMIN_EMAIL: "${SEED_ADMIN_EMAIL:-admin@enterprise.local}"
+      SEED_ADMIN_PASSWORD: "${SEED_ADMIN_PASSWORD:-Admin123*}"
+      SEED_USER_EMAIL: "${SEED_USER_EMAIL:-user@enterprise.local}"
+      SEED_USER_PASSWORD: "${SEED_USER_PASSWORD:-User123*}"
+    ports:
+      - "${API_DOCKER_PORT:-5080}:8080"
 
 volumes:
   sqlserver_data:

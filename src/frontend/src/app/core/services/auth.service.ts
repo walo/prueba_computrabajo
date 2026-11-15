@@ -5,11 +5,9 @@ import { NgxPermissionsService } from 'ngx-permissions';
 import { catchError, firstValueFrom, Observable, of, switchMap, tap } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { API_PATHS } from '../constants/api-paths.constants';
-import {
-  AuthTokensResponse,
-  CurrentUserResponse,
-  LoginRequest,
-} from '../models/auth.models';
+import { AuthTokensResponse } from '../models/auth-tokens-response.model';
+import { CurrentUserResponse } from '../models/current-user-response.model';
+import { LoginRequest } from '../models/login-request.model';
 import { createSilentContext } from '../utils/loading.utils';
 import { StorageService } from './storage.service';
 

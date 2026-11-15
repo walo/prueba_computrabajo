@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AdToast, AdToastComponent, ToastVariant as AdToastVariant } from '@accionadev/ui-kit';
-import { ToastMessage, ToastVariant } from '../../core/models/toast-message.model';
+import { ToastMessage } from '../../core/models/toast-message.model';
+import { ToastVariant } from '../../core/models/toast-variant.model';
 import { NotificationService } from '../../core/services/notification.service';
 
 @Component({

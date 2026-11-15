@@ -11,7 +11,7 @@ namespace Web.API.Controllers;
 public sealed class UsersController(ISender sender) : ApiController
 {
     [HttpGet]
-    [HasPermission(Permissions.Users.Read)]
+    [HasPermission(Permissions.UsersRead)]
     [ProducesResponseType(typeof(IReadOnlyList<UserSummaryResponse>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status403Forbidden)]
     public async Task<IActionResult> GetAll(CancellationToken ct)
