@@ -61,12 +61,14 @@ import { AuthService } from '../../core/services/auth.service';
           </ad-card>
         </a>
 
-        <ad-card *ngxPermissionsOnly="[permissions.INVENTORY_MOVEMENTS.READ]" title="Movimientos" subtitle="Kardex y entradas/salidas" padding="md" [hoverable]="true">
-          <div class="flex items-center justify-between">
-            <span class="text-sm text-foreground-muted">Trazabilidad de inventario</span>
-            <ad-icon name="activity" size="lg" class="text-primary" />
-          </div>
-        </ad-card>
+        <a *ngxPermissionsOnly="[permissions.INVENTORY_MOVEMENTS.READ]" routerLink="/inventory-movements" class="block cursor-pointer">
+          <ad-card title="Movimientos" subtitle="Kardex y entradas/salidas" padding="md" [hoverable]="true">
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-foreground-muted">Trazabilidad de inventario</span>
+              <ad-icon name="activity" size="lg" class="text-primary" />
+            </div>
+          </ad-card>
+        </a>
 
         <ad-card *ngxPermissionsOnly="[permissions.USERS.READ]" title="Usuarios" subtitle="Seguridad y roles" padding="md" [hoverable]="true">
           <div class="flex items-center justify-between">

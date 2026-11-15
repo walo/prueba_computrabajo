@@ -27,6 +27,15 @@ export const FEATURES_ROUTES: Routes = [
       ),
   },
   {
+    path: 'inventory-movements',
+    canActivate: [permissionGuard],
+    data: { permissions: [PERMISSIONS.INVENTORY_MOVEMENTS.READ] },
+    loadComponent: () =>
+      import('./inventory-movements/pages/inventory-movement-list.component').then(
+        (m) => m.InventoryMovementListComponent
+      ),
+  },
+  {
     path: 'users',
     canActivate: [permissionGuard],
     data: { permissions: [PERMISSIONS.USERS.READ] },

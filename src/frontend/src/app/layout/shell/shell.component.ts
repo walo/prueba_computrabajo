@@ -67,6 +67,9 @@ export class ShellComponent {
     if (url.startsWith('/categories')) {
       return 'Catálogo de Categorías';
     }
+    if (url.startsWith('/inventory-movements')) {
+      return 'Movimientos de Inventario';
+    }
 
     return url.startsWith('/users') ? 'Usuarios y Permisos' : 'Tablero Principal';
   });
@@ -99,6 +102,15 @@ export class ShellComponent {
         route: '/categories',
         icon: 'tag',
         active: url.startsWith('/categories'),
+      });
+    }
+    if (granted[PERMISSIONS.INVENTORY_MOVEMENTS.READ]) {
+      items.push({
+        id: 'inventory-movements',
+        label: 'Movimientos',
+        route: '/inventory-movements',
+        icon: 'layers',
+        active: url.startsWith('/inventory-movements'),
       });
     }
     if (granted[PERMISSIONS.USERS.READ]) {
