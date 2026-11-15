@@ -1,0 +1,79 @@
+using Application.Features.Categories.Commands.CreateCategory;
+using Application.Features.Categories.Commands.DeleteCategory;
+using Application.Features.Categories.Commands.UpdateCategory;
+using Application.Features.Categories.DTOs;
+using Application.Features.Categories.Queries.GetCategories;
+using Application.Features.Categories.Queries.GetCategoryById;
+using Domain.Constants;
+using Domain.Entities;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Web.API.Attributes;
+
+namespace Web.API.Controllers;
+
+[Route("api/v1/categories")]
+public sealed class CategoriesController(ISender sender) : ApiController
+{
+    [HttpGet]
+    [HasPermission(Permissions.Categories.Read)]
+    [ProducesResponseType(typeof(PagedCategoriesResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status403Forbidden)]
+    public async Task<IActionResult> GetAll([FromQuery] CategoryFilter filter, CancellationToken ct)
+    {
+        var result = await sender.Send(new GetCategoriesQuery(filter), ct);
+
+        return result.Match(Ok, HandleFailure);
+    }
+
+    [HttpGet("{id:guid}")]
+    [HasPermission(Permissions.Categories.Read)]
+    [ProducesResponseType(typeof(CategoryResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> GetById(Guid id, CancellationToken ct)
+    {
+        var result = await sender.Send(new GetCategoryByIdQuery(id), ct);
+
+        return result.Match(Ok, HandleFailure);
+    }
+
+    [HttpPost]
+    [HasPermission(Permissions.Categories.Create)]
+    [ProducesResponseType(typeof(CategoryResponse), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status409Conflict)]
+    public async Task<IActionResult> Create([FromBody] CreateCategoryRequest request, CancellationToken ct)
+    {
+        var result = await sender.Send(new CreateCategoryCommand(request), ct);
+
+        return result.Match(
+            category => CreatedAtAction(nameof(GetById), new { id = category.Id }, category),
+            HandleFailure);
+    }
+
+    [HttpPut("{id:guid}")]
+    [HasPermission(Permissions.Categories.Update)]
+    [ProducesResponseType(typeof(CategoryResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status409Conflict)]
+    public async Task<IActionResult> Update(Guid id, [FromBody] UpdateCategoryRequest request, CancellationToken ct)
+    {
+        var result = await sender.Send(new UpdateCategoryCommand(id, request), ct);
+
+        return result.Match(Ok, HandleFailure);
+    }
+
+    [HttpDelete("{id:guid}")]
+    [HasPermission(Permissions.Categories.Delete)]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status409Conflict)]
+    public async Task<IActionResult> Delete(Guid id, CancellationToken ct)
+    {
+        var result = await sender.Send(new DeleteCategoryCommand(id), ct);
+
+        return result.Match(_ => NoContent(), HandleFailure);
+    }
+}

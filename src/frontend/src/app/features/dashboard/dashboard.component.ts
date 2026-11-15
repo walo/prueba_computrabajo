@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import {
   AdBadgeComponent,
   AdCardComponent,
@@ -12,6 +13,7 @@ import { AuthService } from '../../core/services/auth.service';
   selector: 'app-dashboard',
   standalone: true,
   imports: [
+    RouterLink,
     NgxPermissionsModule,
     AdCardComponent,
     AdBadgeComponent,
@@ -48,12 +50,14 @@ import { AuthService } from '../../core/services/auth.service';
           </div>
         </ad-card>
 
-        <ad-card *ngxPermissionsOnly="[permissions.CATEGORIES.READ]" title="Categorías" subtitle="Clasificación" padding="md" [hoverable]="true">
-          <div class="flex items-center justify-between">
-            <span class="text-sm text-foreground-muted">Agrupación de catálogo</span>
-            <ad-icon name="tag" size="lg" class="text-primary" />
-          </div>
-        </ad-card>
+        <a *ngxPermissionsOnly="[permissions.CATEGORIES.READ]" routerLink="/categories" class="block cursor-pointer">
+          <ad-card title="Categorías" subtitle="Clasificación" padding="md" [hoverable]="true">
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-foreground-muted">Agrupación de catálogo</span>
+              <ad-icon name="tag" size="lg" class="text-primary" />
+            </div>
+          </ad-card>
+        </a>
 
         <ad-card *ngxPermissionsOnly="[permissions.INVENTORY_MOVEMENTS.READ]" title="Movimientos" subtitle="Kardex y entradas/salidas" padding="md" [hoverable]="true">
           <div class="flex items-center justify-between">
