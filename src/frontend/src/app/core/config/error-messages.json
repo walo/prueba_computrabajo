@@ -12,6 +12,17 @@
     "Category.DuplicateName": "Ya existe una categoría registrada con el nombre ingresado.",
     "Category.HasAssociatedProducts": "No se puede eliminar la categoría porque tiene productos asociados. Considere inactivarla.",
     "Category.InvalidCode": "El código de categoría debe tener entre 2 y 30 caracteres válidos.",
-    "Category.InvalidName": "El nombre de categoría debe tener entre 2 y 100 caracteres."
+    "Category.InvalidName": "El nombre de categoría debe tener entre 2 y 100 caracteres.",
+    "Product.NotFound": "El producto solicitado no existe o fue eliminado.",
+    "Product.DuplicateSku": "Ya existe un producto registrado con el SKU ingresado.",
+    "Product.CategoryNotFound": "La categoría seleccionada no existe.",
+    "Product.CategoryInactive": "No se puede asociar el producto a una categoría inactiva.",
+    "Product.CannotDeleteWithStockOrMovements": "No se puede eliminar un producto con stock mayor a cero o movimientos históricos. Considere inactivarlo.",
+    "Product.InvalidSku": "El SKU debe tener entre 2 y 30 caracteres alfanuméricos o guiones.",
+    "Product.InvalidName": "El nombre del producto debe tener entre 2 y 150 caracteres.",
+    "Product.InvalidDescription": "La descripción del producto no puede superar los 500 caracteres.",
+    "Product.InvalidPrice": "El precio del producto no puede ser negativo.",
+    "Product.InvalidInitialStock": "El stock inicial no puede ser negativo.",
+    "Product.InvalidMinStock": "El stock mínimo no puede ser negativo."
   }
 }

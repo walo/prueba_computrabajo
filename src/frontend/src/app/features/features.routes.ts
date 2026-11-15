@@ -18,6 +18,15 @@ export const FEATURES_ROUTES: Routes = [
       ),
   },
   {
+    path: 'products',
+    canActivate: [permissionGuard],
+    data: { permissions: [PERMISSIONS.PRODUCTS.READ] },
+    loadComponent: () =>
+      import('./products/pages/product-list.component').then(
+        (m) => m.ProductListComponent
+      ),
+  },
+  {
     path: 'users',
     canActivate: [permissionGuard],
     data: { permissions: [PERMISSIONS.USERS.READ] },

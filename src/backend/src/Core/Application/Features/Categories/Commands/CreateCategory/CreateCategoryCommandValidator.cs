@@ -7,6 +7,11 @@ public sealed class CreateCategoryCommandValidator : AbstractValidator<CreateCat
     public CreateCategoryCommandValidator()
     {
         RuleFor(x => x.Request).NotNull();
+        When(x => x.Request is not null, ConfigureRequestRules);
+    }
+
+    private void ConfigureRequestRules()
+    {
         RuleFor(x => x.Request.Code)
             .NotEmpty()
             .Length(2, 30)

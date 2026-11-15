@@ -43,12 +43,14 @@ import { AuthService } from '../../core/services/auth.service';
       </ad-card>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <ad-card *ngxPermissionsOnly="[permissions.PRODUCTS.READ]" title="Productos" subtitle="Catálogo base" padding="md" [hoverable]="true">
-          <div class="flex items-center justify-between">
-            <span class="text-sm text-foreground-muted">Gestión de SKU y stock</span>
-            <ad-icon name="package" size="lg" class="text-primary" />
-          </div>
-        </ad-card>
+        <a *ngxPermissionsOnly="[permissions.PRODUCTS.READ]" routerLink="/products" class="block cursor-pointer">
+          <ad-card title="Productos" subtitle="Catálogo base" padding="md" [hoverable]="true">
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-foreground-muted">Gestión de SKU y stock</span>
+              <ad-icon name="package" size="lg" class="text-primary" />
+            </div>
+          </ad-card>
+        </a>
 
         <a *ngxPermissionsOnly="[permissions.CATEGORIES.READ]" routerLink="/categories" class="block cursor-pointer">
           <ad-card title="Categorías" subtitle="Clasificación" padding="md" [hoverable]="true">

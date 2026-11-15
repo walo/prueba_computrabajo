@@ -34,7 +34,9 @@ public sealed class CategoryRepository(
     {
         if (!dbContext.Database.IsRelational())
         {
-            return false;
+            return await dbContext.Products
+                .AsNoTracking()
+                .AnyAsync(product => product.CategoryId == categoryId, ct);
         }
         const string tableCheckSql = "SELECT CASE WHEN OBJECT_ID(N'dbo.Products', N'U') IS NOT NULL THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT) END";
         using var connection = connectionFactory.CreateConnection();
