@@ -61,6 +61,9 @@ export class ShellComponent {
 
   protected readonly pageTitle = computed(() => {
     const url = this.currentUrl();
+    if (url.startsWith('/products')) {
+      return 'Catálogo de Productos';
+    }
     if (url.startsWith('/categories')) {
       return 'Catálogo de Categorías';
     }
@@ -80,6 +83,15 @@ export class ShellComponent {
         active: url === '/dashboard' || url === '/',
       },
     ];
+    if (granted[PERMISSIONS.PRODUCTS.READ]) {
+      items.push({
+        id: 'products',
+        label: 'Productos',
+        route: '/products',
+        icon: 'package',
+        active: url.startsWith('/products'),
+      });
+    }
     if (granted[PERMISSIONS.CATEGORIES.READ]) {
       items.push({
         id: 'categories',

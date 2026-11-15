@@ -27,6 +27,8 @@ public static class DependencyInjection
         services.AddScoped<IUserFinder, UserFinder>();
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<ICategoryFinder, CategoryFinder>();
+        services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<IProductFinder, ProductFinder>();
 
         return services;
     }

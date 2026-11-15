@@ -1,0 +1,242 @@
+<div class="space-y-6">
+  <ad-card
+    title="Catálogo de Productos"
+    subtitle="Administra los productos, precios, categorías asignadas y umbrales de stock"
+    padding="lg">
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 w-full items-center">
+        <ad-search-box
+          placeholder="Buscar por SKU o nombre..."
+          [value]="searchQuery()"
+          [loading]="isLoading()"
+          (search)="onSearchChange($event)"
+          (cleared)="onSearchChange('')" />
+
+        <ad-select
+          placeholder="Categoría"
+          [options]="filterCategoryOptions()"
+          [ngModel]="categoryFilter()"
+          (ngModelChange)="onCategoryFilterChange($event)" />
+
+        <ad-select
+          placeholder="Estado"
+          [options]="statusOptions"
+          [ngModel]="statusFilter()"
+          (ngModelChange)="onStatusFilterChange($event)" />
+
+        <div class="flex items-center px-1">
+          <ad-switch
+            label="Solo stock bajo"
+            size="sm"
+            [checked]="lowStockOnly()"
+            (changed)="onLowStockFilterChange($event)" />
+        </div>
+      </div>
+
+      <ad-button
+        *ngxPermissionsOnly="[permissions.PRODUCTS.CREATE]"
+        variant="primary"
+        class="shrink-0"
+        (clicked)="openCreateModal()">
+        <ad-icon name="plus" size="sm" class="mr-2" />
+        Nuevo producto
+      </ad-button>
+    </div>
+
+    <ad-table
+      [columns]="columns"
+      [data]="$any(items())"
+      [loading]="isLoading()"
+      [totalItems]="totalCount()"
+      [page]="pageIndex()"
+      [pageSize]="pageSize()"
+      emptyTitle="Sin productos registrados"
+      emptyDescription="Aún no existen productos que coincidan con los filtros actuales."
+      (pageChange)="onPageChange($event)">
+      <ng-template adTableCell="sku" let-row>
+        <span class="font-mono text-xs font-medium text-primary bg-surface-muted px-2 py-1 rounded-ad-sm">
+          {{ row.sku }}
+        </span>
+      </ng-template>
+
+      <ng-template adTableCell="name" let-row>
+        <div class="flex flex-col">
+          <span class="font-medium text-foreground">{{ row.name }}</span>
+          @if (row.description) {
+            <span class="text-xs text-foreground-muted truncate max-w-xs">{{ row.description }}</span>
+          }
+        </div>
+      </ng-template>
+
+      <ng-template adTableCell="categoryName" let-row>
+        <ad-badge variant="neutral" size="sm">
+          {{ row.categoryName || 'Sin categoría' }}
+        </ad-badge>
+      </ng-template>
+
+      <ng-template adTableCell="price" let-row>
+        <span class="font-mono font-medium text-foreground">
+          {{ formatPrice(row.price) }}
+        </span>
+      </ng-template>
+
+      <ng-template adTableCell="stock" let-row>
+        <div class="flex items-center justify-center gap-2">
+          <ad-badge
+            [variant]="row.stock === 0 ? 'danger' : row.isLowStock ? 'warning' : 'success'"
+            size="sm">
+            {{ row.stock }} uds
+          </ad-badge>
+          <span class="text-xs text-foreground-muted">/ mín {{ row.minStock }}</span>
+        </div>
+      </ng-template>
+
+      <ng-template adTableCell="isActive" let-row>
+        <ad-badge
+          [variant]="row.isActive ? 'success' : 'neutral'"
+          [dot]="true"
+          size="sm">
+          {{ row.isActive ? 'Activo' : 'Inactivo' }}
+        </ad-badge>
+      </ng-template>
+
+      <ng-template adTableCell="actions" let-row>
+        <ad-table-actions
+          *ngxPermissionsOnly="[permissions.PRODUCTS.UPDATE, permissions.PRODUCTS.DELETE]"
+          [actions]="rowActions()"
+          [row]="row"
+          (actionClick)="handleRowAction($event)" />
+      </ng-template>
+    </ad-table>
+  </ad-card>
+
+  <ad-modal
+    [isOpen]="isModalOpen()"
+    [title]="editingProduct() ? 'Editar Producto' : 'Nuevo Producto'"
+    [description]="
+      editingProduct()
+        ? 'Actualiza los datos maestros del producto. El stock se ajusta desde movimientos de inventario.'
+        : 'Registra un producto en el catálogo asociándolo a una categoría activa.'
+    "
+    size="lg"
+    (isOpenChange)="onModalOpenChange($event)"
+    (closed)="closeModal()">
+    <form [formGroup]="productForm" (ngSubmit)="submitForm()" class="space-y-4">
+      @if (formCategoryOptions().length === 0) {
+        <ad-alert
+          type="warning"
+          title="Sin categorías activas"
+          message="Debes crear o activar al menos una categoría antes de registrar productos." />
+      }
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <ad-input
+          label="SKU"
+          placeholder="Ej. LAP-PRO-14"
+          formControlName="sku"
+          [required]="true"
+          hint="Código único entre 2 y 30 caracteres sin espacios."
+          [errorMessages]="{
+            required: 'El SKU es obligatorio.',
+            minlength: 'Mínimo 2 caracteres.',
+            maxlength: 'Máximo 30 caracteres.',
+            pattern: 'Solo letras, números y guiones.'
+          }" />
+
+        <ad-select
+          label="Categoría"
+          placeholder="Selecciona una categoría"
+          [options]="formCategoryOptions()"
+          formControlName="categoryId"
+          [required]="true"
+          [errorMessages]="{
+            required: 'La categoría es obligatoria.'
+          }" />
+      </div>
+
+      <ad-input
+        label="Nombre del producto"
+        placeholder="Ej. Laptop Workstation 14 pulgadas"
+        formControlName="name"
+        [required]="true"
+        [errorMessages]="{
+          required: 'El nombre es obligatorio.',
+          minlength: 'Mínimo 2 caracteres.',
+          maxlength: 'Máximo 150 caracteres.'
+        }" />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <ad-input
+          label="Precio unitario"
+          type="number"
+          prefixIcon="dollar"
+          placeholder="0.00"
+          formControlName="price"
+          [required]="true"
+          [errorMessages]="{
+            required: 'El precio es obligatorio.',
+            min: 'El precio no puede ser negativo.'
+          }" />
+
+        @if (!editingProduct()) {
+          <ad-input
+            label="Stock inicial"
+            type="number"
+            placeholder="0"
+            formControlName="initialStock"
+            [required]="true"
+            [errorMessages]="{
+              required: 'El stock inicial es obligatorio.',
+              min: 'No puede ser negativo.'
+            }" />
+        }
+
+        <ad-input
+          label="Stock mínimo de alerta"
+          type="number"
+          placeholder="0"
+          formControlName="minStock"
+          [required]="true"
+          [errorMessages]="{
+            required: 'El stock mínimo es obligatorio.',
+            min: 'No puede ser negativo.'
+          }" />
+      </div>
+
+      <ad-textarea
+        label="Descripción"
+        placeholder="Especificaciones técnicas o detalles del producto (opcional)"
+        formControlName="description"
+        [maxLength]="500"
+        [showCount]="true"
+        [errorMessages]="{
+          maxlength: 'Máximo 500 caracteres.'
+        }" />
+
+      @if (editingProduct()) {
+        <div class="pt-2">
+          <ad-switch
+            label="Producto activo"
+            description="Permite operar el producto en nuevos movimientos de inventario"
+            formControlName="isActive" />
+        </div>
+      }
+    </form>
+
+    <div modal-footer class="flex items-center justify-end gap-3">
+      <ad-button
+        variant="ghost"
+        [disabled]="isSubmitting()"
+        (clicked)="closeModal()">
+        Cancelar
+      </ad-button>
+      <ad-button
+        variant="primary"
+        [loading]="isSubmitting()"
+        [disabled]="productForm.invalid || isSubmitting() || formCategoryOptions().length === 0"
+        (clicked)="submitForm()">
+        {{ editingProduct() ? 'Guardar cambios' : 'Crear producto' }}
+      </ad-button>
+    </div>
+  </ad-modal>
+</div>
