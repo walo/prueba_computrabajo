@@ -14,14 +14,8 @@ describe('StatusPageComponent', () => {
       providers: [
         provideZonelessChangeDetection(),
         provideRouter([]),
-        {
-          provide: ActivatedRoute,
-          useValue: { snapshot: { data: { statusCode: '403' } } },
-        },
-        {
-          provide: AuthService,
-          useValue: { isAuthenticated: isAuthSignal.asReadonly() },
-        },
+        { provide: ActivatedRoute, useValue: { snapshot: { data: { statusCode: '403' } } } },
+        { provide: AuthService, useValue: { isAuthenticated: isAuthSignal.asReadonly() } },
       ],
     });
   });
@@ -31,10 +25,8 @@ describe('StatusPageComponent', () => {
     const router = TestBed.inject(Router);
     const navigateSpy = jest.spyOn(router, 'navigate').mockResolvedValue(true);
     fixture.detectChanges();
-
     const button = fixture.nativeElement.querySelector('button') as HTMLButtonElement;
     button.click();
-
     expect(fixture.nativeElement.textContent).toContain('Acceso Denegado');
     expect(navigateSpy).toHaveBeenCalledWith(['/dashboard']);
   });
@@ -45,10 +37,8 @@ describe('StatusPageComponent', () => {
     const router = TestBed.inject(Router);
     const navigateSpy = jest.spyOn(router, 'navigate').mockResolvedValue(true);
     fixture.detectChanges();
-
     const button = fixture.nativeElement.querySelector('button') as HTMLButtonElement;
     button.click();
-
     expect(navigateSpy).toHaveBeenCalledWith(['/auth/login']);
   });
 });

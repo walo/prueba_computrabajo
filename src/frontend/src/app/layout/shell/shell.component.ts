@@ -38,7 +38,6 @@ export class ShellComponent {
   private readonly router = inject(Router);
   protected readonly env = environment;
   protected readonly sidebarCollapsed = signal(false);
-
   private readonly currentUrl = toSignal(
     this.router.events.pipe(
       filter((event): event is NavigationEnd => event instanceof NavigationEnd),
@@ -46,19 +45,15 @@ export class ShellComponent {
     ),
     { initialValue: this.router.url }
   );
-
   private readonly permissionsMap = toSignal(this.permissions.permissions$, {
     initialValue: this.permissions.getPermissions(),
   });
-
   protected readonly userName = computed(
     () => this.authService.currentUser()?.fullName || 'Usuario'
   );
-
   protected readonly userEmail = computed(
     () => this.authService.currentUser()?.email || ''
   );
-
   protected readonly pageTitle = computed(() => {
     const url = this.currentUrl();
     if (url.startsWith('/products')) {
@@ -73,58 +68,9 @@ export class ShellComponent {
 
     return url.startsWith('/users') ? 'Usuarios y Permisos' : 'Tablero Principal';
   });
-
-  protected readonly navItems = computed<AdAppShellNavItem[]>(() => {
-    const url = this.currentUrl();
-    const granted = this.permissionsMap();
-    const items: AdAppShellNavItem[] = [
-      {
-        id: 'dashboard',
-        label: 'Tablero',
-        route: '/dashboard',
-        icon: 'dashboard',
-        active: url === '/dashboard' || url === '/',
-      },
-    ];
-    if (granted[PERMISSIONS.PRODUCTS.READ]) {
-      items.push({
-        id: 'products',
-        label: 'Productos',
-        route: '/products',
-        icon: 'package',
-        active: url.startsWith('/products'),
-      });
-    }
-    if (granted[PERMISSIONS.CATEGORIES.READ]) {
-      items.push({
-        id: 'categories',
-        label: 'Categorías',
-        route: '/categories',
-        icon: 'tag',
-        active: url.startsWith('/categories'),
-      });
-    }
-    if (granted[PERMISSIONS.INVENTORY_MOVEMENTS.READ]) {
-      items.push({
-        id: 'inventory-movements',
-        label: 'Movimientos',
-        route: '/inventory-movements',
-        icon: 'layers',
-        active: url.startsWith('/inventory-movements'),
-      });
-    }
-    if (granted[PERMISSIONS.USERS.READ]) {
-      items.push({
-        id: 'users',
-        label: 'Usuarios',
-        route: '/users',
-        icon: 'users',
-        active: url.startsWith('/users'),
-      });
-    }
-
-    return items;
-  });
+  protected readonly navItems = computed<AdAppShellNavItem[]>(() =>
+    this.buildNavItems(this.currentUrl(), this.permissionsMap())
+  );
 
   protected onNavSelect(item: AdAppShellNavItem): void {
     if (item.route) {
@@ -134,5 +80,42 @@ export class ShellComponent {
 
   protected onLogout(): void {
     this.authService.logout();
+  }
+
+  private buildNavItems(
+    url: string,
+    granted: Record<string, unknown>
+  ): AdAppShellNavItem[] {
+    const dashboardItem: AdAppShellNavItem = {
+      id: 'dashboard',
+      label: 'Tablero',
+      route: '/dashboard',
+      icon: 'dashboard',
+      active: url === '/dashboard' || url === '/',
+    };
+
+    return [dashboardItem, ...this.getCatalogNavItems(url, granted)];
+  }
+
+  private getCatalogNavItems(
+    url: string,
+    granted: Record<string, unknown>
+  ): AdAppShellNavItem[] {
+    const definitions = [
+      { permission: PERMISSIONS.PRODUCTS.READ, id: 'products', label: 'Productos', route: '/products', icon: 'package' },
+      { permission: PERMISSIONS.CATEGORIES.READ, id: 'categories', label: 'Categorías', route: '/categories', icon: 'tag' },
+      { permission: PERMISSIONS.INVENTORY_MOVEMENTS.READ, id: 'inventory-movements', label: 'Movimientos', route: '/inventory-movements', icon: 'layers' },
+      { permission: PERMISSIONS.USERS.READ, id: 'users', label: 'Usuarios', route: '/users', icon: 'users' },
+    ];
+
+    return definitions
+      .filter((entry) => Boolean(granted[entry.permission]))
+      .map((entry) => ({
+        id: entry.id,
+        label: entry.label,
+        route: entry.route,
+        icon: entry.icon,
+        active: url.startsWith(entry.route),
+      }));
   }
 }

@@ -16,7 +16,7 @@ namespace Web.API.Controllers;
 public sealed class CategoriesController(ISender sender) : ApiController
 {
     [HttpGet]
-    [HasPermission(Permissions.Categories.Read)]
+    [HasPermission(Permissions.CategoriesRead)]
     [ProducesResponseType(typeof(PagedCategoriesResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status403Forbidden)]
@@ -28,7 +28,7 @@ public sealed class CategoriesController(ISender sender) : ApiController
     }
 
     [HttpGet("{id:guid}")]
-    [HasPermission(Permissions.Categories.Read)]
+    [HasPermission(Permissions.CategoriesRead)]
     [ProducesResponseType(typeof(CategoryResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetById(Guid id, CancellationToken ct)
@@ -39,7 +39,7 @@ public sealed class CategoriesController(ISender sender) : ApiController
     }
 
     [HttpPost]
-    [HasPermission(Permissions.Categories.Create)]
+    [HasPermission(Permissions.CategoriesCreate)]
     [ProducesResponseType(typeof(CategoryResponse), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status409Conflict)]
@@ -53,7 +53,7 @@ public sealed class CategoriesController(ISender sender) : ApiController
     }
 
     [HttpPut("{id:guid}")]
-    [HasPermission(Permissions.Categories.Update)]
+    [HasPermission(Permissions.CategoriesUpdate)]
     [ProducesResponseType(typeof(CategoryResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
@@ -66,7 +66,7 @@ public sealed class CategoriesController(ISender sender) : ApiController
     }
 
     [HttpDelete("{id:guid}")]
-    [HasPermission(Permissions.Categories.Delete)]
+    [HasPermission(Permissions.CategoriesDelete)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status409Conflict)]

@@ -1,6 +1,163 @@
-@Web.API_HostAddress = http://localhost:5231
+@baseUrl = http://localhost:5000
+# Para API corriendo en Docker Compose, cambiar a: http://localhost:5080
 
-GET {{Web.API_HostAddress}}/weatherforecast/
+### 1. Health Checks
+GET {{baseUrl}}/health
 Accept: application/json
 
 ###
+GET {{baseUrl}}/health/ready
+Accept: application/json
+
+### 2. Login Administrador (PBAC completo)
+# @name loginAdmin
+POST {{baseUrl}}/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@enterprise.local",
+  "password": "Admin123*"
+}
+
+### 2b. Login Usuario Estándar (Solo lectura en Categorías, Productos y Movimientos)
+# @name loginUser
+POST {{baseUrl}}/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "email": "user@enterprise.local",
+  "password": "User123*"
+}
+
+### 3. Consultar Sesión Actual y Permisos (/auth/me)
+GET {{baseUrl}}/api/v1/auth/me
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}
+
+### 4. Rotar Refresh Token (RTR)
+POST {{baseUrl}}/api/v1/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "{{loginAdmin.response.body.refreshToken}}"
+}
+
+### 5. Listar Usuarios (Requiere Users.Read)
+GET {{baseUrl}}/api/v1/users
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}
+
+### 6. Crear Categoría (Categorías CRUD)
+# @name createCategory
+POST {{baseUrl}}/api/v1/categories
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}
+Content-Type: application/json
+
+{
+  "code": "ELEC",
+  "name": "Electrónica y Cómputo",
+  "description": "Equipos portátiles, periféricos y accesorios de oficina"
+}
+
+### 7. Listar Categorías Paginadas
+GET {{baseUrl}}/api/v1/categories?page=1&pageSize=10&isActive=true
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}
+
+### 8. Obtener Categoría por ID
+GET {{baseUrl}}/api/v1/categories/{{createCategory.response.body.id}}
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}
+
+### 9. Actualizar Categoría
+PUT {{baseUrl}}/api/v1/categories/{{createCategory.response.body.id}}
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}
+Content-Type: application/json
+
+{
+  "code": "ELEC",
+  "name": "Electrónica Corporativa",
+  "description": "Equipamiento tecnológico empresarial",
+  "isActive": true
+}
+
+### 10. Crear Producto (Productos CRUD)
+# @name createProduct
+POST {{baseUrl}}/api/v1/products
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}
+Content-Type: application/json
+
+{
+  "sku": "LAP-PRO-14",
+  "name": "Laptop Workstation 14 Pro",
+  "description": "Portátil 16GB RAM, SSD 512GB NVMe",
+  "categoryId": "{{createCategory.response.body.id}}",
+  "price": 1450.00,
+  "initialStock": 10,
+  "minStock": 4
+}
+
+### 11. Listar Productos con Filtros (paginado, categoría, stock bajo, búsqueda)
+GET {{baseUrl}}/api/v1/products?page=1&pageSize=10&categoryId={{createCategory.response.body.id}}&lowStockOnly=false&search=LAP
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}
+
+### 12. Obtener Producto por ID
+GET {{baseUrl}}/api/v1/products/{{createProduct.response.body.id}}
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}
+
+### 13. Actualizar Producto (El stock NO se sobrescribe aquí; se gestiona vía Kardex)
+PUT {{baseUrl}}/api/v1/products/{{createProduct.response.body.id}}
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}
+Content-Type: application/json
+
+{
+  "sku": "LAP-PRO-14",
+  "name": "Laptop Workstation 14 Pro Gen2",
+  "description": "Portátil 32GB RAM, SSD 1TB NVMe",
+  "categoryId": "{{createCategory.response.body.id}}",
+  "price": 1590.00,
+  "minStock": 5,
+  "isActive": true
+}
+
+### 14. Registrar Movimiento de Inventario: ENTRADA (ENTRY)
+# @name createEntryMovement
+POST {{baseUrl}}/api/v1/inventory-movements
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}
+Content-Type: application/json
+
+{
+  "productId": "{{createProduct.response.body.id}}",
+  "type": "ENTRY",
+  "quantity": 15,
+  "reason": "Ingreso por orden de compra OC-2026-0041"
+}
+
+### 15. Registrar Movimiento de Inventario: SALIDA (EXIT)
+# @name createExitMovement
+POST {{baseUrl}}/api/v1/inventory-movements
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}
+Content-Type: application/json
+
+{
+  "productId": "{{createProduct.response.body.id}}",
+  "type": "EXIT",
+  "quantity": 4,
+  "reason": "Despacho a cliente factura FV-9821"
+}
+
+### 16. Consultar Historial Kardex de Movimientos con Filtros
+GET {{baseUrl}}/api/v1/inventory-movements?page=1&pageSize=10&productId={{createProduct.response.body.id}}&type=EXIT
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}
+
+### 17. Consultar Detalle de Movimiento por ID
+GET {{baseUrl}}/api/v1/inventory-movements/{{createExitMovement.response.body.id}}
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}
+
+### 18. Eliminar Producto (Regla: solo sin stock > 0 ni movimientos en Kardex; si ya tiene, devuelve 409 Conflict)
+DELETE {{baseUrl}}/api/v1/products/{{createProduct.response.body.id}}
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}
+
+### 19. Eliminar Categoría (Regla: bloqueado con 409 Conflict si tiene productos asociados)
+DELETE {{baseUrl}}/api/v1/categories/{{createCategory.response.body.id}}
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}
+
+### 20. Cerrar Sesión e Invalidar JWT (Blacklist O(1) + Revocación de Refresh Tokens)
+POST {{baseUrl}}/api/v1/auth/logout
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}

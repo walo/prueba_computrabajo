@@ -109,26 +109,20 @@ public sealed partial class Product : AggregateRoot<Guid>
 
     private static Error? ValidateUpdateData(ProductUpdateData data)
     {
-        var textError = ValidateTextFields(data.Sku, data.Name, data.Description);
-        if (textError is not null)
-        {
-            return textError;
-        }
-
-        return ValidateNumericAndCategoryFields(data.CategoryId, data.Price, data.MinStock);
+        return ValidateTextFields(data) ?? ValidateNumericAndCategoryFields(data);
     }
 
-    private static Error? ValidateTextFields(string sku, string name, string? description)
+    private static Error? ValidateTextFields(ProductUpdateData data)
     {
-        if (!SkuPattern().IsMatch(sku))
+        if (!SkuPattern().IsMatch(data.Sku))
         {
             return Error.Validation("Product.InvalidSku", "El SKU debe tener entre 2 y 30 caracteres alfanuméricos o guiones.");
         }
-        if (name.Length is < 2 or > 150)
+        if (data.Name.Length is < 2 or > 150)
         {
             return Error.Validation("Product.InvalidName", "El nombre del producto debe tener entre 2 y 150 caracteres.");
         }
-        if (description is { Length: > 500 })
+        if (data.Description is { Length: > 500 })
         {
             return Error.Validation("Product.InvalidDescription", "La descripción del producto no puede superar los 500 caracteres.");
         }
@@ -136,17 +130,17 @@ public sealed partial class Product : AggregateRoot<Guid>
         return null;
     }
 
-    private static Error? ValidateNumericAndCategoryFields(Guid categoryId, decimal price, int minStock)
+    private static Error? ValidateNumericAndCategoryFields(ProductUpdateData data)
     {
-        if (categoryId == Guid.Empty)
+        if (data.CategoryId == Guid.Empty)
         {
             return Error.Validation("Product.InvalidCategory", "La categoría del producto es obligatoria.");
         }
-        if (price < 0)
+        if (data.Price < 0)
         {
             return Error.Validation("Product.InvalidPrice", "El precio del producto no puede ser negativo.");
         }
-        if (minStock < 0)
+        if (data.MinStock < 0)
         {
             return Error.Validation("Product.InvalidMinStock", "El stock mínimo no puede ser negativo.");
         }

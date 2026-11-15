@@ -1,4 +1,4 @@
-export type ToastVariant = 'success' | 'error' | 'warning' | 'info';
+import { ToastVariant } from './toast-variant.model';
 
 export interface ToastMessage {
   id: string;

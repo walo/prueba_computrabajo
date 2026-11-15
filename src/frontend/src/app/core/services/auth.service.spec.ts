@@ -41,24 +41,12 @@ describe('AuthService', () => {
     service.login({ email: 'admin@enterprise.local', password: 'Password123!' }).subscribe((user) => {
       resolvedEmail = user.email;
     });
-
     const loginReq = httpMock.expectOne(`${environment.apiUrl}${API_PATHS.AUTH.LOGIN}`);
     expect(loginReq.request.method).toBe('POST');
-    loginReq.flush({
-      accessToken: 'jwt-token',
-      refreshToken: 'refresh-token',
-      expiresAtUtc: '2026-12-01T00:00:00Z',
-    });
-
+    loginReq.flush({ accessToken: 'jwt-token', refreshToken: 'refresh-token', expiresAtUtc: '2026-12-01T00:00:00Z' });
     const meReq = httpMock.expectOne(`${environment.apiUrl}${API_PATHS.AUTH.ME}`);
     expect(meReq.request.method).toBe('GET');
-    meReq.flush({
-      userId: '11111111-1111-1111-1111-111111111111',
-      email: 'admin@enterprise.local',
-      fullName: 'System Administrator',
-      permissions: ['Products.Read', 'Users.Read'],
-    });
-
+    meReq.flush({ userId: '11111111-1111-1111-1111-111111111111', email: 'admin@enterprise.local', fullName: 'System Administrator', permissions: ['Products.Read', 'Users.Read'] });
     expect(resolvedEmail).toBe('admin@enterprise.local');
     expect(storage.getAccessToken()).toBe('jwt-token');
     expect(service.isAuthenticated()).toBe(true);
@@ -67,7 +55,6 @@ describe('AuthService', () => {
 
   it('should clear session when initializeSession runs without tokens', async () => {
     await service.initializeSession();
-
     expect(service.isAuthenticated()).toBe(false);
     expect(service.currentUser()).toBeNull();
   });

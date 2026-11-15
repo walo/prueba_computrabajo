@@ -16,7 +16,7 @@ namespace Web.API.Controllers;
 public sealed class ProductsController(ISender sender) : ApiController
 {
     [HttpGet]
-    [HasPermission(Permissions.Products.Read)]
+    [HasPermission(Permissions.ProductsRead)]
     [ProducesResponseType(typeof(PagedProductsResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status403Forbidden)]
@@ -28,7 +28,7 @@ public sealed class ProductsController(ISender sender) : ApiController
     }
 
     [HttpGet("{id:guid}")]
-    [HasPermission(Permissions.Products.Read)]
+    [HasPermission(Permissions.ProductsRead)]
     [ProducesResponseType(typeof(ProductResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetById(Guid id, CancellationToken ct)
@@ -39,7 +39,7 @@ public sealed class ProductsController(ISender sender) : ApiController
     }
 
     [HttpPost]
-    [HasPermission(Permissions.Products.Create)]
+    [HasPermission(Permissions.ProductsCreate)]
     [ProducesResponseType(typeof(ProductResponse), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
@@ -54,7 +54,7 @@ public sealed class ProductsController(ISender sender) : ApiController
     }
 
     [HttpPut("{id:guid}")]
-    [HasPermission(Permissions.Products.Update)]
+    [HasPermission(Permissions.ProductsUpdate)]
     [ProducesResponseType(typeof(ProductResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
@@ -67,7 +67,7 @@ public sealed class ProductsController(ISender sender) : ApiController
     }
 
     [HttpDelete("{id:guid}")]
-    [HasPermission(Permissions.Products.Delete)]
+    [HasPermission(Permissions.ProductsDelete)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status409Conflict)]

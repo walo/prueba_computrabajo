@@ -133,38 +133,13 @@ export class ProductListComponent implements OnInit {
   });
 
   public readonly productForm = new FormGroup({
-    sku: new FormControl('', {
-      nonNullable: true,
-      validators: [
-        Validators.required,
-        Validators.minLength(2),
-        Validators.maxLength(30),
-        Validators.pattern(/^[a-zA-Z0-9_-]+$/),
-      ],
-    }),
-    name: new FormControl('', {
-      nonNullable: true,
-      validators: [Validators.required, Validators.minLength(2), Validators.maxLength(150)],
-    }),
-    description: new FormControl<string | null>(null, {
-      validators: [Validators.maxLength(500)],
-    }),
-    categoryId: new FormControl('', {
-      nonNullable: true,
-      validators: [Validators.required],
-    }),
-    price: new FormControl(0, {
-      nonNullable: true,
-      validators: [Validators.required, Validators.min(0)],
-    }),
-    initialStock: new FormControl(0, {
-      nonNullable: true,
-      validators: [Validators.required, Validators.min(0)],
-    }),
-    minStock: new FormControl(0, {
-      nonNullable: true,
-      validators: [Validators.required, Validators.min(0)],
-    }),
+    sku: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.minLength(2), Validators.maxLength(30), Validators.pattern(/^[a-zA-Z0-9_-]+$/)] }),
+    name: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.minLength(2), Validators.maxLength(150)] }),
+    description: new FormControl<string | null>(null, { validators: [Validators.maxLength(500)] }),
+    categoryId: new FormControl('', { nonNullable: true, validators: [Validators.required] }),
+    price: new FormControl(0, { nonNullable: true, validators: [Validators.required, Validators.min(0)] }),
+    initialStock: new FormControl(0, { nonNullable: true, validators: [Validators.required, Validators.min(0)] }),
+    minStock: new FormControl(0, { nonNullable: true, validators: [Validators.required, Validators.min(0)] }),
     isActive: new FormControl(true, { nonNullable: true }),
   });
 

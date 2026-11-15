@@ -23,18 +23,14 @@ describe('permissionGuard', () => {
   it('should allow activation when user holds the required permission', () => {
     permissionsService.loadPermissions([PERMISSIONS.PRODUCTS.READ]);
     const route = { data: { permissions: [PERMISSIONS.PRODUCTS.READ] } } as unknown as ActivatedRouteSnapshot;
-
     const result = TestBed.runInInjectionContext(() => permissionGuard(route, mockState));
-
     expect(result).toBe(true);
   });
 
   it('should redirect to /forbidden when user lacks the required permission', () => {
     permissionsService.flushPermissions();
     const route = { data: { permissions: [PERMISSIONS.USERS.READ] } } as unknown as ActivatedRouteSnapshot;
-
     const result = TestBed.runInInjectionContext(() => permissionGuard(route, mockState));
-
     expect(result instanceof UrlTree).toBe(true);
     expect(result.toString()).toBe('/forbidden');
   });

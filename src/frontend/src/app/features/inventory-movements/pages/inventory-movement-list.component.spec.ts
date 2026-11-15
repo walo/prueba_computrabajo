@@ -98,23 +98,12 @@ describe('InventoryMovementListComponent', () => {
     fixture.componentInstance.onFromDateChange('2026-11-01');
     fixture.componentInstance.onToDateChange('2026-11-15');
     expect(mockMovementsService.getMovements).toHaveBeenLastCalledWith({
-      page: 1,
-      pageSize: 10,
-      search: 'LAP',
-      productId: 'prod-1',
-      type: 'EXIT',
-      fromDateUtc: '2026-11-01T00:00:00.000Z',
-      toDateUtc: '2026-11-15T23:59:59.999Z',
+      page: 1, pageSize: 10, search: 'LAP', productId: 'prod-1', type: 'EXIT',
+      fromDateUtc: '2026-11-01T00:00:00.000Z', toDateUtc: '2026-11-15T23:59:59.999Z',
     });
     fixture.componentInstance.clearFilters();
     expect(mockMovementsService.getMovements).toHaveBeenLastCalledWith({
-      page: 1,
-      pageSize: 10,
-      search: undefined,
-      productId: null,
-      type: null,
-      fromDateUtc: null,
-      toDateUtc: null,
+      page: 1, pageSize: 10, search: undefined, productId: null, type: null, fromDateUtc: null, toDateUtc: null,
     });
   });
 

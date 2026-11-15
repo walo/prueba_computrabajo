@@ -33,18 +33,22 @@ public sealed class InventoryMovementsIntegrationTests(CustomWebApplicationFacto
     {
         var suffix = Guid.NewGuid().ToString("N")[..8];
         await AuthenticateAsAdminAsync();
-        var category = await CreateCategoryAsync($"mov-{suffix}", $"MovCat {suffix}");
-        var product = await CreateProductAsync(category.Id, $"mv-{suffix}", $"Tracked {suffix}", 5, 3);
-        var entry = await CreateMovementAsync(product.Id, InventoryMovementTypes.Entry, 10, "Initial replenishment");
+        var category = await CreateCategoryAsync(new CreateCategoryRequest($"mov-{suffix}", $"MovCat {suffix}", null));
+        var product = await CreateProductAsync(
+            new CreateProductRequest($"mv-{suffix}", $"Tracked {suffix}", "Tracked item", category.Id, 99m, 5, 3));
+        var entry = await CreateMovementAsync(
+            new CreateInventoryMovementRequest(product.Id, InventoryMovementTypes.Entry, 10, "Initial replenishment"));
         entry.PreviousStock.Should().Be(5);
         entry.NewStock.Should().Be(15);
         entry.ProductSku.Should().Be($"MV-{suffix}".ToUpperInvariant());
         entry.PerformedByEmail.Should().NotBeNullOrWhiteSpace();
-        var exit = await CreateMovementAsync(product.Id, InventoryMovementTypes.Exit, 13, "Order fulfillment");
+        var exit = await CreateMovementAsync(
+            new CreateInventoryMovementRequest(product.Id, InventoryMovementTypes.Exit, 13, "Order fulfillment"));
         exit.PreviousStock.Should().Be(15);
         exit.NewStock.Should().Be(2);
         await VerifyProductStockAndKardexFiltersAsync(product.Id, exit.Id);
-        await CreateMovementAsync(product.Id, InventoryMovementTypes.Exit, 2, "Zero out stock");
+        await CreateMovementAsync(
+            new CreateInventoryMovementRequest(product.Id, InventoryMovementTypes.Exit, 2, "Zero out stock"));
         await AssertConflictAsync(
             Client.DeleteAsync($"/api/v1/products/{product.Id}"),
             "Product.CannotDeleteWithStockOrMovements");
@@ -55,8 +59,9 @@ public sealed class InventoryMovementsIntegrationTests(CustomWebApplicationFacto
     {
         var suffix = Guid.NewGuid().ToString("N")[..8];
         await AuthenticateAsAdminAsync();
-        var category = await CreateCategoryAsync($"rul-{suffix}", $"Rules {suffix}");
-        var product = await CreateProductAsync(category.Id, $"rl-{suffix}", $"Constrained {suffix}", 4, 1);
+        var category = await CreateCategoryAsync(new CreateCategoryRequest($"rul-{suffix}", $"Rules {suffix}", null));
+        var product = await CreateProductAsync(
+            new CreateProductRequest($"rl-{suffix}", $"Constrained {suffix}", "Tracked item", category.Id, 99m, 4, 1));
         await AssertConflictAsync(
             Client.PostAsJsonAsync(
                 "/api/v1/inventory-movements",
@@ -72,38 +77,25 @@ public sealed class InventoryMovementsIntegrationTests(CustomWebApplicationFacto
             "InventoryMovement.ProductInactive");
     }
 
-    private async Task<CategoryResponse> CreateCategoryAsync(string code, string name)
+    private async Task<CategoryResponse> CreateCategoryAsync(CreateCategoryRequest request)
     {
-        var response = await Client.PostAsJsonAsync("/api/v1/categories", new CreateCategoryRequest(code, name, null));
+        var response = await Client.PostAsJsonAsync("/api/v1/categories", request);
         response.StatusCode.Should().Be(HttpStatusCode.Created);
 
         return (await response.Content.ReadFromJsonAsync<CategoryResponse>())!;
     }
 
-    private async Task<ProductResponse> CreateProductAsync(
-        Guid categoryId,
-        string sku,
-        string name,
-        int initialStock,
-        int minStock)
+    private async Task<ProductResponse> CreateProductAsync(CreateProductRequest request)
     {
-        var response = await Client.PostAsJsonAsync(
-            "/api/v1/products",
-            new CreateProductRequest(sku, name, "Tracked item", categoryId, 99m, initialStock, minStock));
+        var response = await Client.PostAsJsonAsync("/api/v1/products", request);
         response.StatusCode.Should().Be(HttpStatusCode.Created);
 
         return (await response.Content.ReadFromJsonAsync<ProductResponse>())!;
     }
 
-    private async Task<InventoryMovementResponse> CreateMovementAsync(
-        Guid productId,
-        string type,
-        int quantity,
-        string reason)
+    private async Task<InventoryMovementResponse> CreateMovementAsync(CreateInventoryMovementRequest request)
     {
-        var response = await Client.PostAsJsonAsync(
-            "/api/v1/inventory-movements",
-            new CreateInventoryMovementRequest(productId, type, quantity, reason));
+        var response = await Client.PostAsJsonAsync("/api/v1/inventory-movements", request);
         response.StatusCode.Should().Be(HttpStatusCode.Created);
 
         return (await response.Content.ReadFromJsonAsync<InventoryMovementResponse>())!;

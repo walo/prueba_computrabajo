@@ -56,12 +56,8 @@ describe('ProductListComponent', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    mockCategoriesService.getCategories.mockReturnValue(
-      of({ items: [sampleCategory], page: 1, pageSize: 100, totalCount: 1 })
-    );
-    mockProductsService.getProducts.mockReturnValue(
-      of({ items: [sampleProduct], page: 1, pageSize: 10, totalCount: 1 })
-    );
+    mockCategoriesService.getCategories.mockReturnValue(of({ items: [sampleCategory], page: 1, pageSize: 100, totalCount: 1 }));
+    mockProductsService.getProducts.mockReturnValue(of({ items: [sampleProduct], page: 1, pageSize: 10, totalCount: 1 }));
     TestBed.configureTestingModule({
       imports: [ProductListComponent],
       providers: [
@@ -73,12 +69,8 @@ describe('ProductListComponent', () => {
         { provide: NotificationService, useValue: mockNotifications },
       ],
     });
-    const permissions = TestBed.inject(NgxPermissionsService);
-    permissions.loadPermissions([
-      PERMISSIONS.PRODUCTS.READ,
-      PERMISSIONS.PRODUCTS.CREATE,
-      PERMISSIONS.PRODUCTS.UPDATE,
-      PERMISSIONS.PRODUCTS.DELETE,
+    TestBed.inject(NgxPermissionsService).loadPermissions([
+      PERMISSIONS.PRODUCTS.READ, PERMISSIONS.PRODUCTS.CREATE, PERMISSIONS.PRODUCTS.UPDATE, PERMISSIONS.PRODUCTS.DELETE,
     ]);
   });
 
@@ -124,24 +116,13 @@ describe('ProductListComponent', () => {
     fixture.detectChanges();
     fixture.componentInstance.openCreateModal();
     fixture.componentInstance.productForm.setValue({
-      sku: 'MOU-01',
-      name: 'Optical Mouse',
-      description: 'Wireless',
-      categoryId: 'cat-1',
-      price: 39.5,
-      initialStock: 12,
-      minStock: 3,
-      isActive: true,
+      sku: 'MOU-01', name: 'Optical Mouse', description: 'Wireless', categoryId: 'cat-1',
+      price: 39.5, initialStock: 12, minStock: 3, isActive: true,
     });
     fixture.componentInstance.submitForm();
     expect(mockProductsService.createProduct).toHaveBeenCalledWith({
-      sku: 'MOU-01',
-      name: 'Optical Mouse',
-      description: 'Wireless',
-      categoryId: 'cat-1',
-      price: 39.5,
-      initialStock: 12,
-      minStock: 3,
+      sku: 'MOU-01', name: 'Optical Mouse', description: 'Wireless', categoryId: 'cat-1',
+      price: 39.5, initialStock: 12, minStock: 3,
     });
     expect(mockNotifications.success).toHaveBeenCalled();
   });

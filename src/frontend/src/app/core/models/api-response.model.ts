@@ -1,7 +1,4 @@
-export interface ApiError {
-  code?: string;
-  description: string;
-}
+import { ApiError } from './api-error.model';
 
 export interface ApiResponse<T> {
   data: T;
