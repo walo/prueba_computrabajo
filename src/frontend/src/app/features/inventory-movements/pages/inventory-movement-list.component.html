@@ -47,7 +47,7 @@
         (ngModelChange)="onTypeFilterChange($event)" />
 
       <ad-input
-        label="Desde (UTC)"
+        label="Desde"
         type="text"
         prefixIcon="calendar"
         placeholder="AAAA-MM-DD"
@@ -55,7 +55,7 @@
         (ngModelChange)="onFromDateChange($event)" />
 
       <ad-input
-        label="Hasta (UTC)"
+        label="Hasta"
         type="text"
         prefixIcon="calendar"
         placeholder="AAAA-MM-DD"
@@ -81,7 +81,7 @@
       (pageChange)="onPageChange($event)">
       <ng-template adTableCell="createdAtUtc" let-row>
         <span class="text-xs font-mono text-foreground-muted">
-          {{ row.createdAtUtc | date:'dd/MM/yyyy HH:mm' }}
+          {{ toLocalDate(row.createdAtUtc) | date:'dd/MM/yyyy HH:mm' }}
         </span>
       </ng-template>
 

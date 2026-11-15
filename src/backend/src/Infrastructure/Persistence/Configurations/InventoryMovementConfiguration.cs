@@ -25,7 +25,9 @@ public sealed class InventoryMovementConfiguration : IEntityTypeConfiguration<In
         builder.Property(movement => movement.NewStock).IsRequired();
         builder.Property(movement => movement.Reason).IsRequired().HasMaxLength(300);
         builder.Property(movement => movement.PerformedByUserId).IsRequired();
-        builder.Property(movement => movement.CreatedAtUtc).IsRequired();
+        builder.Property(movement => movement.CreatedAtUtc)
+            .IsRequired()
+            .HasConversion(value => value, value => DateTime.SpecifyKind(value, DateTimeKind.Utc));
     }
 
     private static void ConfigureIndexes(EntityTypeBuilder<InventoryMovement> builder)

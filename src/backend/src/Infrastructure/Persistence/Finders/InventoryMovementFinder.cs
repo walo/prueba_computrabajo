@@ -169,6 +169,6 @@ public sealed class InventoryMovementFinder(AppDbContext dbContext) : IInventory
             movement.Reason,
             movement.PerformedByUserId,
             email,
-            movement.CreatedAtUtc);
+            DateTime.SpecifyKind(movement.CreatedAtUtc, DateTimeKind.Utc));
     }
 }

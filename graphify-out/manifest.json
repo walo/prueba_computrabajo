@@ -2520,15 +2520,15 @@
     "semantic_hash": ""
   },
   "src/backend/src/Infrastructure/Persistence/Configurations/InventoryMovementConfiguration.cs": {
-    "mtime": 1794758681.5007021,
-    "seen": 1794759353.3367288,
-    "ast_hash": "c62aa6c073b7dcb31b22230a7fd2dcb7",
+    "mtime": 1794762305.3603373,
+    "seen": 1794762429.2752364,
+    "ast_hash": "6e8773fd12407e849df56a013188276b",
     "semantic_hash": ""
   },
   "src/backend/src/Infrastructure/Persistence/Finders/InventoryMovementFinder.cs": {
-    "mtime": 1794758960.403357,
-    "seen": 1794759353.3367288,
-    "ast_hash": "7ae7949b4825362586616a2638558802",
+    "mtime": 1794762305.420786,
+    "seen": 1794762429.2752364,
+    "ast_hash": "01ba084a872967b84822466c38f8e59b",
     "semantic_hash": ""
   },
   "src/backend/src/Infrastructure/Persistence/Migrations/20261115160456_AddInventoryMovements.Designer.cs": {
@@ -2616,15 +2616,15 @@
     "semantic_hash": ""
   },
   "src/frontend/src/app/features/inventory-movements/pages/inventory-movement-list.component.spec.ts": {
-    "mtime": 1794759198.7921858,
-    "seen": 1794759353.3367288,
-    "ast_hash": "a51473cbf39e73c91ebfe3cb7f96584f",
+    "mtime": 1794762064.7694213,
+    "seen": 1794762429.2752364,
+    "ast_hash": "f8e8cb2b638ca672709387375f9f1140",
     "semantic_hash": ""
   },
   "src/frontend/src/app/features/inventory-movements/pages/inventory-movement-list.component.ts": {
-    "mtime": 1794759320.554733,
-    "seen": 1794759353.3367288,
-    "ast_hash": "bb5720d0208a2f4d23a98aab969feed5",
+    "mtime": 1794762305.5894163,
+    "seen": 1794762429.2752364,
+    "ast_hash": "b3bdac8f8b86a054db1874df6e44df23",
     "semantic_hash": ""
   },
   "src/frontend/src/app/features/inventory-movements/services/inventory-movements.service.spec.ts": {
@@ -2664,9 +2664,9 @@
     "semantic_hash": ""
   },
   "src/frontend/src/app/features/inventory-movements/pages/inventory-movement-list.component.html": {
-    "mtime": 1794759238.293012,
-    "seen": 1794759353.3367288,
-    "ast_hash": "23a763e72a1e680af843245232a1e5bc",
+    "mtime": 1794762305.5187407,
+    "seen": 1794762429.2752364,
+    "ast_hash": "e606b92f01475502aac37556717a50c3",
     "semantic_hash": ""
   },
   "src/backend/tests/Tests.UnitTests/Core/Application/Features/InventoryMovements/GetInventoryMovementByIdQueryHandlerTests.cs": {

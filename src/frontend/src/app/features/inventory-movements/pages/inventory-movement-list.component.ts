@@ -81,7 +81,7 @@ export class InventoryMovementListComponent implements OnInit {
   public readonly pageError = signal<UiErrorMessage | null>(null);
 
   public readonly columns: AdTableColumn[] = [
-    { key: 'createdAtUtc', label: 'Fecha UTC', width: '165px' },
+    { key: 'createdAtUtc', label: 'Fecha y Hora', width: '165px' },
     { key: 'productSku', label: 'Producto' },
     { key: 'type', label: 'Tipo', width: '120px' },
     { key: 'quantity', label: 'Cantidad', align: 'right', width: '105px' },
@@ -240,6 +240,16 @@ export class InventoryMovementListComponent implements OnInit {
 
   public clearPageError(): void {
     this.pageError.set(null);
+  }
+
+  public toLocalDate(utcValue: string): Date {
+    const trimmed = (utcValue ?? '').trim();
+    if (!trimmed) {
+      return new Date(NaN);
+    }
+    const hasTimezone = /(Z|[+-]\d{2}:\d{2})$/i.test(trimmed);
+
+    return new Date(hasTimezone ? trimmed : `${trimmed}Z`);
   }
 
   public submitForm(): void {

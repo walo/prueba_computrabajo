@@ -183,4 +183,16 @@ describe('InventoryMovementListComponent', () => {
     expect(text).not.toContain('Editar');
     expect(text).not.toContain('Eliminar');
   });
+
+  it('should normalize timezone-less UTC timestamps so DatePipe formats local time accurately', () => {
+    const fixture = TestBed.createComponent(InventoryMovementListComponent);
+    fixture.detectChanges();
+    const normalized = fixture.componentInstance.toLocalDate('2026-11-15T16:30:00');
+    const explicitUtc = fixture.componentInstance.toLocalDate('2026-11-15T16:30:00Z');
+    expect(normalized.toISOString()).toBe('2026-11-15T16:30:00.000Z');
+    expect(explicitUtc.toISOString()).toBe('2026-11-15T16:30:00.000Z');
+    const text = (fixture.nativeElement as HTMLElement).textContent ?? '';
+    expect(text).toContain('Fecha y Hora');
+    expect(text).not.toContain('Fecha UTC');
+  });
 });

@@ -1,31 +1,31 @@
 # Graph Report - computrabajo  (2026-11-15)
 
 ## Corpus Check
-- 436 files · ~93,602 words
+- 436 files · ~93,683 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 10 file(s) not represented in the graph (top: (none) 5, .css 2, .example 1)
 
 ## Summary
-- 3359 nodes · 6941 edges · 212 communities (188 shown, 24 thin omitted)
+- 3360 nodes · 6942 edges · 218 communities (191 shown, 27 thin omitted)
 - Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 763 edges (avg confidence: 0.88)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `58246e77`
+- Built from commit: `513e1dd7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- GetCurrentUserQuery
+- @angular/common
 - AuthTokensResponse
 - AuthController
 - InitialDataSeeder
 - PermissionCacheService
-- Application.Features.Auth.DTOs
+- InventoryMovementsIntegrationTests.cs
 - IRequest
 - CreateItemCommand
 - new-story.mjs
-- auth.service.ts
+- @angular/core
 - AuthService
 - query-and-finder.example.cs
 - GetUsersQuery
@@ -34,7 +34,7 @@
 - fluentassertions
 - .RotateRefreshTokenAsync
 - .Create
-- @angular/core
+- login.component.example.ts
 - ITokenBlacklistService
 - inventory-movement-list.component.ts
 - app.config.ts
@@ -52,19 +52,19 @@
 - application-behaviors.example.cs
 - package.json
 - RefreshToken
-- ICategoryFinder
+- GetCategoriesQuery
 - CacheService
 - NotificationService
 - IDomainEvent
-- IProductRepository
+- .CreateConnection
 - Application.Common.Interfaces
 - CategoriesPageComponent
 - FeatureSummaryReportDto
-- AddCategoriesCatalog
-- program.example.cs
+- ICategoryFinder
+- integration-endpoint-test.example.cs
 - AppDbContext
 - ProductFinder
-- DeleteProductCommand
+- ProductCreationData
 - schematics
 - Entity
 - User
@@ -74,7 +74,7 @@
 - mediatr
 - User
 - ValueObject
-- .CreateConnection
+- microsoft_aspnetcore_mvc
 - RefreshToken
 - UpdateProductCommand
 - AuthFinder
@@ -82,24 +82,24 @@
 - NotificationService
 - 2. CAPA APPLICATION (Abstracciones y Atributos)
 - Role
-- ProductCreationData
+- InventoryMovementsService
 - dependencies
 - ICurrentUserContext
 - .AddAuthenticationInfrastructure
 - tests_integrationtests_common
-- products.service.ts
-- Application.Features.Products.DTOs
+- rxjs
+- Application.Features.Categories.DTOs
 - InventoryMovement
 - ProductResponse
 - domain-entities.example.cs
 - Role
 - AuthorizationMiddlewareTests
-- FeatureListComponent
-- @angular/common
-- app-routes.example.ts
+- .AddPersistenceInfrastructure
+- service-http.example.ts
+- @angular/router
 - Web.API.csproj
 - Tests.IntegrationTests.csproj
-- .GetPermissionNamesByUserIdAsync
+- UserIdentityDto
 - .GetPermissionsForUserAsync
 - GlobalExceptionHandlingMiddleware
 - .AddJwtAuthentication
@@ -108,7 +108,7 @@
 - RolePermission
 - IRepository
 - angular.json
-- Entrevista Técnica y de Negocio: Catálogo de Categorías de Productos
+- 2. Registro de Preguntas y Resoluciones Técnicas de Negocio
 - Skill: Angular Feature Development (Modern Angular + SDD + Atomic Design)
 - Product
 - ProductListComponent
@@ -162,13 +162,13 @@
 - Skill: Angular Test Automation (Jest Testing Specialist)
 - 2. Registro de Preguntas y Resoluciones Técnicas de Negocio
 - Redarbor Product Inventory Management System
-- IDbConnectionFactory
+- Products
 - Skill: .NET Scaffold Skeleton (.NET 10 & C# 13 Decoupled Onion Architecture)
 - Skill: Git, Gitflow Estricto y Automatización de GitHub
 - 🛠️ Comandos de CLI Disponibles
 - Entrevista Técnica y de Negocio: Configuración de Límites de Almacenamiento por Organización
 - 2. Registro de Preguntas y Resoluciones Técnicas de Negocio
-- feature-routes.example.ts
+- 2. Fases de Ejecución en `/feature-scaffold`
 - CacheService
 - 2. Execution Steps
 - 1. Dominios de Auditoría Mandatorios
@@ -176,7 +176,7 @@
 - Especificación Técnica: [KEY] - [Título de la Funcionalidad]
 - ApiController
 - .CheckHealthAsync
-- Entrevista Técnica y de Negocio: Catálogo de Productos
+- 4. Criterios de Aceptación Refinados (Gherkin Enriquecido)
 - .Update
 - IInventoryMovementFinder
 - .InvokeAsync_Should_CallNext_When_UserHasPermission
@@ -187,16 +187,16 @@
 - InventoryMovementFinder
 - GetInventoryMovementsQuery
 - Skill: Entrevistador Técnico y de Negocio (Socratic Interviewer)
-- ApiController
+- .GetAll
 - 2. Execution Steps
 - 2. Execution Steps
-- 2. Registro de Preguntas y Resoluciones Técnicas de Negocio
+- .GetPermissionsForUserAsync
 - Frontend
 - InventoryMovementResponse
 - Desglose de Tareas Técnicas (Tasks): [KEY] - [Título de la Funcionalidad]
 - Skill: PostgreSQL & TimescaleDB Stored Functions (Dapper Integration)
 - IAuditableEntity
-- ProductUpdateData
+- InitialAuthMigration
 - .BlacklistTokenAsync
 - .Create
 - ExternalServices.csproj
@@ -210,20 +210,26 @@
 - domain_primitives
 - infrastructure_persistence_connections
 - web_api_attributes
-- Especificación Técnica: US-001 - Catálogo de Categorías de Productos
-- Desglose de Tareas Técnicas (Tasks): US-001 - Catálogo de Categorías de Productos
-- 2. Fases de Ejecución
+- TokenBlacklistService
+- IProductRepository
+- RefreshTokenRepository
 - .BuildModel
 - 2. Registro de Preguntas y Resoluciones Técnicas de Negocio
-- Pregunta E.1: Estrategia híbrida EF Core Lectura / Dapper Escritura en SQL Server 2022
+- ApiController
 - Entity
 - scripts
 - .AddCorsInfrastructure
 - IPasswordHasher
 - main.example.ts
-- .BuildTargetModel
+- IDbConnectionFactory
 - .BuildTargetModel
 - jest-preset-angular
+- LoaderService
+- .Normalize
+- .AddCorsInfrastructure
+- .AddExternalServicesInfrastructure
+- GetCurrentUserQuery
+- ProductUniquenessFilter.cs
 
 ## God Nodes (most connected - your core abstractions)
 1. `Application.Common.Interfaces` - 94 edges
@@ -235,11 +241,9 @@
 7. `InventoryMovement` - 41 edges
 8. `RefreshToken` - 41 edges
 9. `ICategoryRepository` - 32 edges
-10. `InventoryMovementListComponent` - 31 edges
+10. `InventoryMovementListComponent` - 32 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Pregunta A.3: Gestión de rama base en Gitflow respecto al PR #2 de `US-001`` --references--> `ICategoryRepository`  [INFERRED]
-  specs/US-002_catalogo_de_productos/US-002-interview.md → src/backend/src/Core/Application/Common/Interfaces/ICategoryRepository.cs
 - `Escenario 1 — Registro exitoso de categoría con paginación actualizada (Camino feliz)` --references--> `CategoryResponse`  [INFERRED]
   specs/US-001_catalogo_de_categorias/US-001-interview.md → src/backend/src/Core/Application/Features/Categories/DTOs/CategoryResponse.cs
 - `C. Endpoints HTTP (RESTful RFC 7807 & PBAC)` --references--> `CategoryResponse`  [INFERRED]
@@ -248,95 +252,97 @@
   specs/US-003_movimientos_de_inventario/US-003-interview.md → src/backend/src/Core/Application/Features/InventoryMovements/DTOs/InventoryMovementResponse.cs
 - `C. Endpoints HTTP (RESTful RFC 7807 & PBAC)` --references--> `InventoryMovementResponse`  [INFERRED]
   specs/US-003_movimientos_de_inventario/US-003.spec.md → src/backend/src/Core/Application/Features/InventoryMovements/DTOs/InventoryMovementResponse.cs
+- `Escenario 1 — Creación de producto con categoría activa y stock inicial (Camino Feliz)` --references--> `ProductResponse`  [INFERRED]
+  specs/US-002_catalogo_de_productos/US-002-interview.md → src/backend/src/Core/Application/Features/Products/DTOs/ProductResponse.cs
 
 ## Import Cycles
 - None detected.
 
-## Communities (212 total, 24 thin omitted)
+## Communities (218 total, 27 thin omitted)
 
-### Community 0 - "GetCurrentUserQuery"
-Cohesion: 0.20
-Nodes (13): GetCurrentUserQuery, GetCurrentUserQueryHandler, CancellationToken, ErrorOr, Guid, Task, CurrentUserResponse, Guid (+5 more)
+### Community 0 - "@angular/common"
+Cohesion: 0.05
+Nodes (27): appConfig, ErrorHandlerService, Injectable, UiErrorMessage, DEFAULT_FALLBACK_MESSAGE, ErrorCatalog, ProblemDetails, loaderInterceptor() (+19 more)
 
 ### Community 1 - "AuthTokensResponse"
-Cohesion: 0.06
-Nodes (38): Program, Fact, HttpClient, Task, CustomWebApplicationFactory, IntegrationTestBase, UsersEndpointsIntegrationTests, IClassFixture (+30 more)
+Cohesion: 0.07
+Nodes (32): Program, Fact, HttpClient, Task, CustomWebApplicationFactory, IntegrationTestBase, UsersEndpointsIntegrationTests, IClassFixture (+24 more)
 
 ### Community 2 - "AuthController"
 Cohesion: 0.26
 Nodes (10): AllowAnonymous, Authorize, CancellationToken, HasPermission, HttpGet, HttpPost, IActionResult, Task (+2 more)
 
 ### Community 3 - "InitialDataSeeder"
-Cohesion: 0.32
-Nodes (9): AppDbContext, ILogger, DatabaseSeedRequest, AppDbContext, CancellationToken, Guid, IEnumerable, Task (+1 more)
+Cohesion: 0.26
+Nodes (11): Bloque B: Roles, Permisos y Seguridad (PBAC), Pregunta B.1: Permisos PBAC y alcance Single-Tenant aplicables a Movimientos de Inventario, AppDbContext, ILogger, DatabaseSeedRequest, AppDbContext, CancellationToken, Guid (+3 more)
 
 ### Community 4 - "PermissionCacheService"
-Cohesion: 0.18
-Nodes (11): CancellationToken, DateTime, Guid, HashSet, IConfiguration, List, Task, TimeSpan (+3 more)
+Cohesion: 0.27
+Nodes (8): CancellationToken, DateTime, Guid, HashSet, List, Task, TimeSpan, PermissionCacheService
 
-### Community 5 - "Application.Features.Auth.DTOs"
-Cohesion: 0.17
-Nodes (12): Tests.IntegrationTests.Examples, Tests.IntegrationTests.Features.Auth, Tests.IntegrationTests.Features.Categories, Tests.IntegrationTests.Common, Tests.IntegrationTests.Features.Products, Application.Features.Auth.DTOs, Tests.IntegrationTests.Features.InventoryMovements, microsoft_aspnetcore_hosting (+4 more)
+### Community 5 - "InventoryMovementsIntegrationTests.cs"
+Cohesion: 0.26
+Nodes (8): Tests.IntegrationTests.Features.Auth, Tests.IntegrationTests.Features.Categories, Tests.IntegrationTests.Common, Tests.IntegrationTests.Features.Products, Tests.IntegrationTests.Features.InventoryMovements, system_net, system_net_http_headers, system_net_http_json
 
 ### Community 6 - "IRequest"
-Cohesion: 0.16
-Nodes (15): IRequest, IRequestHandler, GetCategoryByIdQuery, ErrorOr, Guid, GetCategoryByIdQueryHandler, CancellationToken, ErrorOr (+7 more)
+Cohesion: 0.18
+Nodes (14): IRequest, GetCategoryByIdQuery, ErrorOr, Guid, GetCategoryByIdQueryHandler, CancellationToken, ErrorOr, Task (+6 more)
 
 ### Community 7 - "CreateItemCommand"
-Cohesion: 0.09
-Nodes (30): CreateItemCommand, CreateItemCommandHandler, CancellationToken, ErrorOr, Guid, ICompanyRepository, IItemDomainService, IItemRepository (+22 more)
+Cohesion: 0.08
+Nodes (32): CreateItemCommand, CreateItemCommandHandler, CancellationToken, ErrorOr, Guid, ICompanyRepository, IItemDomainService, IItemRepository (+24 more)
 
 ### Community 8 - "new-story.mjs"
 Cohesion: 0.10
 Nodes (36): ambar(), cian(), comandoCheck(), comandoCreateJira(), comandoList(), comandoNew(), entradasSpecs(), listarCarpetasSpecs() (+28 more)
 
-### Community 9 - "auth.service.ts"
-Cohesion: 0.11
-Nodes (20): ref_angular_common_http, ref_angular_common_http_testing, ref_angular_core_testing, API_PATHS, CategoryFilter, Category, CategoryUpdateCommand, CreateCategoryRequest (+12 more)
+### Community 9 - "@angular/core"
+Cohesion: 0.13
+Nodes (16): ref_angular_common_http, ref_angular_common_http_testing, @angular/core, ref_angular_core_testing, ref_button_component, ref_notification_service_example, API_PATHS, CategoryFilter (+8 more)
 
 ### Community 10 - "AuthService"
-Cohesion: 0.14
-Nodes (11): c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adstatuspagecomponent, c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_statuscode, AuthTokensResponse, CurrentUserResponse, LoginRequest, RefreshTokenRequest, AuthService, Injectable (+3 more)
+Cohesion: 0.23
+Nodes (7): AuthTokensResponse, CurrentUserResponse, LoginRequest, RefreshTokenRequest, AuthService, Injectable, createSilentContext()
 
 ### Community 11 - "query-and-finder.example.cs"
 Cohesion: 0.09
 Nodes (31): CancellationToken, HttpGet, HttpPost, IActionResult, ProducesResponseType, Task, ItemsController, GetItemsQuery (+23 more)
 
 ### Community 12 - "GetUsersQuery"
-Cohesion: 0.12
-Nodes (20): IUserFinder, CancellationToken, IReadOnlyList, Task, UserSummaryResponse, DateTime, Guid, GetUsersQuery (+12 more)
+Cohesion: 0.22
+Nodes (11): UserSummaryResponse, DateTime, Guid, GetUsersQuery, ErrorOr, IReadOnlyList, GetUsersQueryHandler, CancellationToken (+3 more)
 
 ### Community 13 - "Infrastructure.Persistence"
-Cohesion: 0.18
-Nodes (14): Infrastructure.Persistence, Infrastructure.Persistence.Migrations, microsoft_entityframeworkcore_infrastructure, microsoft_entityframeworkcore_metadata, microsoft_entityframeworkcore_migrations, microsoft_entityframeworkcore_storage_valueconversion, DateTime, Guid (+6 more)
+Cohesion: 0.38
+Nodes (7): Infrastructure.Persistence, Infrastructure.Persistence.Migrations, microsoft_entityframeworkcore_infrastructure, microsoft_entityframeworkcore_metadata, microsoft_entityframeworkcore_migrations, microsoft_entityframeworkcore_storage_valueconversion, system
 
 ### Community 14 - "Domain.Primitives"
-Cohesion: 0.16
-Nodes (3): Domain.Events, Domain.Primitives, system_text_regularexpressions
+Cohesion: 0.13
+Nodes (4): Domain.Events, Tests.UnitTests.Core.Application.Features.Auth.Commands.Logout, Domain.Primitives, system_text_regularexpressions
 
 ### Community 15 - "fluentassertions"
-Cohesion: 0.09
-Nodes (21): application_abstractions_caching, Tests.UnitTests.Core.Application.Features.InventoryMovements, Tests.UnitTests.Core.Application.Features.Auth.Commands.RefreshToken, Domain.ValueObjects, Tests.UnitTests.Presentation.Middlewares, Tests.UnitTests.Core.Application.Features.Categories, Application.Features.InventoryMovements.Queries.GetInventoryMovementById, Application.Features.InventoryMovements.DTOs (+13 more)
+Cohesion: 0.11
+Nodes (18): Application.Features.Products.Common, Tests.UnitTests.Core.Application.Features.InventoryMovements, Tests.UnitTests.Core.Application.Features.Auth.Commands.RefreshToken, Application.Features.Products.Queries.GetProducts, Application.Features.Products.Commands.CreateProduct, Domain.ValueObjects, Application.Features.Products.Commands.UpdateProduct, Application.Features.Products.DTOs (+10 more)
 
 ### Community 16 - ".RotateRefreshTokenAsync"
-Cohesion: 0.13
-Nodes (19): IJwtProvider, AccessTokenMinutes, DateTime, RefreshTokenCommand, ErrorOr, RefreshTokenCommandHandler, CancellationToken, ErrorOr (+11 more)
+Cohesion: 0.14
+Nodes (18): IJwtProvider, AccessTokenMinutes, RefreshTokenCommand, ErrorOr, RefreshTokenCommandHandler, CancellationToken, ErrorOr, Guid (+10 more)
 
 ### Community 17 - ".Create"
-Cohesion: 0.16
-Nodes (15): UpdateCategoryCommand, ErrorOr, Guid, UpdateCategoryCommandValidator, UpdateCategoryRequest, CategoryCreationData, CancellationToken, Fact (+7 more)
+Cohesion: 0.12
+Nodes (20): UpdateCategoryCommand, ErrorOr, Guid, UpdateCategoryCommandValidator, UpdateCategoryRequest, CategoryCreationData, CancellationToken, Fact (+12 more)
 
-### Community 18 - "@angular/core"
-Cohesion: 0.05
-Nodes (36): appConfig, DashboardComponent, Component, loaderInterceptor(), LoaderService, Injectable, AUTH_ERRORS, LoginComponent (+28 more)
+### Community 18 - "login.component.example.ts"
+Cohesion: 0.09
+Nodes (20): DashboardComponent, Component, ./dashboard/dashboard.component, FEATURES_ROUTES, permissionGuard(), AUTH_ERRORS, LoginComponent, Component (+12 more)
 
 ### Community 19 - "ITokenBlacklistService"
 Cohesion: 0.15
 Nodes (15): ITokenBlacklistService, HttpContext, RequestDelegate, Task, JwtBlacklistMiddleware, HttpContext, RequestDelegate, Task (+7 more)
 
 ### Community 20 - "inventory-movement-list.component.ts"
-Cohesion: 0.11
-Nodes (37): c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adalertcomponent, c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adappshellcomponent, c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adappshellnavitem, c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adbadgecomponent, c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adbrandlogocomponent, c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adbuttoncomponent, c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adcardcomponent, c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adconfirmservice (+29 more)
+Cohesion: 0.12
+Nodes (33): c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adalertcomponent, c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adappshellcomponent, c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adappshellnavitem, c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adbadgecomponent, c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adbrandlogocomponent, c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adbuttoncomponent, c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adcardcomponent, c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adconfirmservice (+25 more)
 
 ### Community 21 - "app.config.ts"
 Cohesion: 0.14
@@ -348,23 +354,23 @@ Nodes (25): createPR(), envVars, { execSync }, fs, getCurrentBranch(), getRepoIn
 
 ### Community 23 - "IAuthFinder"
 Cohesion: 0.11
-Nodes (21): IAuthFinder, ICacheService, IPermissionCacheService, IRefreshTokenRepository, IUserRepository, CancellationToken, Guid, HashSet (+13 more)
+Nodes (24): IAuthFinder, ICacheService, IPermissionCacheService, IRefreshTokenRepository, IUserRepository, CancellationToken, Guid, HashSet (+16 more)
 
 ### Community 24 - "LogoutCommand"
 Cohesion: 0.13
 Nodes (17): BlacklistTokenRequest, DateTime, LogoutCommand, DateTime, ErrorOr, Guid, Success, LogoutCommandHandler (+9 more)
 
 ### Community 25 - "2. Diseño de Backend (.NET 10 Onion Architecture & SQL Server 2022)"
-Cohesion: 0.19
-Nodes (14): 2. Diseño de Backend (.NET 10 Onion Architecture & SQL Server 2022), CreateCategoryCommand, ErrorOr, CreateCategoryCommandHandler, ErrorOr, CreateCategoryCommandValidator, CategoryResponse, DateTime (+6 more)
+Cohesion: 0.11
+Nodes (23): 2. Diseño de Backend (.NET 10 Onion Architecture & SQL Server 2022), CreateCategoryCommand, ErrorOr, CreateCategoryCommandHandler, CancellationToken, Error, ErrorOr, Task (+15 more)
 
 ### Community 26 - "Category"
-Cohesion: 0.10
-Nodes (19): Pregunta D.1: Cumplimiento de la Regla 7 de Redarbor y manejo de errores RFC 7807, Fase 1: Dominio y Persistencia (SQL Server 2022 sin FKs), DateTime, Error, ErrorOr, GeneratedRegex, Guid, Regex (+11 more)
+Cohesion: 0.09
+Nodes (24): Bloque D: Diseño Limpio (Paso de Objetos) y Casos de Borde, Pregunta D.1: Cumplimiento de la Regla 7 de Redarbor y manejo de errores RFC 7807, DateTime, Error, ErrorOr, GeneratedRegex, Guid, Regex (+16 more)
 
 ### Community 27 - ".Handle"
-Cohesion: 0.10
-Nodes (22): Tests.UnitTests.Core.Application.Features.Auth.Commands.Login, fluentvalidation_testhelper, LoginCommand, ErrorOr, LoginCommandHandler, CancellationToken, ErrorOr, Task (+14 more)
+Cohesion: 0.11
+Nodes (20): LoginCommand, ErrorOr, LoginCommandHandler, CancellationToken, ErrorOr, Task, LoginCommandValidator, Guid (+12 more)
 
 ### Community 28 - "Step 2: Backend Solution Scaffolding (.NET 10 Decoupled Onion Architecture)"
 Cohesion: 0.19
@@ -375,8 +381,8 @@ Cohesion: 0.11
 Nodes (12): Claim, SigningCredentials, GeneratedAccessToken, DateTime, GeneratedRefreshToken, IJwtProvider, AccessTokenMinutes, JwtTokenRequest (+4 more)
 
 ### Community 30 - "DeleteCategoryCommand"
-Cohesion: 0.17
-Nodes (15): DeleteCategoryCommand, Deleted, ErrorOr, Guid, DeleteCategoryCommandHandler, CancellationToken, Deleted, ErrorOr (+7 more)
+Cohesion: 0.33
+Nodes (5): DeleteCategoryCommand, Deleted, ErrorOr, Guid, DeleteCategoryCommandValidator
 
 ### Community 31 - "CreateInventoryMovementCommand"
 Cohesion: 0.19
@@ -395,12 +401,12 @@ Cohesion: 0.10
 Nodes (20): @angular/build, @angular/cli, @angular/compiler, @angular/compiler-cli, autoprefixer, jest, jest-environment-jsdom, jsdom (+12 more)
 
 ### Community 35 - "RefreshToken"
-Cohesion: 0.09
-Nodes (22): EntityTypeBuilder, RefreshTokenConfiguration, IEntityTypeConfiguration, DateTime, Guid, RefreshToken, CreatedAtUtc, ExpiresAtUtc (+14 more)
+Cohesion: 0.12
+Nodes (16): EntityTypeBuilder, RefreshTokenConfiguration, IEntityTypeConfiguration, DateTime, Guid, RefreshToken, CreatedAtUtc, ExpiresAtUtc (+8 more)
 
-### Community 36 - "ICategoryFinder"
-Cohesion: 0.09
-Nodes (24): 1.2 Alcance Acordado, 2. Tareas de Backend (.NET 10 CQRS + TDD), ICategoryFinder, CancellationToken, Guid, Task, PagedCategoriesResponse, IReadOnlyList (+16 more)
+### Community 36 - "GetCategoriesQuery"
+Cohesion: 0.11
+Nodes (19): CancellationToken, Guid, Task, PagedCategoriesResponse, IReadOnlyList, GetCategoriesQuery, ErrorOr, GetCategoriesQueryHandler (+11 more)
 
 ### Community 37 - "CacheService"
 Cohesion: 0.16
@@ -411,40 +417,44 @@ Cohesion: 0.13
 Nodes (11): c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adtoast, c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_adtoastcomponent, c_proyectos_prueba_computrabajo_ui_design_system_projects_ui_kit_src_public_api_toastvariant, LoginComponent, Component, ToastMessage, ToastVariant, NotificationService (+3 more)
 
 ### Community 39 - "IDomainEvent"
-Cohesion: 0.12
-Nodes (14): Guid, IDomainEvent, EventId, OccurredOnUtc, Guid, CategoryDeletedDomainEvent, Guid, ProductDeletedDomainEvent (+6 more)
+Cohesion: 0.10
+Nodes (16): Guid, IDomainEvent, EventId, OccurredOnUtc, Guid, CategoryCreatedDomainEvent, Guid, CategoryDeletedDomainEvent (+8 more)
 
-### Community 40 - "IProductRepository"
-Cohesion: 0.23
-Nodes (9): IProductRepository, CancellationToken, Guid, Task, AppDbContext, CancellationToken, Guid, Task (+1 more)
+### Community 40 - ".CreateConnection"
+Cohesion: 0.31
+Nodes (7): Pregunta E.1: Esquema `dbo.InventoryMovements`, CQRS Dual (EF Core + Dapper) e integridad cruzada con Productos, IDbConnection, AppDbContext, CancellationToken, Guid, Task, ProductRepository
 
 ### Community 41 - "Application.Common.Interfaces"
-Cohesion: 0.13
-Nodes (11): Infrastructure.Persistence.Infrastructure.Persistence.Configurations, Infrastructure.Persistence.Repositories, Application.Common.Interfaces, Infrastructure.Persistence.Finders, Domain.Entities, Infrastructure.Persistence.Configurations, dapper, microsoft_entityframeworkcore (+3 more)
+Cohesion: 0.12
+Nodes (11): Application.Features.Users.DTOs, Infrastructure.Persistence.Infrastructure.Persistence.Configurations, Infrastructure.Persistence.Repositories, Application.Common.Interfaces, Infrastructure.Persistence.Finders, Domain.Entities, Infrastructure.Persistence.Configurations, dapper (+3 more)
+
+### Community 42 - "CategoriesPageComponent"
+Cohesion: 0.09
+Nodes (12): 1. Estrategia de Entrega por Fases Secuenciales, Plan de Arquitectura e Implementación: US-001 - Catálogo de Categorías de Productos, 1. Contratos de Datos y API (Interface Definition), 3. Diseño de Frontend (Angular 22+ Zoneless & `@accionadev/ui-kit`), 4. Diseño de App Mobile, 5. Catálogo de Errores Semánticos (UI Error Translation), A. DTOs de Entrada (Request & Filter Models), B. DTOs de Salida (Response Models) (+4 more)
 
 ### Community 43 - "FeatureSummaryReportDto"
 Cohesion: 0.19
 Nodes (14): CancellationToken, DateTime, Guid, IDbConnection, IEnumerable, Task, FeatureReportRepository, FeatureSummaryReportDto (+6 more)
 
-### Community 44 - "AddCategoriesCatalog"
-Cohesion: 0.22
-Nodes (7): DateTime, Guid, MigrationBuilder, DateTime, Guid, ModelBuilder, AddCategoriesCatalog
+### Community 44 - "ICategoryFinder"
+Cohesion: 0.08
+Nodes (27): 1.1 Propósito y Valor en la Jerarquía, 1.2 Alcance Acordado, 1. Resumen Ejecutivo y Objetivos Clarificados, 2. Fases de Ejecución, Fase 1: Dominio y Persistencia (SQL Server 2022 sin FKs), Fase 2: Backend TDD Fase Roja (Failing Tests), Fase 3: Backend Implementación Fase Verde (Passing Tests), Fase 4: Frontend Contratos, Servicio y Registro Transversal (+19 more)
 
-### Community 45 - "program.example.cs"
+### Community 45 - "integration-endpoint-test.example.cs"
 Cohesion: 0.07
-Nodes (28): Web.API.Infrastructure, Infrastructure.Persistence.Seeding, Web.API.Services, Infrastructure.Shared, Infrastructure.Shared.Services, Infrastructure.Authentication, Web.API.HealthChecks, Web.API.Middlewares (+20 more)
+Nodes (28): Tests.IntegrationTests.Examples, Web.API.Infrastructure, Infrastructure.Persistence.Seeding, Web.API.Services, Infrastructure.Shared, Infrastructure.Shared.Services, Infrastructure.Authentication, Web.API.HealthChecks (+20 more)
 
 ### Community 46 - "AppDbContext"
 Cohesion: 0.15
 Nodes (12): DbContextOptions, DbSet, ModelBuilder, AppDbContext, Categories, InventoryMovements, Permissions, Products (+4 more)
 
 ### Community 47 - "ProductFinder"
-Cohesion: 0.24
-Nodes (8): Guid, ProductFilter, AppDbContext, CancellationToken, Guid, IQueryable, Task, ProductFinder
+Cohesion: 0.18
+Nodes (12): 1.1 Propósito y Valor en la Jerarquía, 1.2 Alcance Acordado, 1. Resumen Ejecutivo y Objetivos Clarificados, 3. Matriz de Decisiones Técnicas por Stack, 5. Checklist de Preparación para Especificación Técnica, Entrevista Técnica y de Negocio: Catálogo de Productos, AppDbContext, CancellationToken (+4 more)
 
-### Community 48 - "DeleteProductCommand"
-Cohesion: 0.21
-Nodes (14): DeleteProductCommand, Deleted, ErrorOr, Guid, DeleteProductCommandHandler, CancellationToken, Deleted, ErrorOr (+6 more)
+### Community 48 - "ProductCreationData"
+Cohesion: 0.12
+Nodes (20): DeleteProductCommand, Deleted, ErrorOr, Guid, DeleteProductCommandHandler, CancellationToken, Deleted, ErrorOr (+12 more)
 
 ### Community 49 - "schematics"
 Cohesion: 0.12
@@ -471,8 +481,8 @@ Cohesion: 0.13
 Nodes (15): devDependencies, @angular/build, @angular/cli, @angular/compiler-cli, autoprefixer, jest, jest-environment-jsdom, jest-preset-angular (+7 more)
 
 ### Community 55 - "mediatr"
-Cohesion: 0.07
-Nodes (24): application_attributes, application_features_items_queries_getitems, Application.Features.Items.DTOs, Application.Features.Auth.Events, Application.Features.Categories.Commands.UpdateCategory, Application.Features.Users.DTOs, Web.API.Attributes, Application.Features.Categories.Commands.DeleteCategory (+16 more)
+Cohesion: 0.11
+Nodes (15): Application.Features.Auth.Events, Web.API.Attributes, Application.Features.Auth.Queries.GetCurrentUser, Application.Features.Auth.Commands.Login, Web.API.Controllers, Application.Features.InventoryMovements.Queries.GetInventoryMovementById, Application.Features.InventoryMovements.DTOs, Application.Features.InventoryMovements.Queries.GetInventoryMovements (+7 more)
 
 ### Community 56 - "User"
 Cohesion: 0.15
@@ -482,21 +492,21 @@ Nodes (12): DateTime, Guid, User, CompanyId, CreatedAt, Email, IsActive, Name (+
 Cohesion: 0.23
 Nodes (5): IEnumerable, ValueObject, IEquatable, IEnumerable, ValueObject
 
-### Community 58 - ".CreateConnection"
-Cohesion: 0.32
-Nodes (6): IDbConnection, AppDbContext, CancellationToken, Guid, Task, CategoryRepository
+### Community 58 - "microsoft_aspnetcore_mvc"
+Cohesion: 0.15
+Nodes (14): application_abstractions_caching, application_attributes, application_features_items_queries_getitems, Application.Features.Items.DTOs, Tests.UnitTests.Presentation.Middlewares, Domain.Enums, Web.API.Middlewares, Tests.WebApi.Middlewares (+6 more)
 
 ### Community 59 - "RefreshToken"
 Cohesion: 0.17
 Nodes (10): RefreshToken, CreatedAt, ExpiresAt, Id, IsActive, IsUsed, ReplacedByTokenHash, RevokedAt (+2 more)
 
 ### Community 60 - "UpdateProductCommand"
-Cohesion: 0.21
+Cohesion: 0.20
 Nodes (15): UpdateProductCommand, ErrorOr, Guid, UpdateProductCommandHandler, CancellationToken, Error, ErrorOr, Task (+7 more)
 
 ### Community 61 - "AuthFinder"
-Cohesion: 0.27
-Nodes (8): UserIdentityDto, Guid, AppDbContext, CancellationToken, Guid, IReadOnlyList, Task, AuthFinder
+Cohesion: 0.42
+Nodes (6): AppDbContext, CancellationToken, Guid, IReadOnlyList, Task, AuthFinder
 
 ### Community 62 - "AuthService"
 Cohesion: 0.11
@@ -514,9 +524,9 @@ Nodes (31): 1. CAPA DOMAIN, 2. CAPA APPLICATION (Abstracciones y Atributos), 3. 
 Cohesion: 0.20
 Nodes (8): Guid, Role, Code, Description, Name, RoleCreationData, EntityTypeBuilder, RoleConfiguration
 
-### Community 66 - "ProductCreationData"
-Cohesion: 0.27
-Nodes (6): Guid, ProductCreationData, Fact, InlineData, Theory, ProductTests
+### Community 66 - "InventoryMovementsService"
+Cohesion: 0.22
+Nodes (7): CreateInventoryMovementRequest, InventoryMovementFilter, InventoryMovement, InventoryMovementType, PagedInventoryMovementsResponse, InventoryMovementsService, Injectable
 
 ### Community 67 - "dependencies"
 Cohesion: 0.18
@@ -528,23 +538,23 @@ Nodes (10): ICurrentUserContext, Email, IsAuthenticated, UserId, IHttpContextAcc
 
 ### Community 69 - ".AddAuthenticationInfrastructure"
 Cohesion: 0.17
-Nodes (7): IPasswordHasher, IServiceCollection, DependencyInjection, PasswordHasher, CancellationToken, Task, TokenBlacklistService
+Nodes (7): IPasswordHasher, IConfiguration, JwtProvider, AccessTokenMinutes, IServiceCollection, DependencyInjection, PasswordHasher
 
-### Community 71 - "products.service.ts"
-Cohesion: 0.18
-Nodes (8): CreateProductRequest, PagedProductsResponse, ProductFilter, Product, ProductUpdateCommand, UpdateProductRequest, ProductsService, Injectable
+### Community 71 - "rxjs"
+Cohesion: 0.15
+Nodes (11): rxjs, sampleMovement, sampleProduct, CreateProductRequest, PagedProductsResponse, ProductFilter, Product, ProductUpdateCommand (+3 more)
 
-### Community 72 - "Application.Features.Products.DTOs"
-Cohesion: 0.08
-Nodes (14): Application.Features.Products.Common, Application.Features.Products.Queries.GetProducts, Application.Features.Products.Commands.CreateProduct, Application.Common.Behaviors, Application.Features.Products.Commands.UpdateProduct, Application.Features.Products.DTOs, Application.Features.Products.Commands.DeleteProduct, Application.Features.Products.Queries.GetProductById (+6 more)
+### Community 72 - "Application.Features.Categories.DTOs"
+Cohesion: 0.11
+Nodes (9): Application.Features.Categories.Commands.UpdateCategory, Application.Features.Categories.Commands.DeleteCategory, Application.Common.Behaviors, Application.Features.Categories.DTOs, Application.Features.Categories.Queries.GetCategoryById, Application.Features.Categories.Queries.GetCategories, Application.Features.Categories.Commands.CreateCategory, fluentvalidation (+1 more)
 
 ### Community 73 - "InventoryMovement"
-Cohesion: 0.12
-Nodes (22): IDbTransaction, IInventoryMovementRepository, CancellationToken, Task, DateTime, Guid, InventoryMovement, CreatedAtUtc (+14 more)
+Cohesion: 0.15
+Nodes (19): IDbTransaction, DateTime, Guid, InventoryMovement, CreatedAtUtc, NewStock, PerformedByUserId, PreviousStock (+11 more)
 
 ### Community 74 - "ProductResponse"
-Cohesion: 0.13
-Nodes (19): Fase 2: Aplicación CQRS y TDD Rojo Backend, IProductFinder, CancellationToken, Guid, Task, PagedProductsResponse, IReadOnlyList, ProductResponse (+11 more)
+Cohesion: 0.09
+Nodes (30): Fase 2: Aplicación CQRS y TDD Rojo Backend, IProductFinder, CancellationToken, Guid, Task, PagedProductsResponse, IReadOnlyList, ProductResponse (+22 more)
 
 ### Community 75 - "domain-entities.example.cs"
 Cohesion: 0.13
@@ -558,17 +568,17 @@ Nodes (8): RolePermission, Role, Role, Code, Description, Name, RolePermissions,
 Cohesion: 0.31
 Nodes (7): CancellationToken, Fact, IPermissionCacheService, Mock, Task, AuthorizationMiddlewareTests, AuthorizationMiddleware
 
-### Community 78 - "FeatureListComponent"
-Cohesion: 0.17
-Nodes (7): FeatureListComponent, Component, 1. Filosofía: Specification-Driven Development (SDD) & UI Kit Centralizado, 2. Atomic Design Cross-Repo: Los Cuatro Niveles, 3. Tailwind CSS y Tokens Semánticos (`--ad-*`), 4. Convenciones de Componente Angular 22+, sdd-angular-manual.md — Manual de Desarrollo Frontend (Angular 22+ & `@accionadev/ui-kit`)
+### Community 78 - ".AddPersistenceInfrastructure"
+Cohesion: 0.15
+Nodes (12): IConfiguration, IServiceCollection, DependencyInjection, IUserFinder, CancellationToken, IReadOnlyList, Task, AppDbContext (+4 more)
 
-### Community 79 - "@angular/common"
-Cohesion: 0.05
-Nodes (25): CreateFeatureDto, FeatureDto, FeatureHttpService, Injectable, FeatureFilter, FeatureSignalStore, Injectable, ErrorHandlerService (+17 more)
+### Community 79 - "service-http.example.ts"
+Cohesion: 0.06
+Nodes (20): FeatureListComponent, Component, CreateFeatureDto, FeatureDto, FeatureHttpService, Injectable, FeatureFilter, FeatureSignalStore (+12 more)
 
-### Community 80 - "app-routes.example.ts"
-Cohesion: 0.12
-Nodes (14): routes, ./auth/auth.routes, ./dashboard/dashboard.component, ./features/features.routes, FEATURES_ROUTES, authGuard(), permissionGuard(), publicGuard() (+6 more)
+### Community 80 - "@angular/router"
+Cohesion: 0.07
+Nodes (23): ../components/feature-detail.component, ../components/feature-list.component, FEATURE_ROUTES, routes, ./auth/auth.routes, ./features/features.routes, authGuard(), publicGuard() (+15 more)
 
 ### Community 81 - "Web.API.csproj"
 Cohesion: 0.33
@@ -578,9 +588,9 @@ Nodes (5): Microsoft.AspNetCore.Authentication.JwtBearer (10.0.12), Swashbuckle.
 Cohesion: 0.18
 Nodes (10): Microsoft.AspNetCore.Mvc.Testing (10.0.12), net10.0, coverlet.collector (6.0.4), FluentAssertions (8.3.0), Microsoft.EntityFrameworkCore.InMemory (10.0.12), Microsoft.EntityFrameworkCore.Relational (10.0.12), Microsoft.NET.Test.Sdk (17.14.1), xunit (2.9.3) (+2 more)
 
-### Community 83 - ".GetPermissionNamesByUserIdAsync"
-Cohesion: 0.50
-Nodes (5): IAuthFinder, CancellationToken, Guid, IReadOnlyList, Task
+### Community 83 - "UserIdentityDto"
+Cohesion: 0.31
+Nodes (7): IAuthFinder, CancellationToken, Guid, IReadOnlyList, Task, UserIdentityDto, Guid
 
 ### Community 84 - ".GetPermissionsForUserAsync"
 Cohesion: 0.39
@@ -591,8 +601,8 @@ Cohesion: 0.39
 Nodes (6): HttpContext, ILogger, RequestDelegate, Task, GlobalExceptionHandlingMiddleware, ValidationException
 
 ### Community 86 - ".AddJwtAuthentication"
-Cohesion: 0.20
-Nodes (8): JwtBearerOptions, IConfiguration, IServiceCollection, CorsExtensions, IConfiguration, IServiceCollection, JwtExtensions, TokenValidationParameters
+Cohesion: 0.39
+Nodes (5): JwtBearerOptions, IConfiguration, IServiceCollection, JwtExtensions, TokenValidationParameters
 
 ### Community 87 - "Persistence.csproj"
 Cohesion: 0.20
@@ -614,25 +624,25 @@ Nodes (6): 1. Invocation & Pre-Conditions, 3. Quality Gate Checklist, Workflow: 
 Cohesion: 0.25
 Nodes (7): cli, analytics, packageManager, newProjectRoot, projects, $schema, version
 
-### Community 92 - "Entrevista Técnica y de Negocio: Catálogo de Categorías de Productos"
-Cohesion: 0.20
-Nodes (10): 1.1 Propósito y Valor en la Jerarquía, 1. Resumen Ejecutivo y Objetivos Clarificados, 3. Matriz de Decisiones Técnicas por Stack, 4. Criterios de Aceptación Refinados (Gherkin Enriquecido), 5. Checklist de Preparación para Especificación Técnica, Entrevista Técnica y de Negocio: Catálogo de Categorías de Productos, Escenario 1 — Registro exitoso de categoría con paginación actualizada (Camino feliz), Escenario 2 — Consulta paginada y filtrada por búsqueda y estado (Caso alternativo) (+2 more)
+### Community 92 - "2. Registro de Preguntas y Resoluciones Técnicas de Negocio"
+Cohesion: 0.12
+Nodes (16): 2. Registro de Preguntas y Resoluciones Técnicas de Negocio, 3. Matriz de Decisiones Técnicas por Stack, 4. Criterios de Aceptación Refinados (Gherkin Enriquecido), 5. Checklist de Preparación para Especificación Técnica, Bloque A: Dominio y Reglas de Negocio, Bloque B: Roles, Permisos y Seguridad (PBAC), Bloque C: Experiencia de Usuario (UX) e Interacción Visual, Bloque E: Persistencia, Integración y Migraciones (+8 more)
 
 ### Community 93 - "Skill: Angular Feature Development (Modern Angular + SDD + Atomic Design)"
 Cohesion: 0.05
 Nodes (30): A. Reactividad y APIs de Signals, B. Control Flow Nativo en Plantillas, C. Inyección de Dependencias, ✅ Checklist de Revisión Mandatorio (Quality Gate antes de Commit), D. Formularios Estrictamente Reactivos, ⚡ Directrices Técnicas de Angular 21+/22+ (Signal-First), E. Seguridad y Control de Acceso en UI, 📁 Ejemplos de Referencia (`examples/`) (+22 more)
 
 ### Community 94 - "Product"
-Cohesion: 0.12
-Nodes (18): DateTime, Error, GeneratedRegex, Guid, Regex, Product, CategoryId, CreatedAtUtc (+10 more)
+Cohesion: 0.07
+Nodes (30): Fase 1: Dominio y Permisos PBAC (.NET 10), ProductWriteSupport, DateTime, Error, ErrorOr, GeneratedRegex, Guid, Regex (+22 more)
 
 ### Community 95 - "ProductListComponent"
-Cohesion: 0.07
-Nodes (20): 1. Flujo de Interacción y Arquitectura, 2. Fases de Ejecución en `/feature-scaffold`, Fase 4: Presentación `Web.API` y Pruebas de Integración, Fase 5: Frontend Angular 22+ Zoneless, `@accionadev/ui-kit` y Jest TDD, Fase 6: Verificación Integral y Graphify, Plan de Arquitectura e Implementación: US-002 - Catálogo de Productos, 1. Contratos de Datos y API (Interface Definition), 3. Diseño de Frontend (Angular 22+ Zoneless & `@accionadev/ui-kit`) (+12 more)
+Cohesion: 0.06
+Nodes (21): 1. Flujo de Interacción y Arquitectura, 2. Fases de Ejecución en `/feature-scaffold`, Fase 4: Presentación `Web.API` y Pruebas de Integración, Fase 5: Frontend Angular 22+ Zoneless, `@accionadev/ui-kit` y Jest TDD, Fase 6: Verificación Integral y Graphify, Plan de Arquitectura e Implementación: US-002 - Catálogo de Productos, 1. Contratos de Datos y API (Interface Definition), 3. Diseño de Frontend (Angular 22+ Zoneless & `@accionadev/ui-kit`) (+13 more)
 
 ### Community 96 - "Permission"
-Cohesion: 0.17
-Nodes (9): A. Dominio (`src/backend/src/Core/Domain`), IReadOnlyList, Guid, Permission, Code, Name, PermissionCreationData, EntityTypeBuilder (+1 more)
+Cohesion: 0.14
+Nodes (11): A. Dominio (`src/backend/src/Core/Domain`), IReadOnlyList, Guid, Permission, Code, Name, PermissionCreationData, Guid (+3 more)
 
 ### Community 97 - "IAuditableEntity"
 Cohesion: 0.29
@@ -643,15 +653,15 @@ Cohesion: 0.10
 Nodes (20): 1. Misión y Principios Rectores, 2. Perfil Activo del Proyecto (Sellado en project-init), 3.1. Regla de Dependencia Concéntrica (Onion Architecture), 3.2. CQRS y MediatR, 3.3. Control de Errores y Validaciones, 3.4. Autorización y Seguridad Granular en Endpoints (RBAC Mandatorio), 3.5. Base de Datos y Persistencia, 3.6. Test-Driven Development (TDD Backend) (+12 more)
 
 ### Community 99 - "InventoryMovementCreationData"
-Cohesion: 0.14
-Nodes (9): InventoryMovementTypes, Error, ErrorOr, Guid, InventoryMovementCreationData, Fact, InlineData, Theory (+1 more)
+Cohesion: 0.18
+Nodes (8): Error, ErrorOr, Guid, InventoryMovementCreationData, Fact, InlineData, Theory, InventoryMovementTests
 
 ### Community 100 - "Entrevista Técnica y de Negocio: [Título de la Historia]"
 Cohesion: 0.18
 Nodes (11): 1.1 Propósito y Valor en la Jerarquía, 1.2 Alcance Acordado, 1. Resumen Ejecutivo y Objetivos Clarificados, 3. Matriz de Decisiones Técnicas por Stack, 4. Criterios de Aceptación Refinados (Gherkin Enriquecido), 5. Checklist de Preparación para Especificación Técnica, Entrevista Técnica y de Negocio: [Título de la Historia], Escenario 1 — Camino Feliz (Refinado) (+3 more)
 
 ### Community 101 - "IUnitOfWork"
-Cohesion: 0.20
+Cohesion: 0.19
 Nodes (16): CancellationToken, Task, IUnitOfWork, CreateProductCommand, ErrorOr, CreateProductCommandHandler, CancellationToken, ErrorOr (+8 more)
 
 ### Community 103 - "Application.csproj"
@@ -671,12 +681,12 @@ Cohesion: 0.24
 Nodes (8): src_frontend_src_app_core_config_error_messages, attachBearerToken(), isPublicAuthEndpoint(), notifyHttpError(), retryWithRefresh(), tokenInterceptor(), ErrorHandlerService, Injectable
 
 ### Community 107 - "B. Aplicación (`src/backend/src/Core/Application`)"
-Cohesion: 0.15
-Nodes (19): AbstractValidator, B. Aplicación (`src/backend/src/Core/Application`), 2. Tareas de Aplicación CQRS & TDD (.NET 10), CreateProductCommandValidator, DeleteProductCommandValidator, UpdateProductCommandValidator, GetProductByIdQuery, ErrorOr (+11 more)
+Cohesion: 0.13
+Nodes (14): AbstractValidator, 2. Diseño de Backend (.NET 10 Onion Architecture & SQL Server 2022), A. Dominio (`src/backend/src/Core/Domain`), B. Aplicación (`src/backend/src/Core/Application`), D. Presentación (`src/backend/src/Presentation/Web.API`), 2. Tareas de Aplicación CQRS & TDD (.NET 10), RefreshTokenCommandValidator, CreateProductCommandValidator (+6 more)
 
 ### Community 108 - "InventoryMovementListComponent"
-Cohesion: 0.08
-Nodes (15): 1. Flujo de Interacción y Arquitectura, 2. Fases de Ejecución en `/feature-scaffold`, Fase 1: Dominio y Permisos PBAC (.NET 10), Fase 4: Presentación `Web.API` y Pruebas de Integración, Fase 5: Frontend Angular 22+ Zoneless, `@accionadev/ui-kit` y Jest TDD, Fase 6: Verificación Integral y Graphify, Plan de Arquitectura e Implementación: US-003 - Movimientos de Inventario, 1. Tareas de Dominio & Permisos PBAC (.NET 10) (+7 more)
+Cohesion: 0.13
+Nodes (3): UiErrorMessage, InventoryMovementListComponent, Component
 
 ### Community 109 - "modal-shell.component.spec.ts"
 Cohesion: 0.40
@@ -735,20 +745,20 @@ Cohesion: 0.33
 Nodes (4): microsoft_openapi_models, OpenApiSecurityScheme, IServiceCollection, SwaggerExtensions
 
 ### Community 123 - "2. Registro de Preguntas y Resoluciones Técnicas de Negocio"
-Cohesion: 0.17
-Nodes (12): 2. Registro de Preguntas y Resoluciones Técnicas de Negocio, Bloque A: Dominio y Reglas de Negocio, Bloque B: Roles, Permisos y Seguridad (PBAC), Bloque C: Experiencia de Usuario (UX) e Interacción Visual, Bloque D: Casos de Borde, Excepciones y Resiliencia, Bloque E: Persistencia, Integración y Eventos, Pregunta A.1: Ciclo de vida del Stock entre creación, edición y movimientos de inventario, Pregunta A.2: Reglas de validación de Categoría y política de eliminación (+4 more)
+Cohesion: 0.25
+Nodes (8): 2. Registro de Preguntas y Resoluciones Técnicas de Negocio, Bloque B: Roles, Permisos y Seguridad (PBAC), Bloque C: Experiencia de Usuario (UX) e Interacción Visual, Bloque D: Casos de Borde, Excepciones y Resiliencia, Bloque E: Persistencia, Integración y Eventos, Pregunta B.1: Permisos PBAC y alcance Single-Tenant aplicables a Productos, Pregunta C.1: Flujo de pantalla `/products`, filtros y formularios con `@accionadev/ui-kit`, Pregunta D.1: Duplicidad de SKU, categoría inexistente/inactiva y bloqueo de borrado
 
 ### Community 129 - "ICategoryRepository"
 Cohesion: 0.11
-Nodes (20): 1. Tareas de Base de Datos & Dominio (.NET 10), ICategoryRepository, CancellationToken, Guid, Task, CancellationToken, Error, Task (+12 more)
+Nodes (23): IRequestHandler, Bloque A: Dominio y Reglas de Negocio, Pregunta A.1: Ciclo de vida del Stock entre creación, edición y movimientos de inventario, Pregunta A.2: Reglas de validación de Categoría y política de eliminación, Pregunta A.3: Gestión de rama base en Gitflow respecto al PR #2 de `US-001`, ICategoryRepository, CancellationToken, Guid (+15 more)
 
 ### Community 133 - ".Update"
 Cohesion: 0.29
 Nodes (12): CancellationToken, Guid, HasPermission, HttpDelete, HttpGet, HttpPost, HttpPut, IActionResult (+4 more)
 
 ### Community 134 - "AuthController"
-Cohesion: 0.20
-Nodes (14): GetCurrentUserQuery, ErrorOr, Guid, AllowAnonymous, Authorize, CancellationToken, DateTime, HttpGet (+6 more)
+Cohesion: 0.27
+Nodes (11): AllowAnonymous, Authorize, CancellationToken, DateTime, HttpGet, HttpPost, IActionResult, ISender (+3 more)
 
 ### Community 135 - "Guía Maestra de Operaciones: Metodología, Workflows y Skills (AGENTS.md)"
 Cohesion: 0.13
@@ -765,10 +775,6 @@ Nodes (13): 🏛️ Los 6 Pilares de Seguridad y Rendimiento Mandatorios, INotif
 ### Community 139 - "PermissionAuthorizationMiddleware"
 Cohesion: 0.24
 Nodes (10): AuthorizeAttribute, HasPermissionAttribute, Permission, CancellationToken, Guid, HttpContext, IReadOnlyList, RequestDelegate (+2 more)
-
-### Community 140 - "StorageService"
-Cohesion: 0.15
-Nodes (5): AUTH_ROUTES, authGuard(), publicGuard(), StorageService, Injectable
 
 ### Community 141 - "Regla: Control de Acceso Granular por Permisos Dinámicos (PBAC / RBAC Dinámico)"
 Cohesion: 0.15
@@ -802,9 +808,9 @@ Nodes (12): 2. Registro de Preguntas y Resoluciones Técnicas de Negocio, Bloque
 Cohesion: 0.18
 Nodes (9): 1. Herramientas de IA y Orquestación Utilizadas, 2. Fases de Aplicación de la IA, 3. Cómo se Revisó y Validó la Salida de la IA, Architecture Overview, Configuracion Inicial del Desarrollador, Declaración de Uso de IA, Orquestación y Validación (Requisito Redarbor), Default Seeded Credentials (Development Only), Redarbor Product Inventory Management System (+1 more)
 
-### Community 149 - "IDbConnectionFactory"
-Cohesion: 0.12
-Nodes (26): Migration, Pregunta E.1: Esquema `dbo.Products`, CQRS Dual (EF Core + Dapper) y enlace con Categorías, Fase 3: Infraestructura EF Core + Dapper + Migración SQL Server sin FKs, C. Infraestructura y Persistencia SQL Server (`src/backend/src/Infrastructure/Persistence`), 3. Tareas de Infraestructura SQL Server & Dapper (.NET 10), 1.2 Alcance Acordado, Pregunta A.1: Gestión de rama base en Gitflow respecto al PR #4 de `US-002`, Pregunta E.1: Esquema `dbo.InventoryMovements`, CQRS Dual (EF Core + Dapper) e integridad cruzada con Productos (+18 more)
+### Community 149 - "Products"
+Cohesion: 0.23
+Nodes (13): 1.2 Alcance Acordado, Fase 3: Infraestructura EF Core + Dapper + Migración SQL Server sin FKs, C. Infraestructura y Persistencia SQL Server (`src/backend/src/Infrastructure/Persistence`), 3. Tareas de Infraestructura SQL Server & Dapper (.NET 10), InventoryMovements, Permissions, Products, Roles (+5 more)
 
 ### Community 150 - "Skill: .NET Scaffold Skeleton (.NET 10 & C# 13 Decoupled Onion Architecture)"
 Cohesion: 0.18
@@ -826,9 +832,9 @@ Nodes (11): 1.1 Propósito y Valor en la Jerarquía, 1.2 Alcance Acordado, 1. Re
 Cohesion: 0.18
 Nodes (11): 2. Registro de Preguntas y Resoluciones Técnicas de Negocio, Bloque A: Dominio y Reglas de Negocio, Bloque B: Roles, Permisos y Seguridad (RBAC & RLS), Bloque C: Experiencia de Usuario (UX) e Interacción Visual, Bloque D: Casos de Borde, Excepciones y Resiliencia, Bloque E: Persistencia, Integración y Eventos, Pregunta A.1: [Enunciado de la pregunta de negocio/dominio], Pregunta B.1: [Enunciado sobre roles permitidos, permisos y alcance multi-tenant] (+3 more)
 
-### Community 155 - "feature-routes.example.ts"
-Cohesion: 0.33
-Nodes (5): ../components/feature-detail.component, ../components/feature-list.component, FEATURE_ROUTES, ref_core_constants, ref_core_guards
+### Community 155 - "2. Fases de Ejecución en `/feature-scaffold`"
+Cohesion: 0.14
+Nodes (12): 1. Flujo de Interacción y Arquitectura, 2. Fases de Ejecución en `/feature-scaffold`, Fase 1: Dominio y Permisos PBAC (.NET 10), Fase 4: Presentación `Web.API` y Pruebas de Integración, Fase 5: Frontend Angular 22+ Zoneless, `@accionadev/ui-kit` y Jest TDD, Fase 6: Verificación Integral y Graphify, Plan de Arquitectura e Implementación: US-003 - Movimientos de Inventario, 1. Tareas de Dominio & Permisos PBAC (.NET 10) (+4 more)
 
 ### Community 156 - "CacheService"
 Cohesion: 0.29
@@ -858,13 +864,13 @@ Nodes (6): BadRequestObjectResult, Error, IActionResult, List, ProblemDetails, A
 Cohesion: 0.29
 Nodes (6): HealthCheckContext, HealthCheckResult, IHealthCheck, CancellationToken, Task, DatabaseHealthCheck
 
-### Community 163 - "Entrevista Técnica y de Negocio: Catálogo de Productos"
-Cohesion: 0.18
-Nodes (11): 1.1 Propósito y Valor en la Jerarquía, 1.2 Alcance Acordado, 1. Resumen Ejecutivo y Objetivos Clarificados, 3. Matriz de Decisiones Técnicas por Stack, 4. Criterios de Aceptación Refinados (Gherkin Enriquecido), 5. Checklist de Preparación para Especificación Técnica, Entrevista Técnica y de Negocio: Catálogo de Productos, Escenario 1 — Creación de producto con categoría activa y stock inicial (Camino Feliz) (+3 more)
+### Community 163 - "4. Criterios de Aceptación Refinados (Gherkin Enriquecido)"
+Cohesion: 0.40
+Nodes (5): 4. Criterios de Aceptación Refinados (Gherkin Enriquecido), Escenario 1 — Creación de producto con categoría activa y stock inicial (Camino Feliz), Escenario 2 — Consulta paginada con filtros combinados e indicador de stock bajo, Escenario 3 — Validación de reglas de negocio e integridad lógica sin FKs (Excepciones), Escenario 4 — Protección PBAC de endpoints y acciones UI
 
 ### Community 164 - ".Update"
-Cohesion: 0.26
-Nodes (13): Fase 3: Backend Implementación Fase Verde (Passing Tests), CancellationToken, Guid, HasPermission, HttpDelete, HttpGet, HttpPost, HttpPut (+5 more)
+Cohesion: 0.29
+Nodes (12): CancellationToken, Guid, HasPermission, HttpDelete, HttpGet, HttpPost, HttpPut, IActionResult (+4 more)
 
 ### Community 165 - "IInventoryMovementFinder"
 Cohesion: 0.14
@@ -902,9 +908,9 @@ Nodes (12): PagedInventoryMovementsResponse, IReadOnlyList, GetInventoryMovement
 Cohesion: 0.22
 Nodes (6): 1. Posición en el Flujo de Artefactos, 2. Herramienta CLI: `interview-helper.mjs`, 3. Metodología de la Entrevista Socrática, 4. Recursos de Plantilla y Referencia (`resources/`), ✅ Checklist de Revisión Mandatorio (Quality Gate antes de Commit), Skill: Entrevistador Técnico y de Negocio (Socratic Interviewer)
 
-### Community 174 - "ApiController"
-Cohesion: 0.12
-Nodes (14): Error, ISender, List, ApiController, UsersController, ControllerBase, CancellationToken, HasPermission (+6 more)
+### Community 174 - ".GetAll"
+Cohesion: 0.22
+Nodes (8): CancellationToken, HasPermission, HttpGet, IActionResult, ISender, ProducesResponseType, Task, UsersController
 
 ### Community 175 - "2. Execution Steps"
 Cohesion: 0.25
@@ -914,17 +920,17 @@ Nodes (8): 2. Execution Steps, Phase 1: Database & Domain Layer, Phase 2: Backen
 Cohesion: 0.25
 Nodes (7): 1. Architectural Governance & Grounding, 2. Execution Steps, 3. Quality Gate Checklist, Step 1: User Story Formulation (Gherkin-Driven & 100% Business Language), Step 2: Publication to Jira Cloud, Step 3: Engineering Directory Scaffolding in Git, Workflow: User Story Authoring (`story-authoring.md`)
 
-### Community 177 - "2. Registro de Preguntas y Resoluciones Técnicas de Negocio"
-Cohesion: 0.22
-Nodes (9): 2. Registro de Preguntas y Resoluciones Técnicas de Negocio, Bloque A: Dominio y Reglas de Negocio, Bloque B: Roles, Permisos y Seguridad (PBAC), Bloque C: Experiencia de Usuario (UX) e Interacción Visual, Bloque D: Diseño Limpio (Paso de Objetos) y Casos de Borde, Bloque E: Persistencia, Integración y Migraciones, Pregunta A.1: Atributos de identidad, unicidad y eliminación de Categorías, Pregunta B.1: Permisos granulares PBAC y modelo de aislamiento Single-Tenant (+1 more)
+### Community 177 - ".GetPermissionsForUserAsync"
+Cohesion: 0.32
+Nodes (7): CancellationToken, Guid, HashSet, List, Task, TimeSpan, PermissionCacheService
 
 ### Community 178 - "Frontend"
 Cohesion: 0.25
 Nodes (7): Additional Resources, Building, Code scaffolding, Development server, Frontend, Running end-to-end tests, Running unit tests
 
 ### Community 179 - "InventoryMovementResponse"
-Cohesion: 0.34
-Nodes (8): CreateInventoryMovementCommandHandler, CancellationToken, ErrorOr, Guid, Task, InventoryMovementResponse, DateTime, Guid
+Cohesion: 0.19
+Nodes (14): 2. Diseño de Backend (.NET 10 Onion Architecture & SQL Server 2022), B. Aplicación (`src/backend/src/Core/Application`), D. Presentación (`src/backend/src/Presentation/Web.API`), IInventoryMovementRepository, CancellationToken, Task, CreateInventoryMovementCommandHandler, CancellationToken (+6 more)
 
 ### Community 180 - "Desglose de Tareas Técnicas (Tasks): [KEY] - [Título de la Funcionalidad]"
 Cohesion: 0.29
@@ -938,9 +944,9 @@ Nodes (5): 📁 Catálogo de Ejemplos (`examples/`), ✅ Checklist de Revisión 
 Cohesion: 0.33
 Nodes (6): DateTime, IAuditableEntity, CreatedAtUtc, CreatedBy, ModifiedAtUtc, ModifiedBy
 
-### Community 183 - "ProductUpdateData"
-Cohesion: 0.14
-Nodes (12): Fase 1: Dominio y Permisos PBAC (.NET 10), 2. Diseño de Backend (.NET 10 Onion Architecture & SQL Server 2022), D. Presentación (`src/backend/src/Presentation/Web.API`), 1. Tareas de Dominio & Permisos PBAC (.NET 10), ErrorOr, Updated, Guid, ProductCreatedDomainEvent (+4 more)
+### Community 183 - "InitialAuthMigration"
+Cohesion: 0.20
+Nodes (8): Migration, DateTime, Guid, MigrationBuilder, DateTime, Guid, ModelBuilder, InitialAuthMigration
 
 ### Community 184 - ".BlacklistTokenAsync"
 Cohesion: 0.47
@@ -959,32 +965,32 @@ Cohesion: 0.39
 Nodes (5): IRefreshTokenRepository, CancellationToken, Guid, IReadOnlyList, Task
 
 ### Community 189 - "Entrevista Técnica y de Negocio: Gestión de Movimientos de Inventario"
-Cohesion: 0.08
-Nodes (24): 1.1 Propósito y Valor en la Jerarquía, 1. Resumen Ejecutivo y Objetivos Clarificados, 3. Matriz de Decisiones Técnicas por Stack, 4. Criterios de Aceptación Refinados (Gherkin Enriquecido), 5. Checklist de Preparación para Especificación Técnica, Entrevista Técnica y de Negocio: Gestión de Movimientos de Inventario, Escenario 1 — Registro de Entrada y actualización inmediata del Stock del Producto (Camino Feliz), Escenario 2 — Registro de Salida válida, cálculo de alerta Stock Bajo y bloqueo posterior de borrado del Producto (Flujo Secundario) (+16 more)
+Cohesion: 0.10
+Nodes (18): 1.1 Propósito y Valor en la Jerarquía, 1. Resumen Ejecutivo y Objetivos Clarificados, 3. Matriz de Decisiones Técnicas por Stack, 4. Criterios de Aceptación Refinados (Gherkin Enriquecido), 5. Checklist de Preparación para Especificación Técnica, Entrevista Técnica y de Negocio: Gestión de Movimientos de Inventario, Escenario 1 — Registro de Entrada y actualización inmediata del Stock del Producto (Camino Feliz), Escenario 2 — Registro de Salida válida, cálculo de alerta Stock Bajo y bloqueo posterior de borrado del Producto (Flujo Secundario) (+10 more)
 
-### Community 198 - "Especificación Técnica: US-001 - Catálogo de Categorías de Productos"
-Cohesion: 0.25
-Nodes (8): 1. Contratos de Datos y API (Interface Definition), 3. Diseño de Frontend (Angular 22+ Zoneless & `@accionadev/ui-kit`), 4. Diseño de App Mobile, 5. Catálogo de Errores Semánticos (UI Error Translation), A. DTOs de Entrada (Request & Filter Models), B. DTOs de Salida (Response Models), C. Endpoints HTTP (RESTful RFC 7807 & PBAC), Especificación Técnica: US-001 - Catálogo de Categorías de Productos
-
-### Community 199 - "Desglose de Tareas Técnicas (Tasks): US-001 - Catálogo de Categorías de Productos"
+### Community 198 - "TokenBlacklistService"
 Cohesion: 0.29
-Nodes (3): 3. Tareas de Frontend (Angular 22+ Zoneless & `@accionadev/ui-kit`), 4. Cierre y Quality Gate, Desglose de Tareas Técnicas (Tasks): US-001 - Catálogo de Categorías de Productos
+Nodes (4): DateTime, CancellationToken, Task, TokenBlacklistService
 
-### Community 200 - "2. Fases de Ejecución"
-Cohesion: 0.29
-Nodes (7): 1. Estrategia de Entrega por Fases Secuenciales, 2. Fases de Ejecución, Fase 2: Backend TDD Fase Roja (Failing Tests), Fase 4: Frontend Contratos, Servicio y Registro Transversal, Fase 5: Frontend Smart Component, `@accionadev/ui-kit` y Jest TDD, Fase 6: Verificación Integral y Grafo de Conocimiento, Plan de Arquitectura e Implementación: US-001 - Catálogo de Categorías de Productos
+### Community 199 - "IProductRepository"
+Cohesion: 0.44
+Nodes (4): IProductRepository, CancellationToken, Guid, Task
+
+### Community 200 - "RefreshTokenRepository"
+Cohesion: 0.33
+Nodes (6): AppDbContext, CancellationToken, Guid, IReadOnlyList, Task, RefreshTokenRepository
 
 ### Community 201 - ".BuildModel"
 Cohesion: 0.33
 Nodes (5): ModelSnapshot, DateTime, Guid, ModelBuilder, AppDbContextModelSnapshot
 
 ### Community 202 - "2. Registro de Preguntas y Resoluciones Técnicas de Negocio"
-Cohesion: 0.20
-Nodes (10): 2. Registro de Preguntas y Resoluciones Técnicas de Negocio, Bloque A: Dominio y Reglas de Negocio, Bloque B: Roles, Permisos y Seguridad (PBAC), Bloque C: Experiencia de Usuario (UX) e Interacción Visual, Bloque D: Casos de Borde, Excepciones y Resiliencia, Bloque E: Persistencia, Integración y Eventos, Pregunta A.2: Tipos de movimiento, cálculo de saldos y estado del producto, Pregunta B.1: Permisos PBAC y alcance Single-Tenant aplicables a Movimientos de Inventario (+2 more)
+Cohesion: 0.22
+Nodes (9): 2. Registro de Preguntas y Resoluciones Técnicas de Negocio, Bloque A: Dominio y Reglas de Negocio, Bloque C: Experiencia de Usuario (UX) e Interacción Visual, Bloque D: Casos de Borde, Excepciones y Resiliencia, Bloque E: Persistencia, Integración y Eventos, Pregunta A.1: Gestión de rama base en Gitflow respecto al PR #4 de `US-002`, Pregunta A.2: Tipos de movimiento, cálculo de saldos y estado del producto, Pregunta C.1: Flujo de pantalla `/inventory-movements`, filtros de fecha y modal de registro con `@accionadev/ui-kit` (+1 more)
 
-### Community 203 - "Pregunta E.1: Estrategia híbrida EF Core Lectura / Dapper Escritura en SQL Server 2022"
-Cohesion: 0.40
-Nodes (5): Pregunta E.1: Estrategia híbrida EF Core Lectura / Dapper Escritura en SQL Server 2022, Guid, CategoryCreatedDomainEvent, Guid, CategoryUpdatedDomainEvent
+### Community 203 - "ApiController"
+Cohesion: 0.29
+Nodes (6): Error, ISender, List, ApiController, UsersController, ControllerBase
 
 ### Community 205 - "scripts"
 Cohesion: 0.29
@@ -998,33 +1004,45 @@ Nodes (3): IConfiguration, IServiceCollection, CorsExtensions
 Cohesion: 0.50
 Nodes (3): @angular/platform-browser, ref_app_app, ref_app_app_config
 
-### Community 209 - ".BuildTargetModel"
-Cohesion: 0.50
-Nodes (3): DateTime, Guid, ModelBuilder
+### Community 209 - "IDbConnectionFactory"
+Cohesion: 0.16
+Nodes (14): Pregunta E.1: Estrategia híbrida EF Core Lectura / Dapper Escritura en SQL Server 2022, Pregunta E.1: Esquema `dbo.Products`, CQRS Dual (EF Core + Dapper) y enlace con Categorías, Fase 3: Infraestructura EF Core + Dapper + Migración SQL Server sin FKs, C. Infraestructura y Persistencia SQL Server (`src/backend/src/Infrastructure/Persistence`), 3. Tareas de Infraestructura SQL Server & Dapper (.NET 10), IDbConnectionFactory, Categories, DateTime (+6 more)
 
 ### Community 210 - ".BuildTargetModel"
 Cohesion: 0.50
 Nodes (3): DateTime, Guid, ModelBuilder
 
+### Community 214 - ".AddCorsInfrastructure"
+Cohesion: 0.47
+Nodes (3): IConfiguration, IServiceCollection, CorsExtensions
+
+### Community 215 - ".AddExternalServicesInfrastructure"
+Cohesion: 0.50
+Nodes (3): IConfiguration, IServiceCollection, DependencyInjection
+
+### Community 216 - "GetCurrentUserQuery"
+Cohesion: 0.67
+Nodes (3): GetCurrentUserQuery, ErrorOr, Guid
+
 ## Knowledge Gaps
 - **678 isolated node(s):** `ItemId`, `ItemCode`, `ItemName`, `TotalTransactions`, `TotalAmount` (+673 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1240 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **24 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1241 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **27 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `@angular/core` connect `@angular/core` to `package.json`, `NotificationService`, `products.service.ts`, `auth.service.ts`, `token.interceptor.ts`, `AuthService`, `StorageService`, `modal-shell.component.spec.ts`, `@angular/common`, `app-routes.example.ts`, `inventory-movement-list.component.ts`, `app.config.ts`, `Skill: Angular Feature Development (Modern Angular + SDD + Atomic Design)`, `NotificationService`?**
-  _High betweenness centrality (0.123) - this node is a cross-community bridge._
+- **Why does `@angular/core` connect `@angular/core` to `@angular/common`, `package.json`, `NotificationService`, `rxjs`, `token.interceptor.ts`, `modal-shell.component.spec.ts`, `service-http.example.ts`, `@angular/router`, `login.component.example.ts`, `LoaderService`, `app.config.ts`, `inventory-movement-list.component.ts`, `Skill: Angular Feature Development (Modern Angular + SDD + Atomic Design)`, `NotificationService`?**
+  _High betweenness centrality (0.127) - this node is a cross-community bridge._
 - **Why does `IRepository` connect `IRepository` to `4. Backend (.NET 10 & C# 13 — Onion Architecture)`, `Entrevista Técnica y de Negocio: Configuración de Límites de Almacenamiento por Organización`, `Entrevista Técnica y de Negocio: [Título de la Historia]`, `Guía Maestra de Operaciones: Metodología, Workflows y Skills (AGENTS.md)`, `Skill: Generador de Especificaciones Técnicas (SDD Breakdown)`, `🏛️ Reglas Arquitectónicas Mandatorias de Feature`, `2. Execution Steps`, `Project Profile: Redarbor Product Inventory Management System`, `3. Execution Steps`, `User`, `Desglose de Tareas Técnicas (Tasks): [KEY] - [Título de la Funcionalidad]`, `Redarbor Product Inventory Management System`, `IAuthFinder`, `Skill: Creador de Historias de Usuario (Jira Cloud & Gherkin Driven)`, `2. Registro de Preguntas y Resoluciones Técnicas de Negocio`, `2. Fases de Ejecución`?**
   _High betweenness centrality (0.111) - this node is a cross-community bridge._
-- **Why does `ProductsService` connect `products.service.ts` to `Entrevista Técnica y de Negocio: Catálogo de Productos`, `auth.service.ts`, `inventory-movement-list.component.ts`, `Entrevista Técnica y de Negocio: Gestión de Movimientos de Inventario`, `ProductListComponent`?**
-  _High betweenness centrality (0.106) - this node is a cross-community bridge._
+- **Why does `ProductsService` connect `rxjs` to `@angular/core`, `ProductFinder`, `inventory-movement-list.component.ts`, `Entrevista Técnica y de Negocio: Gestión de Movimientos de Inventario`, `ProductListComponent`?**
+  _High betweenness centrality (0.101) - this node is a cross-community bridge._
 - **What connects `ItemId`, `ItemCode`, `ItemName` to the rest of the system?**
   _678 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `@angular/common` be split into smaller, more focused modules?**
+  _Cohesion score 0.05426356589147287 - nodes in this community are weakly interconnected._
 - **Should `AuthTokensResponse` be split into smaller, more focused modules?**
-  _Cohesion score 0.06126126126126126 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07219662058371736 - nodes in this community are weakly interconnected._
 - **Should `CreateItemCommand` be split into smaller, more focused modules?**
-  _Cohesion score 0.08658536585365853 - nodes in this community are weakly interconnected._
-- **Should `new-story.mjs` be split into smaller, more focused modules?**
-  _Cohesion score 0.0975609756097561 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07822410147991543 - nodes in this community are weakly interconnected._
