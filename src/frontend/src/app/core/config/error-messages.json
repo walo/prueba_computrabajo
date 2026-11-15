@@ -1,0 +1,11 @@
+{
+  "ERRORS": {
+    "DEFAULT": "Se produjo un error inesperado al procesar la solicitud.",
+    "Entity.NotFound": "El registro con identificador {id} no fue encontrado.",
+    "Entity.DuplicateCode": "El código {code} ya se encuentra registrado en el sistema.",
+    "Entity.InvalidState": "El registro no permite esta operación en su estado actual.",
+    "User.DuplicateEmail": "El correo electrónico {email} ya se encuentra en uso.",
+    "Auth.InvalidCredentials": "Las credenciales ingresadas son incorrectas.",
+    "Auth.Forbidden": "No tienes los permisos requeridos para acceder a este recurso."
+  }
+}

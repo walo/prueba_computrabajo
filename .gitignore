@@ -1,0 +1,28 @@
+# Environment variables / Credentials
+.env
+.env*.local
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+bin/
+obj/
+out-tsc/
+.angular/
+coverage/
+TestResults/
+
+# IDE & OS
+.vscode/
+.vs/
+.idea/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+*.log
+
+# Graphify Cache
+graphify-out/cache/

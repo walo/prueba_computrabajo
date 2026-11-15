@@ -1,0 +1,54 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "target": "ES2022",
+    "module": "preserve",
+    "paths": {
+      "@accionadev/ui-kit": [
+        "./../../../ui-design-system/projects/ui-kit/src/public-api.ts"
+      ],
+      "@angular/core/rxjs-interop": [
+        "./node_modules/@angular/core/types/rxjs-interop.d.ts",
+        "./node_modules/@angular/core/fesm2022/rxjs-interop.mjs"
+      ],
+      "@angular/*": [
+        "./node_modules/@angular/*"
+      ],
+      "lucide": [
+        "./node_modules/lucide"
+      ],
+      "rxjs": [
+        "./node_modules/rxjs"
+      ],
+      "rxjs/*": [
+        "./node_modules/rxjs/*"
+      ],
+      "tslib": [
+        "./node_modules/tslib"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ]
+}

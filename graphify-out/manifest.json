@@ -1,0 +1,1424 @@
+{
+  ".agents/skills/be-database-sp/examples/dapper-caller.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "73b6c220eac3595d41f62684b54164a5",
+    "semantic_hash": "73b6c220eac3595d41f62684b54164a5"
+  },
+  ".agents/skills/be-database-sp/examples/function-template.example.sql": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "4afda18d60aba55815e787a32b1d8eec",
+    "semantic_hash": "4afda18d60aba55815e787a32b1d8eec"
+  },
+  ".agents/skills/be-dotnet-feature/examples/command-and-handler.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "b13bfd2ae4a4c9bf06cce4aee2a53162",
+    "semantic_hash": "b13bfd2ae4a4c9bf06cce4aee2a53162"
+  },
+  ".agents/skills/be-dotnet-feature/examples/command-validator.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "fa3da871e06b5c28e7e7a43c1e63c80d",
+    "semantic_hash": "fa3da871e06b5c28e7e7a43c1e63c80d"
+  },
+  ".agents/skills/be-dotnet-feature/examples/feature-controller.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "dca7f3b28dd1d1ca45cad53542a25589",
+    "semantic_hash": "dca7f3b28dd1d1ca45cad53542a25589"
+  },
+  ".agents/skills/be-dotnet-feature/examples/query-and-finder.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "1323049b5e3ff90222ecf8692939cc8d",
+    "semantic_hash": "1323049b5e3ff90222ecf8692939cc8d"
+  },
+  ".agents/skills/be-dotnet-scaffold/examples/cascaron/application-abstractions.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "e3620f72e2cfebd1cfc9893036ff76b2",
+    "semantic_hash": "e3620f72e2cfebd1cfc9893036ff76b2"
+  },
+  ".agents/skills/be-dotnet-scaffold/examples/cascaron/application-auth-commands.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "eb8444de0cb6a9b63e31294509484d00",
+    "semantic_hash": "eb8444de0cb6a9b63e31294509484d00"
+  },
+  ".agents/skills/be-dotnet-scaffold/examples/cascaron/application-behaviors.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "abb9790b7662f5ac3c971a073a34f763",
+    "semantic_hash": "abb9790b7662f5ac3c971a073a34f763"
+  },
+  ".agents/skills/be-dotnet-scaffold/examples/cascaron/cors-infrastructure.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "85b1cd69b58f3f77c3ea24bd31a12115",
+    "semantic_hash": "85b1cd69b58f3f77c3ea24bd31a12115"
+  },
+  ".agents/skills/be-dotnet-scaffold/examples/cascaron/dependency-injection.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "7212ce3ba7f4f87d8901b764d2f7ea35",
+    "semantic_hash": "7212ce3ba7f4f87d8901b764d2f7ea35"
+  },
+  ".agents/skills/be-dotnet-scaffold/examples/cascaron/domain-entities.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "c2ec3db32a2bb07805f320d6a067a6c4",
+    "semantic_hash": "c2ec3db32a2bb07805f320d6a067a6c4"
+  },
+  ".agents/skills/be-dotnet-scaffold/examples/cascaron/domain-primitives.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "c911eecaedbd6b547b5cbde982d76fe7",
+    "semantic_hash": "c911eecaedbd6b547b5cbde982d76fe7"
+  },
+  ".agents/skills/be-dotnet-scaffold/examples/cascaron/infrastructure-auth.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "df0de9ed67dfb96a70a8cb8325e7f00e",
+    "semantic_hash": "df0de9ed67dfb96a70a8cb8325e7f00e"
+  },
+  ".agents/skills/be-dotnet-scaffold/examples/cascaron/infrastructure-caching.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "33a81d52f8cd4ee5bf1d6f4d1bee8b9a",
+    "semantic_hash": "33a81d52f8cd4ee5bf1d6f4d1bee8b9a"
+  },
+  ".agents/skills/be-dotnet-scaffold/examples/cascaron/infrastructure-persistence.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "583ffc8471a6a29a4f171bd3188f98eb",
+    "semantic_hash": "583ffc8471a6a29a4f171bd3188f98eb"
+  },
+  ".agents/skills/be-dotnet-scaffold/examples/cascaron/program.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "113d7e9c51ba3c2429267249fe99601a",
+    "semantic_hash": "113d7e9c51ba3c2429267249fe99601a"
+  },
+  ".agents/skills/be-dotnet-scaffold/examples/cascaron/webapi-controllers.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "4409355695f0c94408e7b816420abf8b",
+    "semantic_hash": "4409355695f0c94408e7b816420abf8b"
+  },
+  ".agents/skills/be-dotnet-scaffold/examples/cascaron/webapi-middlewares.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "e54bda4766cd08da1b0f8a4b1fe035fe",
+    "semantic_hash": "e54bda4766cd08da1b0f8a4b1fe035fe"
+  },
+  ".agents/skills/be-dotnet-test/examples/handler-unit-test.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "2aee2447414be3b7d20662c6486d47fe",
+    "semantic_hash": "2aee2447414be3b7d20662c6486d47fe"
+  },
+  ".agents/skills/be-dotnet-test/examples/integration-endpoint-test.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "c4b64e05f9e6003b1336111ea441b5dd",
+    "semantic_hash": "c4b64e05f9e6003b1336111ea441b5dd"
+  },
+  ".agents/skills/be-dotnet-test/examples/security-middleware-test.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "49a46709db878edf3b72025982ef045b",
+    "semantic_hash": "49a46709db878edf3b72025982ef045b"
+  },
+  ".agents/skills/be-dotnet-test/examples/validator-unit-test.example.cs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "ac66b00e2b674c3e4713f748e86d8839",
+    "semantic_hash": "ac66b00e2b674c3e4713f748e86d8839"
+  },
+  ".agents/skills/fe-angular-feature/examples/feature-routes.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "7acd60d4bf2abad3a8ef65b63279b667",
+    "semantic_hash": "7acd60d4bf2abad3a8ef65b63279b667"
+  },
+  ".agents/skills/fe-angular-feature/examples/feature-smart-component.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "ca16d327635cd89626398c3c0da29730",
+    "semantic_hash": "ca16d327635cd89626398c3c0da29730"
+  },
+  ".agents/skills/fe-angular-feature/examples/service-http.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "8ff0a4062c3a51a7bc8b50719fbc6c7d",
+    "semantic_hash": "8ff0a4062c3a51a7bc8b50719fbc6c7d"
+  },
+  ".agents/skills/fe-angular-feature/examples/signal-store.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "286e0a305713c1e60798f8847189c1b2",
+    "semantic_hash": "286e0a305713c1e60798f8847189c1b2"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/api-response.model.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "10534941bd0cc8100ede8c1efc1ec8a7",
+    "semantic_hash": "10534941bd0cc8100ede8c1efc1ec8a7"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/app-config.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "9d1f813b433ff1c70e62e3374acbd217",
+    "semantic_hash": "9d1f813b433ff1c70e62e3374acbd217"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/app-routes.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "76072d03ad0574d240709b1bf81a8150",
+    "semantic_hash": "76072d03ad0574d240709b1bf81a8150"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/auth.service.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "dfe9798b8069fe6628c2ae7e56f8899e",
+    "semantic_hash": "dfe9798b8069fe6628c2ae7e56f8899e"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/dashboard.component.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "c44609f003bb0fbe06032a4c85b3234b",
+    "semantic_hash": "c44609f003bb0fbe06032a4c85b3234b"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/environment.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "696ec59129a606ec281d64406459ae9e",
+    "semantic_hash": "696ec59129a606ec281d64406459ae9e"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/error-handler.service.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "5d6f2a4efcceeb4a57f031f452d1e06e",
+    "semantic_hash": "5d6f2a4efcceeb4a57f031f452d1e06e"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/error-mapper.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "582330025fdf046f092d7361a0954a6e",
+    "semantic_hash": "582330025fdf046f092d7361a0954a6e"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/error-messages.example.json": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "22783dbc8033e11691406a5843315a1d",
+    "semantic_hash": "22783dbc8033e11691406a5843315a1d"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/feature-redirect.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "40c68d6a8c002b8479076df0ff7bf836",
+    "semantic_hash": "40c68d6a8c002b8479076df0ff7bf836"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/features-routes.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "efc9c35db090e06a77d894272fae83cb",
+    "semantic_hash": "efc9c35db090e06a77d894272fae83cb"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/guards.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "e3e20cddfbf0c4d28ae7956d6fdf7f5d",
+    "semantic_hash": "e3e20cddfbf0c4d28ae7956d6fdf7f5d"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/loader.component.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "6f7c63963e3166d3221d96195e9cc7b0",
+    "semantic_hash": "6f7c63963e3166d3221d96195e9cc7b0"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/loader.interceptor.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "cc977867a34f61f1c182c520b6cd3899",
+    "semantic_hash": "cc977867a34f61f1c182c520b6cd3899"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/loader.service.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "0cdace9cffc20d3c32c8df3bdcdfb011",
+    "semantic_hash": "0cdace9cffc20d3c32c8df3bdcdfb011"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/loading.utils.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "56223d448293bea968a3872b2f8ed80c",
+    "semantic_hash": "56223d448293bea968a3872b2f8ed80c"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/login.component.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "3a6932ae3cb35bf01aa35113d65cb4a7",
+    "semantic_hash": "3a6932ae3cb35bf01aa35113d65cb4a7"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/main.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "834fa56383e7db8c0e97b628aa38bb17",
+    "semantic_hash": "834fa56383e7db8c0e97b628aa38bb17"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/notification.service.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "65c3805ab7be0d50fac106d29d1ea872",
+    "semantic_hash": "65c3805ab7be0d50fac106d29d1ea872"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/permissions.constants.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "ad2bf0b59db15ba74c8c4c6f20fab4eb",
+    "semantic_hash": "ad2bf0b59db15ba74c8c4c6f20fab4eb"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/shell.component.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "8414725e4bbf9237988aba33e53bb80a",
+    "semantic_hash": "8414725e4bbf9237988aba33e53bb80a"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/status-page.component.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "9f25c394dffa376850e1cf825922a350",
+    "semantic_hash": "9f25c394dffa376850e1cf825922a350"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/storage.service.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "41ed28a0efbe167f66787d70e4175b3b",
+    "semantic_hash": "41ed28a0efbe167f66787d70e4175b3b"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/tailwind.config.example.js": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "5517e22a8a6aace7adeadf3a086db485",
+    "semantic_hash": "5517e22a8a6aace7adeadf3a086db485"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/toast-container.component.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "6db7d54231f4e6dee16d7ebe8e814d92",
+    "semantic_hash": "6db7d54231f4e6dee16d7ebe8e814d92"
+  },
+  ".agents/skills/fe-angular-scaffold/examples/cascaron/token.interceptor.example.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "59f49319f48ac358884c82cc62e5e71a",
+    "semantic_hash": "59f49319f48ac358884c82cc62e5e71a"
+  },
+  ".agents/skills/fe-angular-test/examples/button.component.spec.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "3fe0ca1294e5b62fe1da8e71a1f6152d",
+    "semantic_hash": "3fe0ca1294e5b62fe1da8e71a1f6152d"
+  },
+  ".agents/skills/fe-angular-test/examples/modal-shell.component.spec.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "572522c2525fe6619552be2fa19ea4e9",
+    "semantic_hash": "572522c2525fe6619552be2fa19ea4e9"
+  },
+  ".agents/skills/fe-angular-test/examples/notification.service.spec.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "5362dce934644fc11896616a5a207535",
+    "semantic_hash": "5362dce934644fc11896616a5a207535"
+  },
+  ".agents/skills/fe-angular-test/examples/service-http.spec.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "87bab0ae68ddf8ffe46035ebd4629b34",
+    "semantic_hash": "87bab0ae68ddf8ffe46035ebd4629b34"
+  },
+  ".agents/skills/fe-angular-test/examples/store-signal.spec.ts": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "d8b539cbee0f0fbea87b6497f31e65fa",
+    "semantic_hash": "d8b539cbee0f0fbea87b6497f31e65fa"
+  },
+  ".agents/skills/ops-github-gitflow/github_client.js": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "065bf1a040e0617ddd012f3b30f2098c",
+    "semantic_hash": "065bf1a040e0617ddd012f3b30f2098c"
+  },
+  ".agents/skills/req-jira/jira_client.js": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "a53dc52cff967b22dfe1f9094d9fa4c8",
+    "semantic_hash": "a53dc52cff967b22dfe1f9094d9fa4c8"
+  },
+  ".agents/skills/req-user-story-creator/scripts/new-story.mjs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "10d69ce6a06fe919adc6e648bddcf329",
+    "semantic_hash": "10d69ce6a06fe919adc6e648bddcf329"
+  },
+  ".agents/skills/req-user-story-interviewer/scripts/interview-helper.mjs": {
+    "mtime": 1794649984.0,
+    "seen": 1794713364.9242911,
+    "ast_hash": "e02f4954f64b211b6972df8f69d7eda6",
+    "semantic_hash": "e02f4954f64b211b6972df8f69d7eda6"
+  },
+  "link-agents.ps1": {
+    "mtime": 1794712037.4770925,
+    "seen": 1794713364.9242911,
+    "ast_hash": "252cf1262bb356fd9dc37cb0a6a059ce",
+    "semantic_hash": "252cf1262bb356fd9dc37cb0a6a059ce"
+  },
+  "src/backend/EnterpriseApp.sln": {
+    "mtime": 1794712095.5783584,
+    "seen": 1794713364.9242911,
+    "ast_hash": "02d92aad70347216550e1c34be9b38c3",
+    "semantic_hash": "02d92aad70347216550e1c34be9b38c3"
+  },
+  "src/backend/src/Core/Application/Application.csproj": {
+    "mtime": 1794712249.504374,
+    "seen": 1794713364.9242911,
+    "ast_hash": "86593d9f1827087320c275e500e16c8a",
+    "semantic_hash": "86593d9f1827087320c275e500e16c8a"
+  },
+  "src/backend/src/Core/Application/Common/Behaviors/ValidationBehavior.cs": {
+    "mtime": 1794712590.3488753,
+    "seen": 1794713364.9242911,
+    "ast_hash": "206e73b668d5eb05855e3113e777167d",
+    "semantic_hash": "206e73b668d5eb05855e3113e777167d"
+  },
+  "src/backend/src/Core/Application/Common/Interfaces/BlacklistTokenRequest.cs": {
+    "mtime": 1794712301.5710514,
+    "seen": 1794713364.9242911,
+    "ast_hash": "3303eace917a7f000f31e40cd0b5b88e",
+    "semantic_hash": "3303eace917a7f000f31e40cd0b5b88e"
+  },
+  "src/backend/src/Core/Application/Common/Interfaces/CacheSetRequest.cs": {
+    "mtime": 1794712298.0305724,
+    "seen": 1794713364.9242911,
+    "ast_hash": "9f55730817f6fb05012cac003c1a3aab",
+    "semantic_hash": "9f55730817f6fb05012cac003c1a3aab"
+  },
+  "src/backend/src/Core/Application/Common/Interfaces/GeneratedAccessToken.cs": {
+    "mtime": 1794712293.5616465,
+    "seen": 1794713364.9242911,
+    "ast_hash": "af8f985721f9e8ccf429467cc9c0addb",
+    "semantic_hash": "af8f985721f9e8ccf429467cc9c0addb"
+  },
+  "src/backend/src/Core/Application/Common/Interfaces/GeneratedRefreshToken.cs": {
+    "mtime": 1794712294.6228573,
+    "seen": 1794713364.9242911,
+    "ast_hash": "e59d449a7bafd1bc115d3a16922a67a4",
+    "semantic_hash": "e59d449a7bafd1bc115d3a16922a67a4"
+  },
+  "src/backend/src/Core/Application/Common/Interfaces/IAuthFinder.cs": {
+    "mtime": 1794712310.238703,
+    "seen": 1794713364.9242911,
+    "ast_hash": "7da4a02e5728329d1eb55f6aeab55be5",
+    "semantic_hash": "7da4a02e5728329d1eb55f6aeab55be5"
+  },
+  "src/backend/src/Core/Application/Common/Interfaces/ICacheService.cs": {
+    "mtime": 1794712299.482282,
+    "seen": 1794713364.9242911,
+    "ast_hash": "4e74964b97b3af720567ca4d9a400458",
+    "semantic_hash": "4e74964b97b3af720567ca4d9a400458"
+  },
+  "src/backend/src/Core/Application/Common/Interfaces/ICurrentUserContext.cs": {
+    "mtime": 1794712303.9258456,
+    "seen": 1794713364.9242911,
+    "ast_hash": "5bcdaf3786d3c1b1c673022db89639d5",
+    "semantic_hash": "5bcdaf3786d3c1b1c673022db89639d5"
+  },
+  "src/backend/src/Core/Application/Common/Interfaces/IDateTimeProvider.cs": {
+    "mtime": 1794712304.9741664,
+    "seen": 1794713364.9242911,
+    "ast_hash": "5b78277f82f61d608cd6c26c550f3435",
+    "semantic_hash": "5b78277f82f61d608cd6c26c550f3435"
+  },
+  "src/backend/src/Core/Application/Common/Interfaces/IDbConnectionFactory.cs": {
+    "mtime": 1794712306.4156399,
+    "seen": 1794713364.9242911,
+    "ast_hash": "1bdf637586d5c0ea64f473ac1b636e0d",
+    "semantic_hash": "1bdf637586d5c0ea64f473ac1b636e0d"
+  },
+  "src/backend/src/Core/Application/Common/Interfaces/IJwtProvider.cs": {
+    "mtime": 1794712295.6239562,
+    "seen": 1794713364.9242911,
+    "ast_hash": "637e6ed47369e1dd6671aa8cba61b801",
+    "semantic_hash": "637e6ed47369e1dd6671aa8cba61b801"
+  },
+  "src/backend/src/Core/Application/Common/Interfaces/IPasswordHasher.cs": {
+    "mtime": 1794712296.6448307,
+    "seen": 1794713364.9242911,
+    "ast_hash": "315a384f1bd479c9b168c3698be2227f",
+    "semantic_hash": "315a384f1bd479c9b168c3698be2227f"
+  },
+  "src/backend/src/Core/Application/Common/Interfaces/IPermissionCacheService.cs": {
+    "mtime": 1794712300.4258945,
+    "seen": 1794713364.9242911,
+    "ast_hash": "e786b945a182f451fdc24bcd3c1f1ef8",
+    "semantic_hash": "e786b945a182f451fdc24bcd3c1f1ef8"
+  },
+  "src/backend/src/Core/Application/Common/Interfaces/IRefreshTokenRepository.cs": {
+    "mtime": 1794712309.0372055,
+    "seen": 1794713364.9242911,
+    "ast_hash": "bba8c15b78abfd61506d62ffcd0260e3",
+    "semantic_hash": "bba8c15b78abfd61506d62ffcd0260e3"
+  },
+  "src/backend/src/Core/Application/Common/Interfaces/ITokenBlacklistService.cs": {
+    "mtime": 1794712302.8959765,
+    "seen": 1794713364.9242911,
+    "ast_hash": "de93932375a9b75fb95d58d53def8d68",
+    "semantic_hash": "de93932375a9b75fb95d58d53def8d68"
+  },
+  "src/backend/src/Core/Application/Common/Interfaces/IUserFinder.cs": {
+    "mtime": 1794712311.193225,
+    "seen": 1794713364.9242911,
+    "ast_hash": "c3f0a55ecc91baaa1f73875084652c5b",
+    "semantic_hash": "c3f0a55ecc91baaa1f73875084652c5b"
+  },
+  "src/backend/src/Core/Application/Common/Interfaces/IUserRepository.cs": {
+    "mtime": 1794712307.8761647,
+    "seen": 1794713364.9242911,
+    "ast_hash": "e5b68efc78f760246aa941a34416f993",
+    "semantic_hash": "e5b68efc78f760246aa941a34416f993"
+  },
+  "src/backend/src/Core/Application/Common/Interfaces/JwtTokenRequest.cs": {
+    "mtime": 1794712292.2678115,
+    "seen": 1794713364.9242911,
+    "ast_hash": "5729ac5068ba7eb639f1fad39e034589",
+    "semantic_hash": "5729ac5068ba7eb639f1fad39e034589"
+  },
+  "src/backend/src/Core/Application/DependencyInjection.cs": {
+    "mtime": 1794712389.6676216,
+    "seen": 1794713364.9242911,
+    "ast_hash": "fd4c55e49bf0a71769430d8033bd2200",
+    "semantic_hash": "fd4c55e49bf0a71769430d8033bd2200"
+  },
+  "src/backend/src/Core/Application/Features/Auth/Commands/Login/LoginCommand.cs": {
+    "mtime": 1794712371.0627995,
+    "seen": 1794713364.9242911,
+    "ast_hash": "4482c0b596191270910bcdc336d5a230",
+    "semantic_hash": "4482c0b596191270910bcdc336d5a230"
+  },
+  "src/backend/src/Core/Application/Features/Auth/Commands/Login/LoginCommandHandler.cs": {
+    "mtime": 1794712373.7738335,
+    "seen": 1794713364.9242911,
+    "ast_hash": "a2f405839438cc4f928c1c11798796b6",
+    "semantic_hash": "a2f405839438cc4f928c1c11798796b6"
+  },
+  "src/backend/src/Core/Application/Features/Auth/Commands/Login/LoginCommandValidator.cs": {
+    "mtime": 1794712372.2364855,
+    "seen": 1794713364.9242911,
+    "ast_hash": "800fbc3d8260504363d83d1ad35480e1",
+    "semantic_hash": "800fbc3d8260504363d83d1ad35480e1"
+  },
+  "src/backend/src/Core/Application/Features/Auth/Commands/Logout/LogoutCommand.cs": {
+    "mtime": 1794712378.2020872,
+    "seen": 1794713364.9242911,
+    "ast_hash": "9ab282a06dbc921a955f853af5f75694",
+    "semantic_hash": "9ab282a06dbc921a955f853af5f75694"
+  },
+  "src/backend/src/Core/Application/Features/Auth/Commands/Logout/LogoutCommandHandler.cs": {
+    "mtime": 1794712379.7663171,
+    "seen": 1794713364.9242911,
+    "ast_hash": "f70dcad3bd48ac99e6d97a9625d88bd1",
+    "semantic_hash": "f70dcad3bd48ac99e6d97a9625d88bd1"
+  },
+  "src/backend/src/Core/Application/Features/Auth/Commands/RefreshToken/RefreshTokenCommand.cs": {
+    "mtime": 1794712374.7638783,
+    "seen": 1794713364.9242911,
+    "ast_hash": "82af4d373d2e79399164cbc532be6bae",
+    "semantic_hash": "82af4d373d2e79399164cbc532be6bae"
+  },
+  "src/backend/src/Core/Application/Features/Auth/Commands/RefreshToken/RefreshTokenCommandHandler.cs": {
+    "mtime": 1794712377.0333216,
+    "seen": 1794713364.9242911,
+    "ast_hash": "3b80e082bb630ff7e5970db04d4a9383",
+    "semantic_hash": "3b80e082bb630ff7e5970db04d4a9383"
+  },
+  "src/backend/src/Core/Application/Features/Auth/Commands/RefreshToken/RefreshTokenCommandValidator.cs": {
+    "mtime": 1794712375.8534656,
+    "seen": 1794713364.9242911,
+    "ast_hash": "ff3c13657b4029628f22c97d9004587e",
+    "semantic_hash": "ff3c13657b4029628f22c97d9004587e"
+  },
+  "src/backend/src/Core/Application/Features/Auth/DTOs/AuthTokensResponse.cs": {
+    "mtime": 1794712368.0191545,
+    "seen": 1794713364.9242911,
+    "ast_hash": "3d7ed6641db860ba50b4e0a329b26098",
+    "semantic_hash": "3d7ed6641db860ba50b4e0a329b26098"
+  },
+  "src/backend/src/Core/Application/Features/Auth/DTOs/CurrentUserResponse.cs": {
+    "mtime": 1794712368.9869356,
+    "seen": 1794713364.9242911,
+    "ast_hash": "7879708957b01e77f513201bc402512b",
+    "semantic_hash": "7879708957b01e77f513201bc402512b"
+  },
+  "src/backend/src/Core/Application/Features/Auth/DTOs/LoginRequest.cs": {
+    "mtime": 1794712365.928832,
+    "seen": 1794713364.9242911,
+    "ast_hash": "1d947af2c6b64d185dc01dd12ef45d03",
+    "semantic_hash": "1d947af2c6b64d185dc01dd12ef45d03"
+  },
+  "src/backend/src/Core/Application/Features/Auth/DTOs/RefreshTokenRequest.cs": {
+    "mtime": 1794712366.8956318,
+    "seen": 1794713364.9242911,
+    "ast_hash": "5d99b35762dd0eeaf44bd935e6c3a7ff",
+    "semantic_hash": "5d99b35762dd0eeaf44bd935e6c3a7ff"
+  },
+  "src/backend/src/Core/Application/Features/Auth/DTOs/UserIdentityDto.cs": {
+    "mtime": 1794712370.007095,
+    "seen": 1794713364.9242911,
+    "ast_hash": "42a01024fabda69abbbfd360731e0a56",
+    "semantic_hash": "42a01024fabda69abbbfd360731e0a56"
+  },
+  "src/backend/src/Core/Application/Features/Auth/Events/RolePermissionsChangedEventHandler.cs": {
+    "mtime": 1794712384.605498,
+    "seen": 1794713364.9242911,
+    "ast_hash": "e8074b6844b61f9a0cb7e02b04c8016c",
+    "semantic_hash": "e8074b6844b61f9a0cb7e02b04c8016c"
+  },
+  "src/backend/src/Core/Application/Features/Auth/Events/RolePermissionsChangedNotification.cs": {
+    "mtime": 1794712383.0897195,
+    "seen": 1794713364.9242911,
+    "ast_hash": "fe6ead897cbe0556c2ac91ac912c2a78",
+    "semantic_hash": "fe6ead897cbe0556c2ac91ac912c2a78"
+  },
+  "src/backend/src/Core/Application/Features/Auth/Queries/GetCurrentUser/GetCurrentUserQuery.cs": {
+    "mtime": 1794712380.8507853,
+    "seen": 1794713364.9242911,
+    "ast_hash": "abf1be158607f2c67e8747ccb352b294",
+    "semantic_hash": "abf1be158607f2c67e8747ccb352b294"
+  },
+  "src/backend/src/Core/Application/Features/Auth/Queries/GetCurrentUser/GetCurrentUserQueryHandler.cs": {
+    "mtime": 1794712382.051356,
+    "seen": 1794713364.9242911,
+    "ast_hash": "1da38a6dd6a92413ef1830cf5029dbe3",
+    "semantic_hash": "1da38a6dd6a92413ef1830cf5029dbe3"
+  },
+  "src/backend/src/Core/Application/Features/Users/DTOs/UserSummaryResponse.cs": {
+    "mtime": 1794712385.9575152,
+    "seen": 1794713364.9242911,
+    "ast_hash": "d88db590d3035abc1c590073b44d48d3",
+    "semantic_hash": "d88db590d3035abc1c590073b44d48d3"
+  },
+  "src/backend/src/Core/Application/Features/Users/Queries/GetUsers/GetUsersQuery.cs": {
+    "mtime": 1794712387.0883548,
+    "seen": 1794713364.9242911,
+    "ast_hash": "6cac4cea926b6c3ac6df7eadfaa7cdc6",
+    "semantic_hash": "6cac4cea926b6c3ac6df7eadfaa7cdc6"
+  },
+  "src/backend/src/Core/Application/Features/Users/Queries/GetUsers/GetUsersQueryHandler.cs": {
+    "mtime": 1794712388.570196,
+    "seen": 1794713364.9242911,
+    "ast_hash": "25103183fe978a8d2a64584eb6a0bf52",
+    "semantic_hash": "25103183fe978a8d2a64584eb6a0bf52"
+  },
+  "src/backend/src/Core/Domain/Constants/Permissions.cs": {
+    "mtime": 1794712187.828473,
+    "seen": 1794713364.9242911,
+    "ast_hash": "f6d4470264eb83a131d10b8ee7764a48",
+    "semantic_hash": "f6d4470264eb83a131d10b8ee7764a48"
+  },
+  "src/backend/src/Core/Domain/Constants/TokenTypes.cs": {
+    "mtime": 1794712189.1372457,
+    "seen": 1794713364.9242911,
+    "ast_hash": "16fe4253525d567ed6cc38b11568d183",
+    "semantic_hash": "16fe4253525d567ed6cc38b11568d183"
+  },
+  "src/backend/src/Core/Domain/Domain.csproj": {
+    "mtime": 1794712248.49158,
+    "seen": 1794713364.9242911,
+    "ast_hash": "36148abfffe0f744b9994a7c9837b686",
+    "semantic_hash": "36148abfffe0f744b9994a7c9837b686"
+  },
+  "src/backend/src/Core/Domain/Entities/Permission.cs": {
+    "mtime": 1794712198.5776796,
+    "seen": 1794713364.9242911,
+    "ast_hash": "af11cff019a65ed9058b40d12fd21a72",
+    "semantic_hash": "af11cff019a65ed9058b40d12fd21a72"
+  },
+  "src/backend/src/Core/Domain/Entities/PermissionCreationData.cs": {
+    "mtime": 1794712197.4541507,
+    "seen": 1794713364.9242911,
+    "ast_hash": "a4127d4b4b205f5feecc5b371255ffb0",
+    "semantic_hash": "a4127d4b4b205f5feecc5b371255ffb0"
+  },
+  "src/backend/src/Core/Domain/Entities/RefreshToken.cs": {
+    "mtime": 1794712203.639374,
+    "seen": 1794713364.9242911,
+    "ast_hash": "7ed5961e0a9fa8a04b9a6e24f3c8e478",
+    "semantic_hash": "7ed5961e0a9fa8a04b9a6e24f3c8e478"
+  },
+  "src/backend/src/Core/Domain/Entities/RefreshTokenCreationData.cs": {
+    "mtime": 1794712202.5564125,
+    "seen": 1794713364.9242911,
+    "ast_hash": "052b4688ffdd944671d482db0ad62ebb",
+    "semantic_hash": "052b4688ffdd944671d482db0ad62ebb"
+  },
+  "src/backend/src/Core/Domain/Entities/Role.cs": {
+    "mtime": 1794712195.8915915,
+    "seen": 1794713364.9242911,
+    "ast_hash": "ed3563c300928508856c81262168c91b",
+    "semantic_hash": "ed3563c300928508856c81262168c91b"
+  },
+  "src/backend/src/Core/Domain/Entities/RoleCreationData.cs": {
+    "mtime": 1794712194.369696,
+    "seen": 1794713364.9242911,
+    "ast_hash": "6b5216a31d612ba5b668ff8699ff669f",
+    "semantic_hash": "6b5216a31d612ba5b668ff8699ff669f"
+  },
+  "src/backend/src/Core/Domain/Entities/RolePermission.cs": {
+    "mtime": 1794712200.0619767,
+    "seen": 1794713364.9242911,
+    "ast_hash": "95650c852c21b012ec3c49e82c2992e7",
+    "semantic_hash": "95650c852c21b012ec3c49e82c2992e7"
+  },
+  "src/backend/src/Core/Domain/Entities/RolePermissionCreationData.cs": {
+    "mtime": 1794712201.5225668,
+    "seen": 1794713364.9242911,
+    "ast_hash": "8f653592d239c8449fa4a5cf62ac3cfd",
+    "semantic_hash": "8f653592d239c8449fa4a5cf62ac3cfd"
+  },
+  "src/backend/src/Core/Domain/Entities/User.cs": {
+    "mtime": 1794712193.1632097,
+    "seen": 1794713364.9242911,
+    "ast_hash": "01d6190c785960536cd8673329f5cb0d",
+    "semantic_hash": "01d6190c785960536cd8673329f5cb0d"
+  },
+  "src/backend/src/Core/Domain/Entities/UserCreationData.cs": {
+    "mtime": 1794712191.935111,
+    "seen": 1794713364.9242911,
+    "ast_hash": "06b1a59f8891461bb5691f5070b6851e",
+    "semantic_hash": "06b1a59f8891461bb5691f5070b6851e"
+  },
+  "src/backend/src/Core/Domain/Events/RolePermissionsChangedDomainEvent.cs": {
+    "mtime": 1794712190.615977,
+    "seen": 1794713364.9242911,
+    "ast_hash": "95bb7324c44bbbb48c2600eab6728ca6",
+    "semantic_hash": "95bb7324c44bbbb48c2600eab6728ca6"
+  },
+  "src/backend/src/Core/Domain/Primitives/AggregateRoot.cs": {
+    "mtime": 1794712168.1681511,
+    "seen": 1794713364.9242911,
+    "ast_hash": "da20c8c322f6c2b91670bd66101837dc",
+    "semantic_hash": "da20c8c322f6c2b91670bd66101837dc"
+  },
+  "src/backend/src/Core/Domain/Primitives/Entity.cs": {
+    "mtime": 1794712165.588794,
+    "seen": 1794713364.9242911,
+    "ast_hash": "10d9b6b34ba8ce30c2e4b513ff79e59c",
+    "semantic_hash": "10d9b6b34ba8ce30c2e4b513ff79e59c"
+  },
+  "src/backend/src/Core/Domain/Primitives/EntityOfTId.cs": {
+    "mtime": 1794712166.9882174,
+    "seen": 1794713364.9242911,
+    "ast_hash": "c98e16d89dfc889c621dfd539f490ef8",
+    "semantic_hash": "c98e16d89dfc889c621dfd539f490ef8"
+  },
+  "src/backend/src/Core/Domain/Primitives/IAuditableEntity.cs": {
+    "mtime": 1794712171.2496195,
+    "seen": 1794713364.9242911,
+    "ast_hash": "6905026f43e55d9b579737d67e522406",
+    "semantic_hash": "6905026f43e55d9b579737d67e522406"
+  },
+  "src/backend/src/Core/Domain/Primitives/IDomainEvent.cs": {
+    "mtime": 1794712164.2128596,
+    "seen": 1794713364.9242911,
+    "ast_hash": "9c96bf2a4e8ef808c16e17d18101f8b5",
+    "semantic_hash": "9c96bf2a4e8ef808c16e17d18101f8b5"
+  },
+  "src/backend/src/Core/Domain/Primitives/IRepository.cs": {
+    "mtime": 1794712172.7443378,
+    "seen": 1794713364.9242911,
+    "ast_hash": "de244a9f3c34b8bae4a58dbe5fe162b4",
+    "semantic_hash": "de244a9f3c34b8bae4a58dbe5fe162b4"
+  },
+  "src/backend/src/Core/Domain/Primitives/IUnitOfWork.cs": {
+    "mtime": 1794712174.4645894,
+    "seen": 1794713364.9242911,
+    "ast_hash": "5c27847e71776b3ab8e5433bb69fac71",
+    "semantic_hash": "5c27847e71776b3ab8e5433bb69fac71"
+  },
+  "src/backend/src/Core/Domain/Primitives/ValueObject.cs": {
+    "mtime": 1794712169.9041817,
+    "seen": 1794713364.9242911,
+    "ast_hash": "0a707142508b909f05dd4a30b2e5a86c",
+    "semantic_hash": "0a707142508b909f05dd4a30b2e5a86c"
+  },
+  "src/backend/src/Infrastructure/Authentication/Authentication.csproj": {
+    "mtime": 1794712250.5750363,
+    "seen": 1794713364.9242911,
+    "ast_hash": "018ace4983c9697086e8418ec8a4c21a",
+    "semantic_hash": "018ace4983c9697086e8418ec8a4c21a"
+  },
+  "src/backend/src/Infrastructure/Authentication/DependencyInjection.cs": {
+    "mtime": 1794712452.8818648,
+    "seen": 1794713364.9242911,
+    "ast_hash": "601c995b3385a61d449cf8c336591554",
+    "semantic_hash": "601c995b3385a61d449cf8c336591554"
+  },
+  "src/backend/src/Infrastructure/Authentication/JwtProvider.cs": {
+    "mtime": 1794712447.2229176,
+    "seen": 1794713364.9242911,
+    "ast_hash": "3e250a480057a39ed974904e7bfc1ac2",
+    "semantic_hash": "3e250a480057a39ed974904e7bfc1ac2"
+  },
+  "src/backend/src/Infrastructure/Authentication/PasswordHasher.cs": {
+    "mtime": 1794712449.0223281,
+    "seen": 1794713364.9242911,
+    "ast_hash": "2ca37c254b0c3ac2558a41ca4c06a28b",
+    "semantic_hash": "2ca37c254b0c3ac2558a41ca4c06a28b"
+  },
+  "src/backend/src/Infrastructure/Authentication/PermissionCacheService.cs": {
+    "mtime": 1794712451.747304,
+    "seen": 1794713364.9242911,
+    "ast_hash": "5accc55496d9d69783c86dc62efaf43b",
+    "semantic_hash": "5accc55496d9d69783c86dc62efaf43b"
+  },
+  "src/backend/src/Infrastructure/Authentication/TokenBlacklistService.cs": {
+    "mtime": 1794712450.5246792,
+    "seen": 1794713364.9242911,
+    "ast_hash": "5211478f0d9232c910cad821c60df8ba",
+    "semantic_hash": "5211478f0d9232c910cad821c60df8ba"
+  },
+  "src/backend/src/Infrastructure/ExternalServices/DependencyInjection.cs": {
+    "mtime": 1794712453.9551902,
+    "seen": 1794713364.9242911,
+    "ast_hash": "f0206311ffabe0683e98b92382f0570a",
+    "semantic_hash": "f0206311ffabe0683e98b92382f0570a"
+  },
+  "src/backend/src/Infrastructure/ExternalServices/ExternalServices.csproj": {
+    "mtime": 1794712251.6654193,
+    "seen": 1794713364.9242911,
+    "ast_hash": "34ea1122c0391c8d40f842535f765cff",
+    "semantic_hash": "34ea1122c0391c8d40f842535f765cff"
+  },
+  "src/backend/src/Infrastructure/Persistence/AppDbContext.cs": {
+    "mtime": 1794712473.8335478,
+    "seen": 1794713364.9242911,
+    "ast_hash": "c889c22a0cf64bdc83f992139d07ba05",
+    "semantic_hash": "c889c22a0cf64bdc83f992139d07ba05"
+  },
+  "src/backend/src/Infrastructure/Persistence/Configurations/PermissionConfiguration.cs": {
+    "mtime": 1794712481.113703,
+    "seen": 1794713364.9242911,
+    "ast_hash": "48ba92388ed100198cceb1428a0e0aa0",
+    "semantic_hash": "48ba92388ed100198cceb1428a0e0aa0"
+  },
+  "src/backend/src/Infrastructure/Persistence/Configurations/RefreshTokenConfiguration.cs": {
+    "mtime": 1794712483.5329762,
+    "seen": 1794713364.9242911,
+    "ast_hash": "b3da0ad9247ea48e11d1bfca457e36d2",
+    "semantic_hash": "b3da0ad9247ea48e11d1bfca457e36d2"
+  },
+  "src/backend/src/Infrastructure/Persistence/Configurations/RoleConfiguration.cs": {
+    "mtime": 1794712479.5779872,
+    "seen": 1794713364.9242911,
+    "ast_hash": "11ccedd1662896f54a54dc87141a0520",
+    "semantic_hash": "11ccedd1662896f54a54dc87141a0520"
+  },
+  "src/backend/src/Infrastructure/Persistence/Configurations/RolePermissionConfiguration.cs": {
+    "mtime": 1794712482.4364328,
+    "seen": 1794713364.9242911,
+    "ast_hash": "9a8ac1c69116d2b679625ddd00c9f747",
+    "semantic_hash": "9a8ac1c69116d2b679625ddd00c9f747"
+  },
+  "src/backend/src/Infrastructure/Persistence/Configurations/UserConfiguration.cs": {
+    "mtime": 1794712478.1662009,
+    "seen": 1794713364.9242911,
+    "ast_hash": "835c04e320999af1c1811ffdf44f1ebb",
+    "semantic_hash": "835c04e320999af1c1811ffdf44f1ebb"
+  },
+  "src/backend/src/Infrastructure/Persistence/Connections/ConnectionStringResolver.cs": {
+    "mtime": 1794712475.6050737,
+    "seen": 1794713364.9242911,
+    "ast_hash": "ffba51b133548058c5469afa49472bd5",
+    "semantic_hash": "ffba51b133548058c5469afa49472bd5"
+  },
+  "src/backend/src/Infrastructure/Persistence/Connections/SqlConnectionFactory.cs": {
+    "mtime": 1794712477.1610467,
+    "seen": 1794713364.9242911,
+    "ast_hash": "062ba48411f6943af8fcfed810b32b40",
+    "semantic_hash": "062ba48411f6943af8fcfed810b32b40"
+  },
+  "src/backend/src/Infrastructure/Persistence/DependencyInjection.cs": {
+    "mtime": 1794712514.354811,
+    "seen": 1794713364.9242911,
+    "ast_hash": "d167e246c062f2c5179b9704b1894552",
+    "semantic_hash": "d167e246c062f2c5179b9704b1894552"
+  },
+  "src/backend/src/Infrastructure/Persistence/Finders/AuthFinder.cs": {
+    "mtime": 1794712508.3088374,
+    "seen": 1794713364.9242911,
+    "ast_hash": "0c4985e8ff3f1826eccda2a99087782c",
+    "semantic_hash": "0c4985e8ff3f1826eccda2a99087782c"
+  },
+  "src/backend/src/Infrastructure/Persistence/Finders/UserFinder.cs": {
+    "mtime": 1794712509.53696,
+    "seen": 1794713364.9242911,
+    "ast_hash": "aaa018cadbe96899f4d94b4a2fcd1af2",
+    "semantic_hash": "aaa018cadbe96899f4d94b4a2fcd1af2"
+  },
+  "src/backend/src/Infrastructure/Persistence/Migrations/20261115031703_InitialAuthMigration.Designer.cs": {
+    "mtime": 1794712624.0004673,
+    "seen": 1794713364.9242911,
+    "ast_hash": "f662dacc6f1b6aee2b42a2f0266f4333",
+    "semantic_hash": "f662dacc6f1b6aee2b42a2f0266f4333"
+  },
+  "src/backend/src/Infrastructure/Persistence/Migrations/20261115031703_InitialAuthMigration.cs": {
+    "mtime": 1794712624.0004673,
+    "seen": 1794713364.9242911,
+    "ast_hash": "18ad13ec3637aa72dc72366c63993bc1",
+    "semantic_hash": "18ad13ec3637aa72dc72366c63993bc1"
+  },
+  "src/backend/src/Infrastructure/Persistence/Migrations/AppDbContextModelSnapshot.cs": {
+    "mtime": 1794712624.0014675,
+    "seen": 1794713364.9242911,
+    "ast_hash": "d40a1725e028e3f59de388049026928a",
+    "semantic_hash": "d40a1725e028e3f59de388049026928a"
+  },
+  "src/backend/src/Infrastructure/Persistence/Persistence.csproj": {
+    "mtime": 1794712338.4099228,
+    "seen": 1794713364.9242911,
+    "ast_hash": "63d656852e5d12c2c86d3557de75c98e",
+    "semantic_hash": "63d656852e5d12c2c86d3557de75c98e"
+  },
+  "src/backend/src/Infrastructure/Persistence/Repositories/RefreshTokenRepository.cs": {
+    "mtime": 1794712507.0353606,
+    "seen": 1794713364.9242911,
+    "ast_hash": "00fb85ac3ea27f69d6382003d400f2f5",
+    "semantic_hash": "00fb85ac3ea27f69d6382003d400f2f5"
+  },
+  "src/backend/src/Infrastructure/Persistence/Repositories/UserRepository.cs": {
+    "mtime": 1794712505.1832714,
+    "seen": 1794713364.9242911,
+    "ast_hash": "a8732ac6cdfc12450493215bb9f22e0e",
+    "semantic_hash": "a8732ac6cdfc12450493215bb9f22e0e"
+  },
+  "src/backend/src/Infrastructure/Persistence/Seeding/DatabaseSeedRequest.cs": {
+    "mtime": 1794712511.0330186,
+    "seen": 1794713364.9242911,
+    "ast_hash": "2d302abaefaf9c95a63b884133b4aaf5",
+    "semantic_hash": "2d302abaefaf9c95a63b884133b4aaf5"
+  },
+  "src/backend/src/Infrastructure/Persistence/Seeding/InitialDataSeeder.cs": {
+    "mtime": 1794712512.8936224,
+    "seen": 1794713364.9242911,
+    "ast_hash": "e128e3ec2e912ac009c529a2502248f4",
+    "semantic_hash": "e128e3ec2e912ac009c529a2502248f4"
+  },
+  "src/backend/src/Infrastructure/Shared/Caching/CacheService.cs": {
+    "mtime": 1794712600.625339,
+    "seen": 1794713364.9242911,
+    "ast_hash": "e0c84765a09fedd451103624e00d53ef",
+    "semantic_hash": "e0c84765a09fedd451103624e00d53ef"
+  },
+  "src/backend/src/Infrastructure/Shared/DependencyInjection.cs": {
+    "mtime": 1794712457.9679785,
+    "seen": 1794713364.9242911,
+    "ast_hash": "4cd122f2a983c62386791aacefda4228",
+    "semantic_hash": "4cd122f2a983c62386791aacefda4228"
+  },
+  "src/backend/src/Infrastructure/Shared/Services/DateTimeProvider.cs": {
+    "mtime": 1794712456.5374749,
+    "seen": 1794713364.9242911,
+    "ast_hash": "99c4f3c5ba316df99c85c7bd1e0aa216",
+    "semantic_hash": "99c4f3c5ba316df99c85c7bd1e0aa216"
+  },
+  "src/backend/src/Infrastructure/Shared/Shared.csproj": {
+    "mtime": 1794712254.977764,
+    "seen": 1794713364.9242911,
+    "ast_hash": "7e5478d451f797815201df6f32761aca",
+    "semantic_hash": "7e5478d451f797815201df6f32761aca"
+  },
+  "src/backend/src/Presentation/Web.API/Attributes/HasPermissionAttribute.cs": {
+    "mtime": 1794712535.3474154,
+    "seen": 1794713364.9242911,
+    "ast_hash": "a2ca1cab5919693b6913d4c20b37f12b",
+    "semantic_hash": "a2ca1cab5919693b6913d4c20b37f12b"
+  },
+  "src/backend/src/Presentation/Web.API/Controllers/ApiController.cs": {
+    "mtime": 1794712536.7286017,
+    "seen": 1794713364.9242911,
+    "ast_hash": "6a04c8e6aa4e6d39c8b980643cec8071",
+    "semantic_hash": "6a04c8e6aa4e6d39c8b980643cec8071"
+  },
+  "src/backend/src/Presentation/Web.API/Controllers/AuthController.cs": {
+    "mtime": 1794712538.2522657,
+    "seen": 1794713364.9242911,
+    "ast_hash": "0a6bb58d257e13d433ec510414876a19",
+    "semantic_hash": "0a6bb58d257e13d433ec510414876a19"
+  },
+  "src/backend/src/Presentation/Web.API/Controllers/UsersController.cs": {
+    "mtime": 1794712539.4149277,
+    "seen": 1794713364.9242911,
+    "ast_hash": "8f213097ca9283dd96508191e0a9de27",
+    "semantic_hash": "8f213097ca9283dd96508191e0a9de27"
+  },
+  "src/backend/src/Presentation/Web.API/HealthChecks/DatabaseHealthCheck.cs": {
+    "mtime": 1794712540.375635,
+    "seen": 1794713364.9242911,
+    "ast_hash": "914dddf73e92f8c31e7cf82d5b317d47",
+    "semantic_hash": "914dddf73e92f8c31e7cf82d5b317d47"
+  },
+  "src/backend/src/Presentation/Web.API/Infrastructure/CorsExtensions.cs": {
+    "mtime": 1794712541.8268394,
+    "seen": 1794713364.9242911,
+    "ast_hash": "7dd7296f47bc9f3b3f70945892dd6252",
+    "semantic_hash": "7dd7296f47bc9f3b3f70945892dd6252"
+  },
+  "src/backend/src/Presentation/Web.API/Infrastructure/DatabaseSeedExtensions.cs": {
+    "mtime": 1794712571.0583808,
+    "seen": 1794713364.9242911,
+    "ast_hash": "c2a692c87618f32dad5f5d724a41276c",
+    "semantic_hash": "c2a692c87618f32dad5f5d724a41276c"
+  },
+  "src/backend/src/Presentation/Web.API/Infrastructure/EnvironmentLoader.cs": {
+    "mtime": 1794712544.85613,
+    "seen": 1794713364.9242911,
+    "ast_hash": "f0204287187d9c7de44149fe1d93ca6a",
+    "semantic_hash": "f0204287187d9c7de44149fe1d93ca6a"
+  },
+  "src/backend/src/Presentation/Web.API/Infrastructure/JwtExtensions.cs": {
+    "mtime": 1794712731.5102673,
+    "seen": 1794713364.9242911,
+    "ast_hash": "754dc154264df3398d33f13ca398b10a",
+    "semantic_hash": "754dc154264df3398d33f13ca398b10a"
+  },
+  "src/backend/src/Presentation/Web.API/Infrastructure/SwaggerExtensions.cs": {
+    "mtime": 1794712543.322091,
+    "seen": 1794713364.9242911,
+    "ast_hash": "82569150b9cda67ae5c40d0cbd8b5b63",
+    "semantic_hash": "82569150b9cda67ae5c40d0cbd8b5b63"
+  },
+  "src/backend/src/Presentation/Web.API/Middlewares/GlobalExceptionHandlingMiddleware.cs": {
+    "mtime": 1794712563.898478,
+    "seen": 1794713364.9242911,
+    "ast_hash": "d91d04a50ac060813deee012a809a2d8",
+    "semantic_hash": "d91d04a50ac060813deee012a809a2d8"
+  },
+  "src/backend/src/Presentation/Web.API/Middlewares/JwtBlacklistMiddleware.cs": {
+    "mtime": 1794712564.9372964,
+    "seen": 1794713364.9242911,
+    "ast_hash": "47340128be7a42e3db55f2b59c0cfdd6",
+    "semantic_hash": "47340128be7a42e3db55f2b59c0cfdd6"
+  },
+  "src/backend/src/Presentation/Web.API/Middlewares/PermissionAuthorizationMiddleware.cs": {
+    "mtime": 1794712566.405505,
+    "seen": 1794713364.9242911,
+    "ast_hash": "230a1321ac0e63a92f5f89da8ac67e68",
+    "semantic_hash": "230a1321ac0e63a92f5f89da8ac67e68"
+  },
+  "src/backend/src/Presentation/Web.API/Program.cs": {
+    "mtime": 1794712572.7892818,
+    "seen": 1794713364.9242911,
+    "ast_hash": "46ad3619416b78609ded6cecaab8a02b",
+    "semantic_hash": "46ad3619416b78609ded6cecaab8a02b"
+  },
+  "src/backend/src/Presentation/Web.API/Properties/launchSettings.json": {
+    "mtime": 1794712263.7244377,
+    "seen": 1794713364.9242911,
+    "ast_hash": "d9aa66eaf453f87884bb092c6f466306",
+    "semantic_hash": "d9aa66eaf453f87884bb092c6f466306"
+  },
+  "src/backend/src/Presentation/Web.API/Services/CurrentUserContext.cs": {
+    "mtime": 1794712567.9395716,
+    "seen": 1794713364.9242911,
+    "ast_hash": "54e9cd5bd538415f763ae23c4b75254f",
+    "semantic_hash": "54e9cd5bd538415f763ae23c4b75254f"
+  },
+  "src/backend/src/Presentation/Web.API/Web.API.csproj": {
+    "mtime": 1794712256.2215023,
+    "seen": 1794713364.9242911,
+    "ast_hash": "93b99d70e03a22a7c88e28b56e8a8d63",
+    "semantic_hash": "93b99d70e03a22a7c88e28b56e8a8d63"
+  },
+  "src/backend/src/Presentation/Web.API/appsettings.Development.json": {
+    "mtime": 1794712575.0556436,
+    "seen": 1794713364.9242911,
+    "ast_hash": "477a525a47fc9bdbbf94690e6633d843",
+    "semantic_hash": "477a525a47fc9bdbbf94690e6633d843"
+  },
+  "src/backend/src/Presentation/Web.API/appsettings.json": {
+    "mtime": 1794712574.0291684,
+    "seen": 1794713364.9242911,
+    "ast_hash": "eefd2238349bc90ebe89dcce3b03efeb",
+    "semantic_hash": "eefd2238349bc90ebe89dcce3b03efeb"
+  },
+  "src/backend/tests/Tests.IntegrationTests/Common/CustomWebApplicationFactory.cs": {
+    "mtime": 1794712690.3909912,
+    "seen": 1794713364.9242911,
+    "ast_hash": "c5c146e69e1cd9aae93c145a228cd617",
+    "semantic_hash": "c5c146e69e1cd9aae93c145a228cd617"
+  },
+  "src/backend/tests/Tests.IntegrationTests/Common/IntegrationTestBase.cs": {
+    "mtime": 1794712691.8188994,
+    "seen": 1794713364.9242911,
+    "ast_hash": "457ccd6beef161d98db333e1e8a727dc",
+    "semantic_hash": "457ccd6beef161d98db333e1e8a727dc"
+  },
+  "src/backend/tests/Tests.IntegrationTests/Features/Auth/AuthFlowIntegrationTests.cs": {
+    "mtime": 1794712693.2689536,
+    "seen": 1794713364.9242911,
+    "ast_hash": "5600808e5484d044d141db3718e6c6a6",
+    "semantic_hash": "5600808e5484d044d141db3718e6c6a6"
+  },
+  "src/backend/tests/Tests.IntegrationTests/Tests.IntegrationTests.csproj": {
+    "mtime": 1794712259.0895982,
+    "seen": 1794713364.9242911,
+    "ast_hash": "8e5b7fd7760c647a0d613311665e2bea",
+    "semantic_hash": "8e5b7fd7760c647a0d613311665e2bea"
+  },
+  "src/backend/tests/Tests.UnitTests/Core/Application/Features/Auth/Commands/Login/LoginCommandHandlerTests.cs": {
+    "mtime": 1794712688.4876075,
+    "seen": 1794713364.9242911,
+    "ast_hash": "cea006ff4798ee66a42ad36ab72443be",
+    "semantic_hash": "cea006ff4798ee66a42ad36ab72443be"
+  },
+  "src/backend/tests/Tests.UnitTests/Core/Application/Features/Auth/Commands/Login/LoginCommandValidatorTests.cs": {
+    "mtime": 1794712668.8377552,
+    "seen": 1794713364.9242911,
+    "ast_hash": "ca25f2f517634c96f45f5e963ec53bb2",
+    "semantic_hash": "ca25f2f517634c96f45f5e963ec53bb2"
+  },
+  "src/backend/tests/Tests.UnitTests/Core/Application/Features/Auth/Commands/Logout/LogoutCommandHandlerTests.cs": {
+    "mtime": 1794712672.1068046,
+    "seen": 1794713364.9242911,
+    "ast_hash": "abc4dc630ab98c10683adea844778f38",
+    "semantic_hash": "abc4dc630ab98c10683adea844778f38"
+  },
+  "src/backend/tests/Tests.UnitTests/Core/Application/Features/Auth/Commands/RefreshToken/RefreshTokenCommandHandlerTests.cs": {
+    "mtime": 1794712670.6698785,
+    "seen": 1794713364.9242911,
+    "ast_hash": "3424445e271600f2b8d30f246f1fe3e0",
+    "semantic_hash": "3424445e271600f2b8d30f246f1fe3e0"
+  },
+  "src/backend/tests/Tests.UnitTests/Core/Domain/Entities/RefreshTokenTests.cs": {
+    "mtime": 1794712665.75634,
+    "seen": 1794713364.9242911,
+    "ast_hash": "ff049c8f68ff5675f2dbabce81a86046",
+    "semantic_hash": "ff049c8f68ff5675f2dbabce81a86046"
+  },
+  "src/backend/tests/Tests.UnitTests/Core/Domain/Entities/UserTests.cs": {
+    "mtime": 1794712664.32851,
+    "seen": 1794713364.9242911,
+    "ast_hash": "f02daaf9d0b954143acf5fa8790c238e",
+    "semantic_hash": "f02daaf9d0b954143acf5fa8790c238e"
+  },
+  "src/backend/tests/Tests.UnitTests/Presentation/Middlewares/JwtBlacklistMiddlewareTests.cs": {
+    "mtime": 1794712673.3585787,
+    "seen": 1794713364.9242911,
+    "ast_hash": "09cb79fb34df17455b9f42567afd9f1b",
+    "semantic_hash": "09cb79fb34df17455b9f42567afd9f1b"
+  },
+  "src/backend/tests/Tests.UnitTests/Presentation/Middlewares/PermissionAuthorizationMiddlewareTests.cs": {
+    "mtime": 1794712675.2995522,
+    "seen": 1794713364.9242911,
+    "ast_hash": "5b78cecfc16067d97e9f96b13ee0ab58",
+    "semantic_hash": "5b78cecfc16067d97e9f96b13ee0ab58"
+  },
+  "src/backend/tests/Tests.UnitTests/Tests.UnitTests.csproj": {
+    "mtime": 1794712257.9508853,
+    "seen": 1794713364.9242911,
+    "ast_hash": "3d8553ed06f0af9ca46728bc2113536c",
+    "semantic_hash": "3d8553ed06f0af9ca46728bc2113536c"
+  },
+  "src/frontend/angular.json": {
+    "mtime": 1794712954.397826,
+    "seen": 1794713364.9242911,
+    "ast_hash": "cbccd725e8b9660bc4ac0452e543054d",
+    "semantic_hash": "cbccd725e8b9660bc4ac0452e543054d"
+  },
+  "src/frontend/jest.config.js": {
+    "mtime": 1794713171.3067057,
+    "seen": 1794713364.9242911,
+    "ast_hash": "104e8213ff0d5f6e8a74e2580a35f1a4",
+    "semantic_hash": "104e8213ff0d5f6e8a74e2580a35f1a4"
+  },
+  "src/frontend/package.json": {
+    "mtime": 1794712949.9195209,
+    "seen": 1794713364.9242911,
+    "ast_hash": "e99dfaa82f7beadfa618971a59c9ccff",
+    "semantic_hash": "e99dfaa82f7beadfa618971a59c9ccff"
+  },
+  "src/frontend/postcss.config.js": {
+    "mtime": 1794712955.6050868,
+    "seen": 1794713364.9242911,
+    "ast_hash": "8640f9b2e6475cc3f5b1ff4548925765",
+    "semantic_hash": "8640f9b2e6475cc3f5b1ff4548925765"
+  },
+  "src/frontend/setup-jest.ts": {
+    "mtime": 1794712957.8848288,
+    "seen": 1794713364.9242911,
+    "ast_hash": "febb9aa4a42372a5c35fe09366d64237",
+    "semantic_hash": "febb9aa4a42372a5c35fe09366d64237"
+  },
+  "src/frontend/src/app/app.config.ts": {
+    "mtime": 1794713122.7789934,
+    "seen": 1794713364.9242911,
+    "ast_hash": "6f7a82957d50ba369cc0c0c32fa48324",
+    "semantic_hash": "6f7a82957d50ba369cc0c0c32fa48324"
+  },
+  "src/frontend/src/app/app.routes.ts": {
+    "mtime": 1794713124.1389177,
+    "seen": 1794713364.9242911,
+    "ast_hash": "dc478612ae2222be302542b137ef523a",
+    "semantic_hash": "dc478612ae2222be302542b137ef523a"
+  },
+  "src/frontend/src/app/app.ts": {
+    "mtime": 1794713125.169897,
+    "seen": 1794713364.9242911,
+    "ast_hash": "ab807ede9f05e1525a18c0dbd03ce6a7",
+    "semantic_hash": "ab807ede9f05e1525a18c0dbd03ce6a7"
+  },
+  "src/frontend/src/app/auth/auth.routes.ts": {
+    "mtime": 1794713118.488913,
+    "seen": 1794713364.9242911,
+    "ast_hash": "ceda81cd92eaf3ae5c97c146b777d2ab",
+    "semantic_hash": "ceda81cd92eaf3ae5c97c146b777d2ab"
+  },
+  "src/frontend/src/app/auth/login/login.component.spec.ts": {
+    "mtime": 1794713150.4738574,
+    "seen": 1794713364.9242911,
+    "ast_hash": "09864e7f4819a5df7ec57b03b9ff387c",
+    "semantic_hash": "09864e7f4819a5df7ec57b03b9ff387c"
+  },
+  "src/frontend/src/app/auth/login/login.component.ts": {
+    "mtime": 1794713119.37112,
+    "seen": 1794713364.9242911,
+    "ast_hash": "5299b30334af51f811a2b683a5c1f025",
+    "semantic_hash": "5299b30334af51f811a2b683a5c1f025"
+  },
+  "src/frontend/src/app/core/config/error-messages.json": {
+    "mtime": 1794712999.0539267,
+    "seen": 1794713364.9242911,
+    "ast_hash": "22783dbc8033e11691406a5843315a1d",
+    "semantic_hash": "22783dbc8033e11691406a5843315a1d"
+  },
+  "src/frontend/src/app/core/constants/api-paths.constants.ts": {
+    "mtime": 1794712997.7039537,
+    "seen": 1794713364.9242911,
+    "ast_hash": "a7697c91b07794db6b7573f2f4002eb0",
+    "semantic_hash": "a7697c91b07794db6b7573f2f4002eb0"
+  },
+  "src/frontend/src/app/core/constants/permissions.constants.ts": {
+    "mtime": 1794712996.769398,
+    "seen": 1794713364.9242911,
+    "ast_hash": "31e664e7fd7a31d6b397b3521f371e1f",
+    "semantic_hash": "31e664e7fd7a31d6b397b3521f371e1f"
+  },
+  "src/frontend/src/app/core/guards/auth.guard.ts": {
+    "mtime": 1794713057.8253686,
+    "seen": 1794713364.9242911,
+    "ast_hash": "fbc5672d0e7fab4ffa2a34274ba12d1f",
+    "semantic_hash": "fbc5672d0e7fab4ffa2a34274ba12d1f"
+  },
+  "src/frontend/src/app/core/guards/feature-redirect.guard.ts": {
+    "mtime": 1794713062.789318,
+    "seen": 1794713364.9242911,
+    "ast_hash": "3fd399a459b866e612f2dea27ca0ebb0",
+    "semantic_hash": "3fd399a459b866e612f2dea27ca0ebb0"
+  },
+  "src/frontend/src/app/core/guards/permission.guard.spec.ts": {
+    "mtime": 1794713148.9419308,
+    "seen": 1794713364.9242911,
+    "ast_hash": "7fd1c1a05a7a412da7a73a969b663312",
+    "semantic_hash": "7fd1c1a05a7a412da7a73a969b663312"
+  },
+  "src/frontend/src/app/core/guards/permission.guard.ts": {
+    "mtime": 1794713060.9500866,
+    "seen": 1794713364.9242911,
+    "ast_hash": "1688c684522d6c72e01d843c79777918",
+    "semantic_hash": "1688c684522d6c72e01d843c79777918"
+  },
+  "src/frontend/src/app/core/guards/public.guard.ts": {
+    "mtime": 1794713059.0592961,
+    "seen": 1794713364.9242911,
+    "ast_hash": "a19901a47eb2229d5bd186d37bddd245",
+    "semantic_hash": "a19901a47eb2229d5bd186d37bddd245"
+  },
+  "src/frontend/src/app/core/interceptors/loader.interceptor.ts": {
+    "mtime": 1794713054.9603498,
+    "seen": 1794713364.9242911,
+    "ast_hash": "0e093073a975616fe88166e5a303ce78",
+    "semantic_hash": "0e093073a975616fe88166e5a303ce78"
+  },
+  "src/frontend/src/app/core/interceptors/token.interceptor.ts": {
+    "mtime": 1794713056.01601,
+    "seen": 1794713364.9242911,
+    "ast_hash": "5dc4f49a8103da5098384d04cd11dbc8",
+    "semantic_hash": "5dc4f49a8103da5098384d04cd11dbc8"
+  },
+  "src/frontend/src/app/core/models/api-response.model.ts": {
+    "mtime": 1794713000.2894082,
+    "seen": 1794713364.9242911,
+    "ast_hash": "623f137e885c0b7880a7425049b19823",
+    "semantic_hash": "623f137e885c0b7880a7425049b19823"
+  },
+  "src/frontend/src/app/core/models/auth.models.ts": {
+    "mtime": 1794713001.3495216,
+    "seen": 1794713364.9242911,
+    "ast_hash": "e5f3b8921ec7f66588f68ca6260fc332",
+    "semantic_hash": "e5f3b8921ec7f66588f68ca6260fc332"
+  },
+  "src/frontend/src/app/core/models/problem-details.model.ts": {
+    "mtime": 1794713002.2997959,
+    "seen": 1794713364.9242911,
+    "ast_hash": "2064112aa8ebdea49bb32d946c1e82a8",
+    "semantic_hash": "2064112aa8ebdea49bb32d946c1e82a8"
+  },
+  "src/frontend/src/app/core/models/toast-message.model.ts": {
+    "mtime": 1794713021.4546,
+    "seen": 1794713364.9242911,
+    "ast_hash": "ca8b4d95a920743e5213ba0300058b37",
+    "semantic_hash": "ca8b4d95a920743e5213ba0300058b37"
+  },
+  "src/frontend/src/app/core/services/auth.service.spec.ts": {
+    "mtime": 1794713147.418571,
+    "seen": 1794713364.9242911,
+    "ast_hash": "83793164121131b25408d9e1711f9108",
+    "semantic_hash": "83793164121131b25408d9e1711f9108"
+  },
+  "src/frontend/src/app/core/services/auth.service.ts": {
+    "mtime": 1794713031.3756046,
+    "seen": 1794713364.9242911,
+    "ast_hash": "01ce58de704439a29488de6f4f7d93b0",
+    "semantic_hash": "01ce58de704439a29488de6f4f7d93b0"
+  },
+  "src/frontend/src/app/core/services/error-handler.service.ts": {
+    "mtime": 1794713029.6037984,
+    "seen": 1794713364.9242911,
+    "ast_hash": "0b56d7899c249559cdb24f284f9f3930",
+    "semantic_hash": "0b56d7899c249559cdb24f284f9f3930"
+  },
+  "src/frontend/src/app/core/services/loader.service.ts": {
+    "mtime": 1794713027.2202342,
+    "seen": 1794713364.9242911,
+    "ast_hash": "8036890552e75ba1d0cfc590a7440189",
+    "semantic_hash": "8036890552e75ba1d0cfc590a7440189"
+  },
+  "src/frontend/src/app/core/services/notification.service.ts": {
+    "mtime": 1794713096.0058799,
+    "seen": 1794713364.9242911,
+    "ast_hash": "09b7081613a729318481fe97e7b55931",
+    "semantic_hash": "09b7081613a729318481fe97e7b55931"
+  },
+  "src/frontend/src/app/core/services/storage.service.spec.ts": {
+    "mtime": 1794713145.316241,
+    "seen": 1794713364.9242911,
+    "ast_hash": "7a3558736dd0144ca2228a533ffd3102",
+    "semantic_hash": "7a3558736dd0144ca2228a533ffd3102"
+  },
+  "src/frontend/src/app/core/services/storage.service.ts": {
+    "mtime": 1794713026.185819,
+    "seen": 1794713364.9242911,
+    "ast_hash": "30c6117b3c5867a51c049a58ad93521a",
+    "semantic_hash": "30c6117b3c5867a51c049a58ad93521a"
+  },
+  "src/frontend/src/app/core/utils/error-mapper.ts": {
+    "mtime": 1794713024.370579,
+    "seen": 1794713364.9242911,
+    "ast_hash": "6339236f735de375ace1135b4e85149e",
+    "semantic_hash": "6339236f735de375ace1135b4e85149e"
+  },
+  "src/frontend/src/app/core/utils/loading.utils.ts": {
+    "mtime": 1794713022.8991256,
+    "seen": 1794713364.9242911,
+    "ast_hash": "fbe51057b16226f57ac7be2741c23d5f",
+    "semantic_hash": "fbe51057b16226f57ac7be2741c23d5f"
+  },
+  "src/frontend/src/app/features/dashboard/dashboard.component.ts": {
+    "mtime": 1794713121.6590497,
+    "seen": 1794713364.9242911,
+    "ast_hash": "fa9542efed8bc0bc6ef600012881ecf7",
+    "semantic_hash": "fa9542efed8bc0bc6ef600012881ecf7"
+  },
+  "src/frontend/src/app/features/features.routes.ts": {
+    "mtime": 1794713120.5056386,
+    "seen": 1794713364.9242911,
+    "ast_hash": "efc9c35db090e06a77d894272fae83cb",
+    "semantic_hash": "efc9c35db090e06a77d894272fae83cb"
+  },
+  "src/frontend/src/app/layout/shell/shell.component.ts": {
+    "mtime": 1794713101.4290473,
+    "seen": 1794713364.9242911,
+    "ast_hash": "6ae537c8789252552d3af2e45b0ebe69",
+    "semantic_hash": "6ae537c8789252552d3af2e45b0ebe69"
+  },
+  "src/frontend/src/app/shared/components/loader.component.ts": {
+    "mtime": 1794713098.6395125,
+    "seen": 1794713364.9242911,
+    "ast_hash": "a344f3f73aadafc18625693fee59a669",
+    "semantic_hash": "a344f3f73aadafc18625693fee59a669"
+  },
+  "src/frontend/src/app/shared/components/toast-container.component.ts": {
+    "mtime": 1794713097.0969656,
+    "seen": 1794713364.9242911,
+    "ast_hash": "2e0320248d86659bfd68bb621866bc0c",
+    "semantic_hash": "2e0320248d86659bfd68bb621866bc0c"
+  },
+  "src/frontend/src/app/shared/pages/status-page/status-page.component.spec.ts": {
+    "mtime": 1794713188.3810208,
+    "seen": 1794713364.9242911,
+    "ast_hash": "f40f3d2b430537fb49d0f9c5f812cd1b",
+    "semantic_hash": "f40f3d2b430537fb49d0f9c5f812cd1b"
+  },
+  "src/frontend/src/app/shared/pages/status-page/status-page.component.ts": {
+    "mtime": 1794713099.7844646,
+    "seen": 1794713364.9242911,
+    "ast_hash": "1132ad2da59ceeb471458b09cce845f2",
+    "semantic_hash": "1132ad2da59ceeb471458b09cce845f2"
+  },
+  "src/frontend/src/environments/environment.prod.ts": {
+    "mtime": 1794712995.4373817,
+    "seen": 1794713364.9242911,
+    "ast_hash": "272753aa084596eab099a9cbab32f01b",
+    "semantic_hash": "272753aa084596eab099a9cbab32f01b"
+  },
+  "src/frontend/src/environments/environment.ts": {
+    "mtime": 1794712994.5464883,
+    "seen": 1794713364.9242911,
+    "ast_hash": "595a6bf98c90e43b21a8c4afa1724be7",
+    "semantic_hash": "595a6bf98c90e43b21a8c4afa1724be7"
+  },
+  "src/frontend/src/main.ts": {
+    "mtime": 1794713128.1606023,
+    "seen": 1794713364.9242911,
+    "ast_hash": "23ac2d63e9e7fc1345509d26fe25f6bf",
+    "semantic_hash": "23ac2d63e9e7fc1345509d26fe25f6bf"
+  },
+  "src/frontend/tailwind.config.js": {
+    "mtime": 1794712956.7325015,
+    "seen": 1794713364.9242911,
+    "ast_hash": "5517e22a8a6aace7adeadf3a086db485",
+    "semantic_hash": "5517e22a8a6aace7adeadf3a086db485"
+  },
+  "src/frontend/tsconfig.app.json": {
+    "mtime": 1794712768.3415568,
+    "seen": 1794713364.9242911,
+    "ast_hash": "e36d55dc3a81c35d0328a257103d6d3d",
+    "semantic_hash": "e36d55dc3a81c35d0328a257103d6d3d"
+  },
+  "src/frontend/tsconfig.json": {
+    "mtime": 1794713267.4427307,
+    "seen": 1794713364.9242911,
+    "ast_hash": "856a7e9fd7e7e7715f34ffcba003c331",
+    "semantic_hash": "856a7e9fd7e7e7715f34ffcba003c331"
+  },
+  "src/frontend/tsconfig.spec.json": {
+    "mtime": 1794712952.5416818,
+    "seen": 1794713364.9242911,
+    "ast_hash": "1eacf0212e5f1dfb7833879bd9910b4a",
+    "semantic_hash": "1eacf0212e5f1dfb7833879bd9910b4a"
+  }
+}

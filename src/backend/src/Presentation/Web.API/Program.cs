@@ -1,0 +1,43 @@
+using Application;
+using Application.Common.Interfaces;
+using Infrastructure.Authentication;
+using Infrastructure.ExternalServices;
+using Infrastructure.Persistence;
+using Infrastructure.Shared;
+using Web.API.HealthChecks;
+using Web.API.Infrastructure;
+using Web.API.Middlewares;
+using Web.API.Services;
+
+EnvironmentLoader.LoadDotEnvIfPresent();
+var builder = WebApplication.CreateBuilder(args);
+const string corsPolicyName = "AllowFrontend";
+builder.Services.AddApplication();
+builder.Services.AddSharedInfrastructure(builder.Configuration);
+builder.Services.AddPersistenceInfrastructure(builder.Configuration);
+builder.Services.AddAuthenticationInfrastructure();
+builder.Services.AddExternalServicesInfrastructure(builder.Configuration);
+builder.Services.AddControllers();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ICurrentUserContext, CurrentUserContext>();
+builder.Services.AddHealthChecks().AddCheck<DatabaseHealthCheck>("database");
+builder.Services.AddJwtAuthentication(builder.Configuration);
+builder.Services.AddCorsInfrastructure(builder.Configuration, corsPolicyName);
+builder.Services.AddSwaggerDocumentation();
+
+var app = builder.Build();
+await app.InitializeDatabaseAsync();
+app.UseSwagger();
+app.UseSwaggerUI();
+app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
+app.UseCors(corsPolicyName);
+app.UseAuthentication();
+app.UseMiddleware<JwtBlacklistMiddleware>();
+app.UseAuthorization();
+app.UseMiddleware<PermissionAuthorizationMiddleware>();
+app.MapHealthChecks("/health").AllowAnonymous();
+app.MapHealthChecks("/health/ready").AllowAnonymous();
+app.MapControllers();
+app.Run();
+
+public partial class Program;

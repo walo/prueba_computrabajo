@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   AccionaDev Fluent Design Tokens — Paleta Base por Defecto (Azul Corporativo)
+   Nota: Los valores se definen en canales RGB separados por espacios ("R G B")
+   para que Tailwind soporte modificadores de opacidad como bg-primary/10
+   y coincidan exactamente con ui-design-system/tailwind.preset.js.
+   ========================================================================== */
+
+:root {
+  /* Marca Primaria: Azul Corporativo Base (#00529A -> 0 82 154) */
+  --ad-primary: 0 82 154;
+  --ad-primary-hover: 2 59 110;          /* #023B6E */
+  --ad-primary-active: 1 44 82;          /* #012C52 */
+  --ad-primary-foreground: 255 255 255;  /* #FFFFFF */
+
+  /* Superficies y Acciones Secundarias (#EBF1F5 -> 235 241 245) */
+  --ad-secondary: 235 241 245;
+  --ad-secondary-hover: 220 230 238;
+  --ad-secondary-foreground: 15 23 42;
+
+  /* Lienzo y Elevación (#F7F9FC -> 247 249 252) */
+  --ad-bg: 247 249 252;
+  --ad-surface: 255 255 255;
+  --ad-surface-muted: 235 241 245;
+  --ad-surface-elevated: 255 255 255;
+
+  /* Tipografía y Bordes */
+  --ad-text: 15 23 42;                   /* #0F172A */
+  --ad-text-muted: 100 116 139;          /* #64748B */
+  --ad-text-subtle: 148 163 184;         /* #94A3B8 */
+  --ad-border: 226 232 240;              /* #E2E8F0 */
+  --ad-border-strong: 203 213 225;       /* #CBD5E1 */
+  --ad-ring: 0 82 154;                   /* #00529A */
+
+  /* Estados Semánticos Transaccionales */
+  --ad-success: 0 173 89;                /* #00AD59 */
+  --ad-warning: 246 133 17;              /* #F68511 */
+  --ad-danger: 236 27 52;                /* #EC1B34 */
+  --ad-info: 20 122 243;                 /* #147AF3 */
+
+  /* Radios Fluent */
+  --ad-radius-sm: 0.375rem;
+  --ad-radius-md: 0.625rem;
+  --ad-radius-lg: 0.875rem;
+  --ad-radius-xl: 1.25rem;
+}
+
+/* ==========================================================================
+   Modo Oscuro (.dark en <html>) — Activación Instantánea en Vivo
+   ========================================================================== */
+.dark {
+  /* Azul Corporativo Luminoso para Alto Contraste Oscuro (#039DE9 -> 3 157 233) */
+  --ad-primary: 3 157 233;
+  --ad-primary-hover: 56 189 248;
+  --ad-primary-active: 2 132 199;
+  --ad-primary-foreground: 255 255 255;
+
+  --ad-secondary: 30 41 59;
+  --ad-secondary-hover: 51 65 85;
+  --ad-secondary-foreground: 248 250 252;
+
+  --ad-bg: 11 17 32;                     /* #0B1120 */
+  --ad-surface: 17 24 39;                /* #111827 */
+  --ad-surface-muted: 30 41 59;          /* #1E293B */
+  --ad-surface-elevated: 30 41 59;       /* #1E293B */
+
+  --ad-text: 248 250 252;                /* #F8FAFC */
+  --ad-text-muted: 148 163 184;          /* #94A3B8 */
+  --ad-text-subtle: 100 116 139;         /* #64748B */
+  --ad-border: 30 41 59;                 /* #1E293B */
+  --ad-border-strong: 51 65 85;          /* #334155 */
+  --ad-ring: 3 157 233;
+
+  --ad-success: 52 211 153;
+  --ad-warning: 251 191 36;
+  --ad-danger: 248 113 113;
+  --ad-info: 56 189 248;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary-soft selection:text-primary transition-colors duration-200;
+    font-family: 'Inter', 'Segoe UI Variable', system-ui, -apple-system, sans-serif;
+  }
+}
