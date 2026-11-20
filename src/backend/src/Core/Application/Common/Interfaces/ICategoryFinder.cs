@@ -7,4 +7,5 @@ public interface ICategoryFinder
 {
     Task<PagedCategoriesResponse> GetPagedAsync(CategoryFilter filter, CancellationToken ct = default);
     Task<CategoryResponse?> GetByIdAsync(Guid id, CancellationToken ct = default);
+    Task<bool> ExistsAsync(Guid id, CancellationToken ct = default);
 }

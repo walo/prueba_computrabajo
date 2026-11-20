@@ -4,8 +4,11 @@ using Application.Features.Categories.Commands.UpdateCategory;
 using Application.Features.Categories.DTOs;
 using Application.Features.Categories.Queries.GetCategories;
 using Application.Features.Categories.Queries.GetCategoryById;
+using Application.Features.Products.DTOs;
+using Application.Features.Products.Queries.GetProductsByCategory;
 using Domain.Constants;
 using Domain.Entities;
+using Domain.ValueObjects;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Web.API.Attributes;
@@ -34,6 +37,24 @@ public sealed class CategoriesController(ISender sender) : ApiController
     public async Task<IActionResult> GetById(Guid id, CancellationToken ct)
     {
         var result = await sender.Send(new GetCategoryByIdQuery(id), ct);
+
+        return result.Match(Ok, HandleFailure);
+    }
+
+    [HttpGet("{categoryId:guid}/products")]
+    [HasPermission(Permissions.ProductsRead)]
+    [ProducesResponseType(typeof(PagedProductsResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status403Forbidden)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> GetProductsByCategory(
+        Guid categoryId,
+        [FromQuery] CategoryProductsFilter filter,
+        CancellationToken ct)
+    {
+        var request = new CategoryProductsQuery(categoryId, filter);
+        var result = await sender.Send(new GetProductsByCategoryQuery(request), ct);
 
         return result.Match(Ok, HandleFailure);
     }
