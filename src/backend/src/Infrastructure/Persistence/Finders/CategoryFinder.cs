@@ -45,6 +45,13 @@ public sealed class CategoryFinder(AppDbContext dbContext) : ICategoryFinder
             .FirstOrDefaultAsync(ct);
     }
 
+    public async Task<bool> ExistsAsync(Guid id, CancellationToken ct = default)
+    {
+        return await dbContext.Categories
+            .AsNoTracking()
+            .AnyAsync(category => category.Id == id, ct);
+    }
+
     private IQueryable<Category> BuildFilteredQuery(CategoryFilter filter)
     {
         var query = dbContext.Categories.AsNoTracking();

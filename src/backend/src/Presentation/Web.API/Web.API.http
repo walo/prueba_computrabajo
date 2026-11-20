@@ -97,6 +97,10 @@ Content-Type: application/json
 GET {{baseUrl}}/api/v1/products?page=1&pageSize=10&categoryId={{createCategory.response.body.id}}&lowStockOnly=false&search=LAP
 Authorization: Bearer {{loginAdmin.response.body.accessToken}}
 
+### 11b. Consultar Productos por Categoría (US-004 — valida existencia de categoría)
+GET {{baseUrl}}/api/v1/categories/{{createCategory.response.body.id}}/products?page=1&pageSize=10&isActive=true&lowStockOnly=false
+Authorization: Bearer {{loginAdmin.response.body.accessToken}}
+
 ### 12. Obtener Producto por ID
 GET {{baseUrl}}/api/v1/products/{{createProduct.response.body.id}}
 Authorization: Bearer {{loginAdmin.response.body.accessToken}}
